@@ -13,7 +13,7 @@ $my->set_charset("utf8");
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kommentoi</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.3/foundation.min.css" />
-    <link rel="stylesheet" href="seeassas.css" />
+    <link rel="stylesheet" href="seeassas.css" />  
   </head>
   <body>
     <div class="panel">
@@ -27,13 +27,14 @@ if (isset($_POST['submit'])) {
 }
 ?>
       <div>
-        <form action="index.php" method="POST">
+        <form action="kommentoi.php" method="POST">
           <div>
             <h5 class="float-left">Kommentteja</h5>
 <?php
-$result = $my->query("SELECT COUNT(*) FROM 581D_Kommentti");
-if ($result) $numrows = mysqli_num_rows($result);
-else die("Jotain meni vituiks");
+$result1 = $my->query("SELECT * FROM 581D_Kommentti");
+
+$numrows = $result1->num_rows;
+
 echo '<h5 class="float-left">&nbsp•&nbsp' . $numrows . '</h5>';
 ?>
             <textarea name="comment" maxlength="140"></textarea>
@@ -50,7 +51,7 @@ while ($rows = $result->fetch_array(MYSQLI_ASSOC)) {
   $uid = $rows['Nimi'];
   $time = $rows['KTime'];
   $comment = $rows['Kommentti'];
-  echo '<div>' . '<table>' . '<tbody>' . '<tr>' . '<th class="float-left">' . '<a class="float-left" href="http://cosmo.kpedu.fi/~etunimisukunimi/profiili.php?id=' . $id . '">' . $uid . '</a>' . '<p class="float-left">&nbsp</p>' . '<p class="float-left date">' . $time . '</p>' . '</th>' . '</tr>' . '<tr>' . '<td>' . '<p class="more">' . $comment . '</p>' . '</td>' . '</tr>' . '</tbody>' . '</table>' . '</div>';
+  echo '<div>' . '<table>' . '<tbody>' . '<tr>' . '<th class="float-left">' . '<a class="float-left" href="http://cosmo.kpedu.fi/~etunimisukunimi/profiili.php?id=' . $id . '">' .
 }
 $my->close();
 ?>
@@ -84,5 +85,6 @@ $my->close();
     </div>
   </body>
 </html>
+
 
 
