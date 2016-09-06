@@ -27,7 +27,7 @@
 </div>
 
 <div class="off-canvas-content" data-off-canvas-content>
-   <div class="title-bar">
+   <div class="title-bar nav-mobile">
   <div class="title-bar-left">
     <button class="menu-icon" type="button" data-open="offCanvas"></button>
     <span class="title-bar-title">SoMETT</span>
