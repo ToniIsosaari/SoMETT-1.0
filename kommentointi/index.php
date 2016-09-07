@@ -24,7 +24,7 @@ $submit = $_POST['submit'];
 // if($comment != "")
 if (isset($_POST['submit'])) {
   $result = $my->query("INSERT INTO 581D_Kommentti (Kommentti) VALUES ('$comment') ");
-  echo "<meta HTTP-EQUIV='REFRESH' content='0; url=kommentoi.php'>";
+  echo "<meta HTTP-EQUIV='REFRESH' content='0; url=index.php'>";
 }
 ?>
       <div>
