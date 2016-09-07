@@ -21,6 +21,19 @@
 **************************************** */
 .title-bar{
 	background: #00BCD4;
+	height: 60px;
+	line-height: 60px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+.off-canvas-wrapper{
+	background: #0097A7;
+}
+#offCanvas{
+	background: transparent;
+}
+.mobile-menu a{
+	color: white;
 }
 /* ****************************************
     MAIN - SECTION
