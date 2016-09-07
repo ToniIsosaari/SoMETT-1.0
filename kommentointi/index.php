@@ -53,7 +53,31 @@ while ($rows = $result->fetch_array(MYSQLI_ASSOC)) {
   $time = $rows['KTime'];
   $kid = $rows['KommenttiID'];
   $comment = $rows['Kommentti'];
-  echo '<div>' . '<table>' . '<tbody>' . '<tr>' . '<th class="float-left">' . '<a class="float-left" href="http://cosmo.kpedu.fi/~etunimisukunimi/profiili.php?id=' . $id . '">' . $uid . '</a>' . '<p class="float-left">&nbsp</p>' . '<p class="float-left date">' . $time . '</p>' . '</th>' . '<th>' . '<a href=raportoi.php?id=' . $kid . ' title="Ilmoita asiattomasta kommentista" class="float-right">' . '<i class="fi-megaphone"></i>' . '</a>' . '</th>' . '</tr>' . '<tr>' . '<td>' . '<p class="more">' . $comment . '</p>' . '</td>' . '<th>' . '</th>' . '</tr>' . '</tbody>' . '</table>' . '</div>';
+  echo nl2br ('<div>' .
+         '<table>' .
+            '<tbody>' .
+                '<tr>' .
+                    '<th class="float-left">' .
+                      '<a class="float-left" href="http://cosmo.kpedu.fi/~etunimisukunimi/profiili.php?id=' . $id . '">' . $uid . '</a>' .
+                      '<p class="float-left">&nbsp</p>' .
+                      '<p class="float-left date">' . $time . '</p>' .
+                    '</th>' .
+                    '<th>' .
+                      '<a href=raportoi.php?id=' . $kid . ' title="Ilmoita asiattomasta kommentista" class="float-right">' .
+                        '<i class="fi-megaphone"></i>' .
+                      '</a>' .
+                    '</th>' .
+                '</tr>' .
+                '<tr>' .
+                  '<td>' .
+                    '<p class="more">' . $comment . '</p>' .
+                  '</td>' .
+                  '<th>' .
+                  '</th>' .
+                '</tr>' .
+              '</tbody>' .
+            '</table>' .
+          '</div>');
 }
 $my->close();
 ?>
@@ -61,28 +85,17 @@ $my->close();
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/what-input/2.1.1/what-input.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Readmore.js/2.2.0/readmore.js"></script>
 <script>
         $(document).foundation();
       </script>
-      <script type="text/javascript">
-        $(document).ready(function() {
-          var maxLength = 140;
-          $(".show-read-more").each(function() {
-            var myStr = $(this).text();
-            if ($.trim(myStr).length > maxLength) {
-              var newStr = myStr.substring(0, maxLength);
-              var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
-              $(this).empty().html(newStr);
-              $(this).append(' <a href="javascript:void(0);" class="read-more">read more...</a>');
-              $(this).append('<span class="more-text">' + removedStr + '</span>');
-            }
-          });
-          $(".read-more").click(function() {
-            $(this).siblings(".more-text").contents().unwrap();
-            $(this).remove();
-          });
+      <script>
+    $('p').readmore({
+      speed: 75,
+        maxHeight: 5
         });
-      </script>
+
+        </script>
     </div>
   </body>
 </html>
