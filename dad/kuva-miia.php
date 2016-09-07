@@ -59,7 +59,7 @@
           <input class="input-field-b" type="text" placeholder="Käytäthän mahdollisimman kuvailevaa otsikkoa">
         <label class="laapeli-a">Kuvailu:</label>
           <textarea class="input-field-a" placeholder="Kirjoita kaikki mitä tiedät kyseisestä objektista"></textarea>
-        <button class="hollow button">Lähetä</button>
+        <button class="hollow button"><i class="fi-upload"></i> Lähetä</button>
       </form>
     </div>
   </div>
@@ -100,23 +100,23 @@
 <section class="footer">
 	<div class="row">
     <div class="large-4 column">
-		<h4>SoMETTista</h4>
+		<h4><i class="fi-torsos-all"></i> SoMETTista</h4>
 		<hr>
 		<p>Jotain paskaa tekstiä tässäkin ehkä mahdollisesti saattaakin näkyä tai sitten
 		ehkä mahdollisesti ei.</p>
 	</div>
     <div class="large-4 column">
-		<h4>Käyttäjäehdot</h4>
+		<h4><i class="fi-book"></i> Käyttäjäehdot</h4>
 		<hr>
 		<p>Jotain paskaa tekstiä tässäkin ehkä mahdollisesti saattaakin näkyä tai sitten
         ehkä mahdollisesti ei.</p>
 	</div>
     <div class="large-4 column">
-		<h4>Löydä meidät</h4>
+		<h4><i class="fi-magnifying-glass"></i> Löydä meidät</h4>
 		<hr>
-		<p><a href="#"><i class="fi-social-facebook"></i></a> Facebook</p>
-		<p><a href="#"><i class="fi-social-twitter"></i></a> Twitter</p>
-		<p><a href="#"><i class="fi-social-pinterest"></i></a> Pinterest</p>
+		  <a href="#"><i class="fi-social-facebook"></i></a>&nbsp;
+		  <a href="#"><i class="fi-social-twitter"></i></a>&nbsp; 
+		  <a href="#"><i class="fi-social-pinterest"></i></a>
 	</div>
 	</div>
 </section>
