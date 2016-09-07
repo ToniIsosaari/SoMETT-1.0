@@ -14,11 +14,8 @@
 <div class="off-canvas-wrapper">
  <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
  	<div class="off-canvas position-left" id="offCanvas" data-off-canvas>
-
-	<!-- Close button -->
-
   <!-- Mobiili Navipalkki -->
-<ul class="vertical menu">
+<ul class="vertical menu mobile-menu">
  <li><a href="#">Etusivu</a></li>
  <li><a href="#">Kuvapankki</a></li>
  <li><a href="#">Lähetyspalvelu</a></li>
@@ -54,6 +51,7 @@
     Suosittelemme lämpimästi käytäjäehtoihin tutustumista ennen kuvien lähettämistä.
     Mikäli et tiedä kuinka lähetysboksia käytetään, löytyy aiheesta tietoa sivunalaosassa.</p>
   </div>
+    <!-- Kuvan lähetys ja muuta mukavaa -->
     <div class="row">
     <div class="small-9 small-centered colums">
       <form method="GET" action="upload.php" class="dropzone">
@@ -128,7 +126,9 @@
 <script>
       $(document).foundation();
 </script>
-
+</div>
+</div>
+</div>
 </body>
 </html>
 
