@@ -65,7 +65,12 @@
   </div>
 </section>
   <!-- Apua uusavuttomille -->
-<section class="help">
+<div class="apupalkki">
+  <div class="wrap">
+    <button class="apua">Tarvitsetko apua?</button>
+  </div>
+</div>
+<section hidden class="help">
   <div class="wrap">
     <h2>Helppinurkka</h2>
     <hr>
@@ -125,6 +130,13 @@
 <script src="http://cosmo.kpedu.fi/~tomijylha/SoMETT-1.0/dad/dropzone-4.3.0/dist/dropzone.js"></script>
 <script>
       $(document).foundation();
+</script>
+<script>
+      $(document).ready(function(){
+        $(".apua").click(function(){
+          $(".help").toggle(1000);
+        });
+      });
 </script>
 </div>
 </div>
