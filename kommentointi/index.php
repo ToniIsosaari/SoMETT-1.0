@@ -38,7 +38,7 @@ $numrows = $result1->num_rows;
 
 echo '<h5 class="float-left">&nbsp•&nbsp' . $numrows . '</h5>';
 ?>
-            <textarea name="comment" maxlength="140" required></textarea>
+            <textarea name="comment" maxlength="140" rows="2" required></textarea>
             <input class="button float-right" type="submit" name="submit" value="Kommentoi">
             <hr>
           </div>
