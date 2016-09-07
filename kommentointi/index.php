@@ -69,8 +69,8 @@ while ($rows = $result->fetch_array(MYSQLI_ASSOC)) {
                     '</th>' .
                 '</tr>' .
                 '<tr>' .
-                  '<td>' .
-                    '<p class="more">' . $comment . '</p>' .
+                  '<td>' .                
+                    '<p id="kommentti">' . $comment . '</p>' .
                   '</td>' .
                   '<th>' .
                   '</th>' .
@@ -90,10 +90,10 @@ $my->close();
         $(document).foundation();
       </script>
       <script>
-    $('p').readmore({
-      speed: 75,
-        maxHeight: 5
-        });
+    $('p#kommentti').readmore({ 
+      moreLink: '<a href="#">Lisätietoja</a>',
+      lessLink: '<a href="#">Näytä vähemmän</a>',
+        });                             
 
         </script>
     </div>
