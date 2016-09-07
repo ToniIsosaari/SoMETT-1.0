@@ -13,7 +13,8 @@ $my->set_charset("utf8");
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kommentoi</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.3/foundation.min.css" />
-    <link rel="stylesheet" href="seeassas.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="kommentointi/seeassas.css" />
   </head>
   <body>
     <div class="panel">
@@ -23,20 +24,21 @@ $submit = $_POST['submit'];
 // if($comment != "")
 if (isset($_POST['submit'])) {
   $result = $my->query("INSERT INTO 581D_Kommentti (Kommentti) VALUES ('$comment') ");
-  echo "<meta HTTP-EQUIV='REFRESH' content='0; url=index.php'>";
+  echo "<meta HTTP-EQUIV='REFRESH' content='0; url=kommentoi.php'>";
 }
 ?>
       <div>
-        <form action="index.php" method="POST">
+        <form action="kommentoi.php" method="POST">
           <div>
             <h5 class="float-left">Kommentteja</h5>
 <?php
-$result = $my->query("SELECT COUNT(*) FROM 581D_Kommentti");
-if ($result) $numrows = mysqli_num_rows($result);
-else die("Jotain meni vituiks");
+$result1 = $my->query("SELECT * FROM 581D_Kommentti");
+
+$numrows = $result1->num_rows;
+
 echo '<h5 class="float-left">&nbsp•&nbsp' . $numrows . '</h5>';
 ?>
-            <textarea name="comment" maxlength="140"></textarea>
+            <textarea name="comment" maxlength="140" required></textarea>
             <input class="button float-right" type="submit" name="submit" value="Kommentoi">
             <hr>
           </div>
@@ -49,19 +51,19 @@ while ($rows = $result->fetch_array(MYSQLI_ASSOC)) {
   $id = $rows['UID'];
   $uid = $rows['Nimi'];
   $time = $rows['KTime'];
+  $kid = $rows['KommenttiID'];
   $comment = $rows['Kommentti'];
-  echo '<div>' . '<table>' . '<tbody>' . '<tr>' . '<th class="float-left">' . '<a class="float-left" href="http://cosmo.kpedu.fi/~etunimisukunimi/profiili.php?id=' . $id . '">' . $uid . '</a>' . '<p class="float-left">&nbsp</p>' . '<p class="float-left date">' . $time . '</p>' . '</th>' . '</tr>' . '<tr>' . '<td>' . '<p class="more">' . $comment . '</p>' . '</td>' . '</tr>' . '</tbody>' . '</table>' . '</div>';
+  echo '<div>' . '<table>' . '<tbody>' . '<tr>' . '<th class="float-left">' . '<a class="float-left" href="http://cosmo.kpedu.fi/~etunimisukunimi/profiili.php?id=' . $id . '">' . $uid . '</a>' . '<p class="float-left">&nbsp</p>' . '<p class="float-left date">' . $time . '</p>' . '</th>' . '<th>' . '<a href=raportoi.php?id=' . $kid . ' title="Ilmoita asiattomasta kommentista" class="float-right">' . '<i class="fi-megaphone"></i>' . '</a>' . '</th>' . '</tr>' . '<tr>' . '<td>' . '<p class="more">' . $comment . '</p>' . '</td>' . '<th>' . '</th>' . '</tr>' . '</tbody>' . '</table>' . '</div>';
 }
 $my->close();
 ?>
       </div>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-      <script src="js/vendor/what-input.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/foundation/6.2.3/foundation.min.js"></script>
-      <script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/what-input/2.1.1/what-input.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.js"></script>
+<script>
         $(document).foundation();
       </script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
       <script type="text/javascript">
         $(document).ready(function() {
           var maxLength = 140;
