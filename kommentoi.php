@@ -13,7 +13,7 @@ $my->set_charset("utf8");
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kommentoi</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.3/foundation.min.css" />
-    <link rel="stylesheet" href="seeassas.css" />  
+    <link rel="stylesheet" href="seeassas.css" />
   </head>
   <body>
     <div class="panel">
@@ -51,7 +51,7 @@ while ($rows = $result->fetch_array(MYSQLI_ASSOC)) {
   $uid = $rows['Nimi'];
   $time = $rows['KTime'];
   $comment = $rows['Kommentti'];
-  echo '<div>' . '<table>' . '<tbody>' . '<tr>' . '<th class="float-left">' . '<a class="float-left" href="http://cosmo.kpedu.fi/~etunimisukunimi/profiili.php?id=' . $id . '">' .
+  echo '<div>' . '<table>' . '<tbody>' . '<tr>' . '<th class="float-left">' . '<a class="float-left" href="http://cosmo.kpedu.fi/~etunimisukunimi/profiili.php?id=' . $id . '">' . $uid . '</a>' . '<p class="float-left">&nbsp</p>' . '<p class="float-left date">' . $time . '</p>' . '</th>' . '</tr>' . '<tr>' . '<td>' . '<p class="more">' . $comment . '</p>' . '</td>' . '</tr>' . '</tbody>' . '</table>' . '</div>';
 }
 $my->close();
 ?>
@@ -85,6 +85,3 @@ $my->close();
     </div>
   </body>
 </html>
-
-
-
