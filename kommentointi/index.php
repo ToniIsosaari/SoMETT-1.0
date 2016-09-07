@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
 }
 ?>
       <div>
-        <form action="kommentoi.php" method="POST">
+        <form action="index.php" method="POST">
           <div>
             <h5 class="float-left">Kommentteja</h5>
 <?php
