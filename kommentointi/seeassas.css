@@ -9,14 +9,13 @@
 }
 
 p.date {
-    font-weight: 400;                        
-    padding-top: 1.6px;
+    font-weight: 400;
     font-size: 0.85rem;
-}   
+}
 
 p {
     font-weight: 400;
-    margin-bottom: 0 !important;   
+    margin-bottom: 0 !important;
 }
 
 tr {
@@ -25,4 +24,12 @@ tr {
 
 .show-read-more .more-text{
    display: none;
+}
+
+hr {
+    max-width: inherit !important;
+}
+
+textarea {
+    resize: none;
 }
