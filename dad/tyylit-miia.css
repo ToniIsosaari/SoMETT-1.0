@@ -77,7 +77,7 @@
 	width: 75%;
 	max-width: 900px;
 	text-align: center;
-	height: 9%;
+	height: 11em;
 	max-height: 200px;
 	resize: none;
 }
@@ -94,11 +94,20 @@
 	margin: 0 auto;
 }
 /* ****************************************
+    APUPALKKI - DIV
+**************************************** */
+.apupalkki{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+	color: #00BCD4;
+	font-size: 20px;
+}
+/* ****************************************
     HELP - SECTION
 **************************************** */
 .help{
 	padding: 80px 0px;
-	display: none;
 }
 /* ****************************************
     FOOTER - SECTION
