@@ -14,7 +14,7 @@ $my->set_charset("utf8");
     <title>Kommentoi</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.3/foundation.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="kommentointi/seeassas.css" />
+    <link rel="stylesheet" href="seeassas.css" />
   </head>
   <body>
     <div class="panel">
