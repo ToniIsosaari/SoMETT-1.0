@@ -34,11 +34,29 @@
         <td><? echo $i['Kommentti'];?></td>
         <td><? echo $i['UID'];?></td>
         <td><select name="Oikeudet">
-              <option>0</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
+              <option <? if($i['Status'] == 0){
+              echo "selected";
+              }else{
+              echo "";
+              }
+              ?>>0</option>
+              <option <? if($i['Status'] == 1){
+              echo "selected";
+              }else{
+              echo "";
+              }?>>1</option>
+              <option <? if($i['Status'] == 2){
+              echo "selected";
+              }else{
+              echo "";
+              }?>>2</option>
+              <option <? if($i['Status'] == 3){
+              echo "selected";
+              }else{
+              echo "";
+              }?>>3</option>
             </select>
+
         <td><input type="checkbox" name="checkbox[]" id="checkbox[]" value="<?echo $i['KommenttiID'];?>"/></td>
       </tr>
       <?
