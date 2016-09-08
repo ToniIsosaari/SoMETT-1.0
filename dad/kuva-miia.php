@@ -56,9 +56,9 @@
     <div class="small-9 small-centered colums">
       <form method="GET" action="upload.php" class="dropzone">
         <label class="laapeli-b">Otsikko:</label>
-          <input class="input-field-b" type="text" placeholder="Käytäthän mahdollisimman kuvailevaa otsikkoa">
+          <input class="input-field-b" type="text" name="otsikko" placeholder="Käytäthän mahdollisimman kuvailevaa otsikkoa">
         <label class="laapeli-a">Kuvailu:</label>
-          <textarea class="input-field-a" placeholder="Kirjoita kaikki mitä tiedät kyseisestä objektista"></textarea>
+          <textarea class="input-field-a" name="kuvailu" placeholder="Kirjoita kaikki mitä tiedät kyseisestä objektista"></textarea>
         <button class="hollow button"><i class="fi-upload"></i> Lähetä</button>
       </form>
     </div>
