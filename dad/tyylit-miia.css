@@ -125,6 +125,15 @@
 .fi-book:before, .fi-torsos-all:before, .fi-magnifying-glass:before{
 	font-size: 30px;
 }
+.fi-social-facebook:hover{
+	color: #3B5998;
+}
+.fi-social-twitter:hover{         
+    color: #1DA1F2;
+}
+.fi-social-pinterest:hover{         
+    color: #BD081C;
+}
 /* ****************************************
     MEDIA - QUARY
 **************************************** */
