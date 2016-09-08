@@ -120,7 +120,7 @@
 	color: white;
 }
 .footer i{
-	font-size: 40px;
+	font-size: 45px;
 }
 .fi-book:before, .fi-torsos-all:before, .fi-magnifying-glass:before{
 	font-size: 30px;
@@ -133,6 +133,12 @@
 }
 .fi-social-pinterest:hover{         
     color: #BD081C;
+}
+.fi-social-reddit:hover{
+    color: #FF4500;
+}
+.fi-social-google-plus:hover{
+    color: #DC4A38;
 }
 /* ****************************************
     MEDIA - QUARY
