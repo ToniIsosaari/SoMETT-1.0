@@ -102,6 +102,25 @@
 	margin-top: 530px;
 }
 /* ****************************************
+    ETUSIVU - SECTION
+**************************************** */
+.etusivu{
+    padding: 150px 0px;
+    background: url('http://gospelcrusader.com/wp-content/uploads/2016/05/sea-of-forgetfulness-by-myles-munroe.jpg') no-repeat;
+	background-size: cover;
+}
+.etusivu p{
+    text-align: center;
+}
+.transbox{
+	padding: 20px 0;
+	background-color: #ffffff;
+	border-width: 1px;
+	border-style: dashed;
+	opacity: 0.6;
+	filter: alpha(opacity=60);
+}
+/* ****************************************
     WRAP - STYLE
 **************************************** */
 .wrap{
