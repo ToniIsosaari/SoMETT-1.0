@@ -14,9 +14,9 @@
 <div class="off-canvas-wrapper">
  <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
  	<div class="off-canvas position-left" id="offCanvas" data-off-canvas>
-  <!-- Mobiili Navipalkki -->
+  <!-- Mobiili Navipalkki (ÄLÄ KOSKE!) -->
 <ul class="vertical menu mobile-menu">
- <li><a href="#">Etusivu</a></li>
+ <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/index.php">Etusivu</a></li>
  <li><a href="#">Kuvapankki</a></li>
  <li><a href="#">Lähetyspalvelu</a></li>
 </ul>
@@ -30,39 +30,48 @@
     <span class="title-bar-title">SoMETT</span>
   </div>
 </div>
-  <!-- Poytakone Navipalkki -->
+  <!-- Poytakone Navipalkki (ÄLÄ KOSKE!) -->
 <div class="top-bar nav-desktop">
 <div class="wrap">
   <div class="top-bar-left">
     <ul class="dropdown menu dropdown-desktop" data-dropdown-menu>
       <li class="menu-text">SoMETT</li>
-      <li><a href="#">Etusivu</a></li>
+      <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/index.php">Etusivu</a></li>
       <li><a href="#">Kuvapankki</a></li>
       <li><a href="#">Lähetyspalvelu</a></li>
     </ul>
   </div>
 </div>
 </div>
-  <!-- Jotain ylimääräistä paskaa, joka saa sivun näyttämään kivemmalta -->
-<section class="main">
+  <!-- Main osio (lisää sivulle olennainen sisältö tänne) -->
+<section class="main etusivu">
   <div class="wrap">
-    <h1>Pääotsikko</h1>
-    <p>Tältä näyttää normaaliteksti....</p>
+      <h1>SoMETT</h1>
+      <p>"Vähän niin kuin Musketti, mutta vain sata kertaa parempi"</p>
   </div>
-    <!-- Kuvan lähetys ja muuta mukavaa -->
 </section>
-  <!-- Apua uusavuttomille -->
+  <!-- Secondary osio (lisää eri niin tärkeä sisältö tänne) -->
 <section class="secondary">
   <div class="wrap">
-    <h2>Väliotsikko</h2>
+    <h2>Mikä on SoMETT?</h2>
     <hr>
-    <p>SoMETTin lähetyspalveluboksi on "drag & drop -tekniikalla" toimiva lähetyslaatikko.
-    Mikäli selaimesi tukee kyseistä tiedostojen lähetystapaa voi yksinkertaisesti "raahata ja
-    tiputtaa" kuvan lähetysboksin ruutuun. Jos selain ei tue "drag & drop -tekniikkaa", voit 
-    klikata ruudussa olevaa tekstiä, joka avaa perinteisen tiedoston valinta ikkunan.</p>
+    <p>SoMETTi on Erikoistietotoimiston Musketin sosiaalisenmedian nettiversio, joka mahdollistaa 
+    tavallisten ihmisten kuvien lähettämisen yhteisön ja Erikoistietotoimiston työntekijöiden tutkittavaksi.
+    Tavoitteenamme on edistää museoaineiston tutkimista käyttämällä hyödyksi innostuneita vapaaehtoisia yhteisönjäseniä,
+    liity joukkoomme jo tänään!</p>
+    <h2>Miten SoMETT toimii?</h2>
+    <hr>
+    <p>SoMETTin toiminnan pääpilari on sosiaalisuus ja tärkeimpänä työkalunamme ovat sosiaalisenmedian eri palvelut.
+    Meille on hyvin tärkeää kasvattaa laaja käyttäjäkunta, joka mahdollistaa sen, että palveluumme lisätään aktiivisesti
+    uusia kuvia ja jo olemassa oleviin kuviin saataisiin kerättyä tarpeeksi aiheeseen liittyvää tietoa.</p>
+    <p><h4>Toimintamallimme pähkinänkuoressa:</h4>
+    1. Käyttäjä lisää kuvan palveluumme ja jakaa kuvan sosiaalisen medianpalveluihin antamamme linkin kautta.<br>
+    2. Muut käyttäjät kommentoivat kuvaa ja kertovat tietonsa kyseiseen aiheeseen liittyen.<br>
+    3. Erikoistietotoimiston työntekijä varmistaa tiedot.<br>
+    4. Museoviraston työntekijä päättää liitetäänkö kuvamateriaali museotietokantaan.</p>
   </div>
 </section>
-  <!-- Footer osio -->
+  <!-- Footer osio (ÄLÄ KOSKE!) -->
 <section class="footer">
 	<div class="row">
     <div class="large-4 column">
