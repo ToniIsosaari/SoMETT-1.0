@@ -1,16 +1,50 @@
- .top-bar li, .top-bar{
+/* ****************************************
+	NAV - DESKTOP
+**************************************** */
+.nav-desktop{
+	height: 60px;
 	background: #00BCD4;
+	padding-top: 0px;
+    padding-bottom: 0px;
 }
+.nav-desktop li{
+	background: #00BCD4;
+	line-height: 60px;
+	padding-top: 0px;
+    padding-bottom: 0px;
+}
+.nav-desktop a{
+    color: white;
+}
+/* ****************************************
+    NAV - MOBILE
+**************************************** */
+.title-bar{
+	background: #00BCD4;
+	height: 60px;
+	line-height: 60px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+.off-canvas-wrapper{
+	background: #0097A7;
+}
+#offCanvas{
+	background: transparent;
+}
+.mobile-menu a{
+	color: white;
+}
+/* ****************************************
+    MAIN - SECTION
+**************************************** */
 .dropzone{
 	border-style: dashed;
 	border-color: #0097A7;
 	padding: 70px 0px;
 }
-.top-bar a{
-	color: white;
-}
 .main{
-	padding: 70px 0px 400px 0px;
+	padding: 60px 0px 450px 0px;
 	background: #d9d9d9;
 }
 .main h1{
@@ -43,25 +77,79 @@
 	width: 75%;
 	max-width: 900px;
 	text-align: center;
-	height: 10%;
+	height: 11em;
+	max-height: 200px;
 	resize: none;
 }
 .button{
 	position: absolute;
-	margin-top: 465px;
+	margin-top: 530px;
 }
+/* ****************************************
+    WRAP - STYLE
+**************************************** */
 .wrap{
 	width: 90%;
 	max-width: 1100px;
 	margin: 0 auto;
 }
+/* ****************************************
+    APUPALKKI - DIV
+**************************************** */
+.apupalkki{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+	color: #00BCD4;
+	font-size: 20px;
+}
+/* ****************************************
+    HELP - SECTION
+**************************************** */
 .help{
 	padding: 80px 0px;
 }
+/* ****************************************
+    FOOTER - SECTION
+**************************************** */
 .footer{
 	padding: 80px 0px;
 	background-color: #0097A7;
 }
-.footer h4, .footer p, .footer i{
+.footer h4, .footer p, .footer i, .footer li{
 	color: white;
+}
+.footer i{
+	font-size: 45px;
+}
+.fi-book:before, .fi-torsos-all:before, .fi-magnifying-glass:before{
+	font-size: 30px;
+}
+.fi-social-facebook:hover{
+	color: #3B5998;
+}
+.fi-social-twitter:hover{         
+    color: #1DA1F2;
+}
+.fi-social-pinterest:hover{         
+    color: #BD081C;
+}
+.fi-social-reddit:hover{
+    color: #FF4500;
+}
+.fi-social-google-plus:hover{
+    color: #DC4A38;
+}
+/* ****************************************
+    MEDIA - QUARY
+**************************************** */
+@media (max-width: 700px){
+	.nav-desktop{
+		display: none;
+	}
+}
+@media (min-width: 700px){
+    .nav-mobile{
+        display: none;
+    }
 }
