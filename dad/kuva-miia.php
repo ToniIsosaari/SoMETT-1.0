@@ -14,11 +14,8 @@
 <div class="off-canvas-wrapper">
  <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
  	<div class="off-canvas position-left" id="offCanvas" data-off-canvas>
-
-	<!-- Close button -->
-
   <!-- Mobiili Navipalkki -->
-<ul class="vertical menu">
+<ul class="vertical menu mobile-menu">
  <li><a href="#">Etusivu</a></li>
  <li><a href="#">Kuvapankki</a></li>
  <li><a href="#">Lähetyspalvelu</a></li>
@@ -54,20 +51,26 @@
     Suosittelemme lämpimästi käytäjäehtoihin tutustumista ennen kuvien lähettämistä.
     Mikäli et tiedä kuinka lähetysboksia käytetään, löytyy aiheesta tietoa sivunalaosassa.</p>
   </div>
+    <!-- Kuvan lähetys ja muuta mukavaa -->
     <div class="row">
     <div class="small-9 small-centered colums">
       <form method="GET" action="upload.php" class="dropzone">
         <label class="laapeli-b">Otsikko:</label>
-          <input class="input-field-b" type="text" placeholder="Käytäthän mahdollisimman kuvailevaa otsikkoa">
+          <input class="input-field-b" type="text" name="otsikko" placeholder="Käytäthän mahdollisimman kuvailevaa otsikkoa">
         <label class="laapeli-a">Kuvailu:</label>
-          <textarea class="input-field-a" placeholder="Kirjoita kaikki mitä tiedät kyseisestä objektista"></textarea>
-        <button class="hollow button">Lähetä</button>
+          <textarea class="input-field-a" name="kuvailu" placeholder="Kirjoita kaikki mitä tiedät kyseisestä objektista"></textarea>
+        <button class="hollow button"><i class="fi-upload"></i> Lähetä</button>
       </form>
     </div>
   </div>
 </section>
   <!-- Apua uusavuttomille -->
-<section class="help">
+<div class="apupalkki">
+  <div class="wrap">
+    <button class="apua">Tarvitsetko apua?</button>
+  </div>
+</div>
+<section hidden class="help">
   <div class="wrap">
     <h2>Helppinurkka</h2>
     <hr>
@@ -102,23 +105,27 @@
 <section class="footer">
 	<div class="row">
     <div class="large-4 column">
-		<h4>SoMETTista</h4>
+		<h4><i class="fi-torsos-all"></i> SoMETTista</h4>
 		<hr>
-		<p>Jotain paskaa tekstiä tässäkin ehkä mahdollisesti saattaakin näkyä tai sitten
-		ehkä mahdollisesti ei.</p>
+		<p>SoMETTi on Erikoistietotoimiston Musketin sosiaalisenmedian nettiversio,
+		joka mahdollistaa tavallisten ihmisten kuvien lähettämisen yhteisön ja
+		Erikoistietotoimiston työntekijöiden tutkittavaksi.</p>
 	</div>
     <div class="large-4 column">
-		<h4>Käyttäjäehdot</h4>
+		<h4><i class="fi-book"></i> Käyttäjäehdot</h4>
 		<hr>
-		<p>Jotain paskaa tekstiä tässäkin ehkä mahdollisesti saattaakin näkyä tai sitten
-        ehkä mahdollisesti ei.</p>
+		<p>Huomioithan, että sinulla tulee olla oikeudet lähettämääsi kuvaan ja
+		kuva ei saa sisältää mitään sopimatonta materiaalia tai se tullaan 
+		poistamaan palvelusta lopullisesti.</p>
 	</div>
     <div class="large-4 column">
-		<h4>Löydä meidät</h4>
+		<h4><i class="fi-magnifying-glass"></i> Löydä meidät</h4>
 		<hr>
-		<p><a href="#"><i class="fi-social-facebook"></i></a> Facebook</p>
-		<p><a href="#"><i class="fi-social-twitter"></i></a> Twitter</p>
-		<p><a href="#"><i class="fi-social-pinterest"></i></a> Pinterest</p>
+		  <a href="https://fi-fi.facebook.com/"><i class="fi-social-facebook"></i></a>&nbsp;
+		  <a href="https://twitter.com/?lang=fi"><i class="fi-social-twitter"></i></a>&nbsp; 
+		  <a href="https://fi.pinterest.com/"><i class="fi-social-pinterest"></i></a>&nbsp;
+		  <a href="https://www.reddit.com/"><i class="fi-social-reddit"></i></a>&nbsp;
+		  <a href="https://plus.google.com/"><i class="fi-social-google-plus"></i></a>
 	</div>
 	</div>
 </section>
@@ -128,7 +135,16 @@
 <script>
       $(document).foundation();
 </script>
-
+<script>
+      $(document).ready(function(){
+        $(".apua").click(function(){
+          $(".help").toggle(1000);
+        });
+      });
+</script>
+</div>
+</div>
+</div>
 </body>
 </html>
 

@@ -34,13 +34,19 @@
         <td><? echo $i['KommenttiID']?></td>
         <td><? echo $i['Kommentti'];?></td>
         <td><? echo $i['UID'];?></td>
+<<<<<<< HEAD
         <td><select name="Rights[]">
               <option value="0" <? if($i['Status'] == 0){
+=======
+        <td><select name="Oikeudet">
+              <option <? if($i['Status'] == 0){
+>>>>>>> c6c78b15e2af6ec6b5ae4564d2ec8a8074a6af0c
               echo "selected";
               }else{
               echo "";
               }
               ?>>0</option>
+<<<<<<< HEAD
               <option value="1" <? if($i['Status'] == 1){
               echo "selected";
               }else{     
@@ -58,6 +64,26 @@
               }?>>3</option>
             </select>
         <td class="table1"><input type="checkbox" name="checkbox[]" id="checkbox[]" value="<?echo $i['KommenttiID'];?>"/></td>
+=======
+              <option <? if($i['Status'] == 1){
+              echo "selected";
+              }else{
+              echo "";
+              }?>>1</option>
+              <option <? if($i['Status'] == 2){
+              echo "selected";
+              }else{
+              echo "";
+              }?>>2</option>
+              <option <? if($i['Status'] == 3){
+              echo "selected";
+              }else{
+              echo "";
+              }?>>3</option>
+            </select>
+
+        <td><input type="checkbox" name="checkbox[]" id="checkbox[]" value="<?echo $i['KommenttiID'];?>"/></td>
+>>>>>>> c6c78b15e2af6ec6b5ae4564d2ec8a8074a6af0c
       </tr>
       <?}
           $Rights = $_POST['Rights'];
