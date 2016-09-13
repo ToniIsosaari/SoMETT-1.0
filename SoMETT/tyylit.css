@@ -16,6 +16,9 @@
 .nav-desktop a{
     color: white;
 }
+.menu-text{
+	color: white;
+}
 /* ****************************************
     NAV - MOBILE
 **************************************** */
@@ -59,9 +62,6 @@
 **************************************** */
 .grey{
 	background: #d9d9d9;
-}
-.grey h2{
-	text-align: center;
 }
 .grey hr{
 	border-color: white;
