@@ -44,7 +44,7 @@
 </div>
 </div>
   <!-- Main osio (lisää sivulle olennainen sisältö tänne) -->
-<section class="main etusivu">
+<section class="main etusivu" data-interchange="[http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/Somett_otsikkokuvat/Mini.jpg, small],[http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/Somett_otsikkokuvat/Medium.jpg, medium], [http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/Somett_otsikkokuvat/Large.jpg, large]">
   <div class="wrap">
       <p>"Vähän niin kuin Musketti, mutta vain sata kertaa parempi"</p>
       <h1>SoMETT</h1>
