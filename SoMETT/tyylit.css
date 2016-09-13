@@ -120,11 +120,10 @@
     ETUSIVU - SECTION
 **************************************** */
 .etusivu{
-    padding-bottom: 25em;
-    background: url('http://cdn.thedailybeast.com/content/dailybeast/galleries/2016/03/05/swim-through-this-spanish-museum/jcr:content/gallery/15e7a569-de56-4ae0-a783-3a4b7b8567f7/image.img.2560.1440.jpg/48571507.cached.jpg') no-repeat;
+	padding: 12em 0;
+	color: white;
 	background-size: cover;
-	-webkit-filter: grayscale(100%);
-	color: white;	
+	-webkit-filter: grayscale(80%);	
 }
 .etusivu p{
     text-align: center;
