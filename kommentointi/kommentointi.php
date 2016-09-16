@@ -17,18 +17,81 @@ $my->set_charset("utf8");
     <link rel="stylesheet" href="css/stylesheet.css" />
   </head>
   <body>
+  <script>
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    if (response.status === 'connected') {
+
+      testAPI();
+    } else if (response.status === 'not_authorized') {
+
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this app.';
+    } else {
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into Facebook.';
+    }
+  }
+
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '240132786384563',
+    cookie     : true,
+
+    xfbml      : true,
+    version    : 'v2.5'
+  });
+
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name);
+      document.getElementById('status').innerHTML =
+        'Thanks for logging in, ' + response.name + '!';
+        alert ("Welcome " + response.name + ": Your UID is " + response.id);
+    });
+  }
+</script>
+
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+
+<div id="status">
+</div>
     <div class="row">
       <div class="panel">
 <?php
+
 $comment = $_POST['comment'];
 $submit = $_POST['submit'];
 if (isset($_POST['submit'])) {
   $result = $my->query("INSERT INTO 581D_Kommentti (Kommentti) VALUES ('$comment') ");
-  echo "<meta HTTP-EQUIV='REFRESH' content='0; url=index.php'>";
+  echo "<meta HTTP-EQUIV='REFRESH' content='0; url=kommentointi.php'>";
 }
 ?>
         <div>
-          <form action="index.php" method="POST">
+          <form action="kommentointi.php" method="POST">
             <div>
               <h5 class="float-left">Kommentteja</h5>
 <?php
@@ -44,14 +107,13 @@ echo '<h5 class="float-left">&nbsp•&nbsp' . $numrows . '</h5>';
         </div>
         <div>
 <?php
-$result = $my->query("SELECT * FROM 581D_Kommentti, 581D_Kayttaja, 581D_Kuva WHERE 581D_Kommentti.UID = 581D_Kayttaja.UID AND 581D_Kommentti.KID = '$kuvaid' ORDER BY KTime DESC");
+$result = $my->query("SELECT * FROM 581D_Kommentti, 581D_Kayttaja WHERE 581D_Kommentti.UID = 581D_Kayttaja.UID ORDER BY KTime DESC");
 while ($rows = $result->fetch_array(MYSQLI_ASSOC)) {
   $id = $rows['UID'];
   $uid = $rows['Nimi'];
   $time = $rows['KTime'];
   $kid = $rows['KommenttiID'];
   $comment = $rows['Kommentti'];
-  $kuvaid = $_GET = ['juusonkuvaid'];
   echo nl2br (
        '<div>' .
          '<table>' .
