@@ -8,7 +8,7 @@ if ($my->mysqli_errno) {
 $info = $_GET['id'];
 if (isset($_GET['id'])) {
   $result = $my->query("UPDATE 581D_Kommentti SET Tila=1 WHERE 581D_Kommentti.KommenttiID = '$info'");
-  echo "<meta HTTP-EQUIV='REFRESH' content='0; url=kommentoi.php'>";
+  echo "<meta HTTP-EQUIV='REFRESH' content='0; url=kommentointi.php'>";
     }
 $my->close();
 ?>
