@@ -1,4 +1,6 @@
 <?php
+session_start();
+$logged_user= $_SESSION['login_user'];
 $my = mysqli_connect("localhost", "data15", "aJrHfybLxsLU76rV", "data15");
 if ($my->mysqli_errno) {
   die("MySQL, virhe yhteyden luonnissa:" . $my->connect_error);
@@ -18,76 +20,29 @@ $my->set_charset("utf8");
   </head>
   <body>
   <script>
-  function statusChangeCallback(response) {
-    console.log('statusChangeCallback');
-    console.log(response);
-    if (response.status === 'connected') {
-
-      testAPI();
-    } else if (response.status === 'not_authorized') {
-
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
-    } else {
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into Facebook.';
-    }
+  function openWin() {
+    window.location.href = "kommentointi_login.php";
   }
-
-  function checkLoginState() {
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
-  }
-
-  window.fbAsyncInit = function() {
-  FB.init({
-    appId      : '240132786384563',
-    cookie     : true,
-
-    xfbml      : true,
-    version    : 'v2.5'
-  });
-
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
-
-  };
-
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-
-  function testAPI() {
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response.name);
-      document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
-        alert ("Welcome " + response.name + ": Your UID is " + response.id);
-    });
-  }
-</script>
-
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
-
-<div id="status">
-</div>
-    <div class="row">
+  </script>
+     <div class="row">
       <div class="panel">
 <?php
+$sql = "SELECT UID FROM 581D_Kayttaja WHERE Sposti = '$logged_user'";
+echo "<p>Kirjautunut käyttäjällä $logged_user</p>";
+$result3 = $my->query($sql);
+#var_dump($result3);
 
 $comment = $_POST['comment'];
 $submit = $_POST['submit'];
+// if($comment != "")
 if (isset($_POST['submit'])) {
-  $result = $my->query("INSERT INTO 581D_Kommentti (Kommentti) VALUES ('$comment') ");
-  echo "<meta HTTP-EQUIV='REFRESH' content='0; url=kommentointi.php'>";
+  $obj = $result3->fetch_object();
+    var_dump($obj);
+  $sql = "INSERT INTO 581D_Kommentti (UID,Kommentti) VALUES ('".$obj->UID."','$comment') ";
+  $result = $my->query($sql);
+#die($sql);
+
+      echo "<meta HTTP-EQUIV='REFRESH' content='0; url=kommentointi.php'>";
 }
 ?>
         <div>
@@ -101,6 +56,7 @@ echo '<h5 class="float-left">&nbsp•&nbsp' . $numrows . '</h5>';
 ?>
               <textarea name="comment" maxlength="140" rows="2" required></textarea>
               <input class="button float-right" type="submit" name="submit" value="Kommentoi">
+              <input type="button" value="Kirjaudu Sisään" onclick="openWin()">
               <hr>
             </div>
           </form>
