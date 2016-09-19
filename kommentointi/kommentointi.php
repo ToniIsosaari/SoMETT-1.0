@@ -1,4 +1,6 @@
 <?php
+session_start();
+$logged_user= $_SESSION['login_user'];
 $my = mysqli_connect("localhost", "data15", "aJrHfybLxsLU76rV", "data15");
 if ($my->mysqli_errno) {
   die("MySQL, virhe yhteyden luonnissa:" . $my->connect_error);
@@ -17,18 +19,34 @@ $my->set_charset("utf8");
     <link rel="stylesheet" href="css/stylesheet.css" />
   </head>
   <body>
-    <div class="row">
+  <script>
+  function openWin() {
+    window.location.href = "kommentointi_login.php";
+  }
+  </script>
+     <div class="row">
       <div class="panel">
 <?php
+$sql = "SELECT UID FROM 581D_Kayttaja WHERE Sposti = '$logged_user'";
+echo "<p>Kirjautunut käyttäjällä $logged_user</p>";
+$result3 = $my->query($sql);
+#var_dump($result3);
+
 $comment = $_POST['comment'];
 $submit = $_POST['submit'];
+// if($comment != "")
 if (isset($_POST['submit'])) {
-  $result = $my->query("INSERT INTO 581D_Kommentti (Kommentti) VALUES ('$comment') ");
-  echo "<meta HTTP-EQUIV='REFRESH' content='0; url=index.php'>";
+  $obj = $result3->fetch_object();
+    var_dump($obj);
+  $sql = "INSERT INTO 581D_Kommentti (UID,Kommentti) VALUES ('".$obj->UID."','$comment') ";
+  $result = $my->query($sql);
+#die($sql);
+
+      echo "<meta HTTP-EQUIV='REFRESH' content='0; url=kommentointi.php'>";
 }
 ?>
         <div>
-          <form action="index.php" method="POST">
+          <form action="kommentointi.php" method="POST">
             <div>
               <h5 class="float-left">Kommentteja</h5>
 <?php
@@ -38,20 +56,20 @@ echo '<h5 class="float-left">&nbsp•&nbsp' . $numrows . '</h5>';
 ?>
               <textarea name="comment" maxlength="140" rows="2" required></textarea>
               <input class="button float-right" type="submit" name="submit" value="Kommentoi">
+              <input type="button" value="Kirjaudu Sisään" onclick="openWin()">
               <hr>
             </div>
           </form>
         </div>
         <div>
 <?php
-$result = $my->query("SELECT * FROM 581D_Kommentti, 581D_Kayttaja, 581D_Kuva WHERE 581D_Kommentti.UID = 581D_Kayttaja.UID AND 581D_Kommentti.KID = '$kuvaid' ORDER BY KTime DESC");
+$result = $my->query("SELECT * FROM 581D_Kommentti, 581D_Kayttaja WHERE 581D_Kommentti.UID = 581D_Kayttaja.UID ORDER BY KTime DESC");
 while ($rows = $result->fetch_array(MYSQLI_ASSOC)) {
   $id = $rows['UID'];
   $uid = $rows['Nimi'];
   $time = $rows['KTime'];
   $kid = $rows['KommenttiID'];
   $comment = $rows['Kommentti'];
-  $kuvaid = $_GET = ['juusonkuvaid'];
   echo nl2br (
        '<div>' .
          '<table>' .

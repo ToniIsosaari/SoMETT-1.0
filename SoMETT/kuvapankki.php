@@ -17,8 +17,8 @@
   <!-- Mobiili Navipalkki (ÄLÄ KOSKE!) -->
 <ul class="vertical menu mobile-menu">
  <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/index.php">Etusivu</a></li>
- <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/kuvapankki.php">Kuvapankki</a></li>
- <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/lahetyspalvelu.php">Lähetyspalvelu</a></li>
+ <li><a href="#">Kuvapankki</a></li>
+ <li><a href="#">Lähetyspalvelu</a></li>
 </ul>
 
 </div>
@@ -37,49 +37,30 @@
     <ul class="dropdown menu dropdown-desktop" data-dropdown-menu>
       <li class="menu-text">SoMETT</li>
       <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/index.php">Etusivu</a></li>
-      <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/kuvapankki.php">Kuvapankki</a></li>
-      <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/lahetyspalvelu.php">Lähetyspalvelu</a></li>
+      <li><a href="#">Kuvapankki</a></li>
+      <li><a href="#">Lähetyspalvelu</a></li>
     </ul>
   </div>
 </div>
 </div>
   <!-- Main osio (lisää sivulle olennainen sisältö tänne) -->
-<section class="main etusivu" data-interchange="[http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/Somett_otsikkokuvat/Mini.jpg, small],[http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/Somett_otsikkokuvat/Medium.jpg, medium], [http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/Somett_otsikkokuvat/Large.jpg, large]">
+<section class="main">
   <div class="wrap">
-      <p>"Vähän niin kuin Musketti, mutta vain sata kertaa parempi"</p>
-      <h1>SoMETT</h1>
+    <h1>Kuva galleria</h1>
+    <p style="font-size: 30px;">[Tulee käyttöön pian]</p>
+    <p>Tässä on sivu, jonka sisältöä ei ole palautettu kokoajille aikarajaan mennessä! Toivottavasti se tulee joskus.</p>
+    <p>[<a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/kuva.php">Linkki sivuun, jonka tulisi olla yhteydessä tähän sivuun</a>]</p>
   </div>
 </section>
   <!-- Secondary osio (lisää eri niin tärkeä sisältö tänne) -->
 <section class="secondary">
   <div class="wrap">
-      <h2>Mikä on SoMETT?</h2>
-      <hr>
-      <p>SoMETTi on Erikoistietotoimiston Musketin sosiaalisenmedian nettiversio, joka mahdollistaa 
-      tavallisten ihmisten kuvien lähettämisen yhteisön ja Erikoistietotoimiston työntekijöiden tutkittavaksi.
-      Tavoitteenamme on edistää museoaineiston tutkimista käyttämällä hyödyksi innostuneita vapaaehtoisia yhteisönjäseniä,
-      liity joukkoomme jo tänään!</p>
-  </div>
-</section>
-<section class="secondary grey">
-  <div class="wrap">
-      <h2>Miten SoMETT toimii?</h2>
-      <hr>
-      <div class="row">
-        <div class="small-12 medium-6 large-6 columns">
-          <p>SoMETTin toiminnan pääpilari on sosiaalisuus ja tärkeimpänä työkalunamme ovat sosiaalisenmedian eri palvelut.
-          Meille on hyvin tärkeää kasvattaa laaja käyttäjäkunta, joka mahdollistaa sen, että palveluumme lisätään aktiivisesti
-          uusia kuvia ja jo olemassa oleviin kuviin saataisiin kerättyä tarpeeksi aiheeseen liittyvää tietoa.</p>
-        </div>
-        <div class="small-12 medium-6 large-6 columns">
-          <h4>Toimintamallimme pähkinänkuoressa:</h4>
-          <p>
-          1. Käyttäjä lisää kuvan palveluumme ja jakaa kuvan sosiaalisen medianpalveluihin antamamme linkin kautta.<br>
-          2. Muut käyttäjät kommentoivat kuvaa ja kertovat tietonsa kyseiseen aiheeseen liittyen.<br>
-          3. Erikoistietotoimiston työntekijä varmistaa tiedot.<br>
-          4. Museoviraston työntekijä päättää liitetäänkö kuvamateriaali museotietokantaan.</p>
-        </div> 
-      </div>
+    <h2>Rip Juuso 2K16</h2>
+    <hr>
+    <p>Tähän tulee kaikki ei niin tärkeä sisältö, joissain tilanteissa tämä voi olla myös piillotettu ja tulee näkyviin vain käyttäjän
+    halutessa nähdä epäolennaista sisältöä. Mikäli haluat lisätä omia tyylejäsi tähän osioon sinun tulee antaa osiolle "ylimääräinen" 
+    class määrittely, jota käsittelet omissa tyylimäärittelyissäsi</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et lectus vulputate, mattis arcu ac, venenatis nibh. Nunc ac augue quam. Suspendisse potenti. Donec blandit urna mauris, vel cursus elit pretium at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consequat non erat vitae commodo. Cras molestie facilisis tortor, at dignissim urna sodales nec. Nunc eu ligula volutpat, scelerisque magna nec, ullamcorper nunc. Nullam non quam imperdiet, condimentum felis eget, eleifend velit. Praesent lobortis pulvinar velit, quis pulvinar ipsum condimentum nec. Nam sem massa, pellentesque vel ultricies eget, volutpat eget nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam at malesuada sem, porttitor posuere urna. Aenean a scelerisque mi.</p>
   </div>
 </section>
   <!-- Footer osio (ÄLÄ KOSKE!) -->

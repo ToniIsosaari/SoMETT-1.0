@@ -13,13 +13,15 @@
     <td>Kommentti</td>
     <td>KäyttäjäID</td>
     <td>Oikeudet</td>
-    <td><input type="submit" name="Muokkaa" value="Muokkaa"></td>
+    <td><input type="submit" name="Muokkaa" value="ei toimi"></td>
     <td><input type="submit" name="delete" value="delete"></td>
+   
+ 
    
   </tr>
     <?
-  $d=0;  
-
+ 
+ 
   $sql=mysqli_connect("localhost", "data15", "aJrHfybLxsLU76rV", "data15");
   if($sql->mysql_errno) {
     die("mysql, virhe yhteyden luonnissa:" . $sql->connect_error);
@@ -34,19 +36,12 @@
         <td><? echo $i['KommenttiID']?></td>
         <td><? echo $i['Kommentti'];?></td>
         <td><? echo $i['UID'];?></td>
-<<<<<<< HEAD
         <td><select name="Rights[]">
               <option value="0" <? if($i['Status'] == 0){
-=======
-        <td><select name="Oikeudet">
-              <option <? if($i['Status'] == 0){
->>>>>>> c6c78b15e2af6ec6b5ae4564d2ec8a8074a6af0c
               echo "selected";
               }else{
               echo "";
-              }
-              ?>>0</option>
-<<<<<<< HEAD
+              }?>>0</option>
               <option value="1" <? if($i['Status'] == 1){
               echo "selected";
               }else{     
@@ -64,47 +59,17 @@
               }?>>3</option>
             </select>
         <td class="table1"><input type="checkbox" name="checkbox[]" id="checkbox[]" value="<?echo $i['KommenttiID'];?>"/></td>
-=======
-              <option <? if($i['Status'] == 1){
-              echo "selected";
-              }else{
-              echo "";
-              }?>>1</option>
-              <option <? if($i['Status'] == 2){
-              echo "selected";
-              }else{
-              echo "";
-              }?>>2</option>
-              <option <? if($i['Status'] == 3){
-              echo "selected";
-              }else{
-              echo "";
-              }?>>3</option>
-            </select>
-
-        <td><input type="checkbox" name="checkbox[]" id="checkbox[]" value="<?echo $i['KommenttiID'];?>"/></td>
->>>>>>> c6c78b15e2af6ec6b5ae4564d2ec8a8074a6af0c
       </tr>
-      <?}
-          $Rights = $_POST['Rights'];
-          var_dump($Rights);
-     	 
     
-      if(isset($_POST['Muokkaa']))
-      {
-
-      for($e=0;$e<count($Rights);$e++){
-
-      $upd_id = $Rights[$e];
-      $query3 = "UPDATE 581D_Kayttaja SET Status ='$upd_id';";
-      if($result = $sql->query($query3)){
+   
+   
+      
+<?    
  
       }
-      }
-      }
 
-      ?>
-     <? 
+      
+      
       if(isset($_POST['delete']))
       {
       $checkbox = $_POST['checkbox'];
@@ -118,10 +83,9 @@
       }
       }
       }
-   
+ 
       $sql->close();
-     
-         
+          
     ?>
       </form>
     </table>

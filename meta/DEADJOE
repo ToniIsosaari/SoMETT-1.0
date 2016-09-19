@@ -1,0 +1,175 @@
+
+*** These modified files were found in JOE when it aborted on Mon Sep 12 11:18:50 2016
+*** JOE was aborted because the terminal closed
+
+*** File '(Unnamed)'
+autoindent
+
+*** File '(Unnamed)'
+root
+
+*** File 'meta.php'
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<?php
+			$my=mysqli_connect("localhost","data15","aJrHfybLxsLU76rV","data15");
+
+        	if($my->mysql_errno)  {
+            	die("MySQL, virhe yhteyden luonnissa:" . $my->connect_eror);
+        	}
+        	$my->set_charset('utf8');
+        	if($result = $my->query("SELECT * FROM `581D_Kommentti`, `581D_Kayttaja` WHERE 581D_Kommentti.UID=581D_Kayttaja.UID"){
+        	            while($i = $result->fetch_array(MYSQLI_ASSOC)){
+              } else {
+                echo "Error";
+              }
+                 $my->close();
+		$my=mysqli_connect("localhost","data15","aJrHfybLxsLU76rV","data15");
+          if($my->mysql_errno){
+           die("MySQL, virhe (#".$my->mysql_errno.") yhteyden luonnissa:".$my->connect_error);
+          }
+          $my->set_charset("utf8");
+          $sql = 'INSERT INTO 581D_Kuva(OtsikkoOrg,KuvausOrg,DatePub," ",U_ID,K_ID,URL)VALUES(,"061097-470C","Matti","Heikäläinen","kokkola","mage@gmail
+          if($tulos=$my->query($sql)){
+            echo '<p>Nimi tallennettu!</p>';
+            }
+           else {
+              echo "Virhe SQL-kyselyssä!";
+          }
+          $my->close();          
+    	?>
+    	
+	</body>
+</html>
+*** File '(Unnamed)'
+ls
+
+*** File '(Unnamed)'
+xs
+box2
+box2
+p
+<?=$
+GET
+POST
+
+*** File '(Unnamed)'
+sm
+box1
+input
+input
+ name"
+POST
+GET
+
+*** File '(Unnamed)'
+meta.php
+meta.php
+meta.php
+meta.php
+meta.php
+meta.php
+meta.php
+MyPohja.php
+meta.
+meta.php
+meta.php
+
+*** These modified files were found in JOE when it aborted on Mon Sep 12 14:02:30 2016
+*** JOE was aborted because the terminal closed
+
+*** File '(Unnamed)'
+autoindent
+
+*** File '(Unnamed)'
+root
+
+*** File '(Unnamed)'
+ls
+
+*** File '(Unnamed)'
+xs
+box2
+box2
+p
+<?=$
+GET
+POST
+
+*** File '(Unnamed)'
+sm
+box1
+input
+input
+ name"
+POST
+GET
+
+*** File '(Unnamed)'
+meta.php
+meta.php
+meta.php
+meta.php
+meta.php
+meta.php
+MyPohja.php
+meta.
+meta.php
+meta.php
+meta.php
+meta.php
+meta.php
+
+*** These modified files were found in JOE when it aborted on Tue Sep 13 11:32:55 2016
+*** JOE was aborted because the terminal closed
+
+*** File '(Unnamed)'
+autoindent
+
+*** File '(Unnamed)'
+root
+
+*** File '(Unnamed)'
+ls
+
+*** File '(Unnamed)'
+xs
+box2
+box2
+p
+<?=$
+GET
+POST
+
+*** File '(Unnamed)'
+sm
+box1
+input
+input
+ name"
+POST
+GET
+
+*** File '(Unnamed)'
+meta.php
+meta.php
+meta.php
+meta.php
+MyPohja.php
+meta.
+meta.php
+meta.php
+meta.php
+meta.php
+meta.php
+meta.php
+meta.php
+meta.php
+meta.php
+meta.php
+
+*** These modified files were found in JOE when it aborted on Thu Sep 15 15:43:54 2016
+*** JOE was aborted because the terminal closed
