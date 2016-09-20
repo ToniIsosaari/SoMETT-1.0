@@ -1,6 +1,7 @@
 <?php
 session_start();
-$logged_user= $_SESSION['login_user'];
+$kuva = $_SESSION['kuvaid'];
+$logged_user = $_SESSION['login_user'];
 $my = mysqli_connect("localhost", "data15", "aJrHfybLxsLU76rV", "data15");
 if ($my->mysqli_errno) {
   die("MySQL, virhe yhteyden luonnissa:" . $my->connect_error);
@@ -19,6 +20,7 @@ $my->set_charset("utf8");
     <link rel="stylesheet" href="css/stylesheet.css" />
   </head>
   <body>
+  <img src=<?php echo $_SESSION['kuvaid']; ?> width=300 height=400 alt-image path Invalid name=image />
   <script>
   function openWin() {
     window.location.href = "kommentointi_login.php";
