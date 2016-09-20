@@ -10,7 +10,7 @@
 </head>
 <body>
 <?php include('nav.php');?>
-<?php include('main.php');?>
+<?php include('tietoa.php');?>
 <?php include('footer.php');?>
 <?php include('script.php');?>
 </body>
