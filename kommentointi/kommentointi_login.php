@@ -1,4 +1,4 @@
-<?php
+?php
 session_start();
 $my = mysqli_connect("localhost", "data15", "aJrHfybLxsLU76rV", "data15");
 if ($my->mysqli_errno) {
@@ -70,7 +70,7 @@ $my->set_charset("utf8");
 </div>
 
             <form id="login" method="POST">
-                <h1>Kirjaudu sisÃ¤Ã¤n</h1>
+                <h1>Kirjaudu sisään</h1>
                     <fieldset id="inputs">
                         <input name="KEmail" type="text" placeholder="Email" autofocus required>
                         <input name="KSSana" type="password" placeholder="Salasana" required>
@@ -80,12 +80,13 @@ $my->set_charset("utf8");
                         <input type="submit" name="submit" value="Kirjaudu">
                         <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
                         </fb:login-button>
-                    <a href="">RekisterÃ¶idy</a>
+                    <a href="">Rekisteröidy</a>
                     </fieldset>
             </form>
             <?
             if (isset ($_POST['submit']))
 {
+            $login = "1";
 
             $KEmail = $_POST['KEmail'];
             $KSSana = $_POST['KSSana'];
@@ -93,12 +94,14 @@ $my->set_charset("utf8");
             $sql ="SELECT * FROM 581D_Kayttaja WHERE Sposti='$KEmail' AND SSana='$KSSana'";
 
             $query = mysqli_query($my,$sql);
-
+            $kuva = "http://tubby.scene7.com/is/image/tubby/cnm5622_01c";
             $test = mysqli_num_rows($query);
-
             if($test == 1){
             echo "Kirjaudu";
+            $_SESSION['kuvaid']=$kuva;
             $_SESSION['login_user']=$KEmail;
+            $login = $_GET['login'];
+
             header("Location: kommentointi.php");
 
             }
@@ -111,5 +114,4 @@ $my->set_charset("utf8");
 
         </body>
 </html>
-
 
