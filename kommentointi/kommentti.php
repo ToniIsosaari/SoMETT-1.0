@@ -15,13 +15,13 @@
     <td>Oikeudet</td>
     <td><input type="submit" name="Muokkaa" value="ei toimi"></td>
     <td><input type="submit" name="delete" value="delete"></td>
-   
- 
-   
+
+
+
   </tr>
     <?
- 
- 
+
+
   $sql=mysqli_connect("localhost", "data15", "aJrHfybLxsLU76rV", "data15");
   if($sql->mysql_errno) {
     die("mysql, virhe yhteyden luonnissa:" . $sql->connect_error);
@@ -30,46 +30,65 @@
   $result = $sql->query('SELECT * FROM `581D_Kommentti`, `581D_Kayttaja` WHERE 581D_Kommentti.UID=581D_Kayttaja.UID');
   while($i = $result->fetch_array(MYSQLI_ASSOC)) {
   ?>
- 
+
       <tr class="table1">
-        
+
         <td><? echo $i['KommenttiID']?></td>
         <td><? echo $i['Kommentti'];?></td>
         <td><? echo $i['UID'];?></td>
         <td><select name="Rights[]">
-              <option value="0" <? if($i['Status'] == 0){
+              <option value="<?echo $i['UID']?>,0" <? if($i['Status'] == 0){
               echo "selected";
               }else{
               echo "";
               }?>>0</option>
-              <option value="1" <? if($i['Status'] == 1){
+              <option value="<?echo $i['UID']?>,1" <? if($i['Status'] == 1){
               echo "selected";
-              }else{     
+              }else{
               echo "";
               }?>>1</option>
-              <option value="2" <? if($i['Status'] == 2){
+              <option value="<?echo $i['UID']?>,2" <? if($i['Status'] == 2){
               echo "selected";
-              }else{     
+              }else{
               echo "";
               }?>>2</option>
-              <option value="3" <? if($i['Status'] == 3){
+              <option value="<?echo $i['UID']?>,3" <? if($i['Status'] == 3){
               echo "selected";
-              }else{     
+              }else{
               echo "";
               }?>>3</option>
             </select>
         <td class="table1"><input type="checkbox" name="checkbox[]" id="checkbox[]" value="<?echo $i['KommenttiID'];?>"/></td>
       </tr>
-    
-   
-   
-      
-<?    
- 
+
+
+
+
+<?
+      if(isset($_POST['Muokkaa']))
+      {
+      echo "<pre>";
+      var_dump($_POST['Rights']);
+      echo"</pre>";
+      #list($turha,$UID,$muokkaus) = $_POST['Rights']; #explode("x",implode($_POST['Rights']));
+
+      #for($b=0;$b<count($muokkaus);$b++){
+
+      #for($c=0;$c<count($UID);$c++){
+
+      #$oik_id = $muokkaus[$b];
+      #$user_id = $UID[$c];
+      #$query3 = "UPDATE 581D_Kayttaja SET Status = '$oik_id' WHERE UID = '$user_id';";
+      #if($result3 = $sql->query($query3)){
+      #header("Refresh:0");
+
+      #}
+      #}
+      #}
       }
 
-      
-      
+
+
       if(isset($_POST['delete']))
       {
       $checkbox = $_POST['checkbox'];
@@ -83,11 +102,13 @@
       }
       }
       }
- 
+      }
+
       $sql->close();
-          
+
     ?>
       </form>
     </table>
   </body>
 </html>
+
