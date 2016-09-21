@@ -6,7 +6,6 @@
         <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/index.php">Etusivu</a></li>
         <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/kuvapankki.php">Kuvapankki</a></li>
         <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/lahetyspalvelu.php">Lähetyspalvelu</a></li>
-        <li><hr></li>
         <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/info.php"><i class="fi-info"></i> info</a></li>
       </ul>
     </div>
