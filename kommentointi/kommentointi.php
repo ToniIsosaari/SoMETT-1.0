@@ -2,6 +2,7 @@
 session_start();
 $kuva = $_SESSION['kuvaid'];
 $logged_user = $_SESSION['login_user'];
+$logged_fbuser = $_SESSION['FULLNAME'];
 $my = mysqli_connect("localhost", "data15", "aJrHfybLxsLU76rV", "data15");
 if ($my->mysqli_errno) {
   die("MySQL, virhe yhteyden luonnissa:" . $my->connect_error);
@@ -9,7 +10,7 @@ if ($my->mysqli_errno) {
 $my->set_charset("utf8");
 ?>
 <!DOCTYPE HTML>
-<html class="no-js" lang="en">
+<html xmlns:fb="http://www.facebook.com/2008/fbml" class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -20,17 +21,17 @@ $my->set_charset("utf8");
     <link rel="stylesheet" href="css/stylesheet.css" />
   </head>
   <body>
+  <?php if ($_SESSION['FBID'] or $_SESSION['login_user']): ?>      
   <img src=<?php echo $_SESSION['kuvaid']; ?> width=300 height=400 alt-image path Invalid name=image />
-  <script>
-  function openWin() {
-    window.location.href = "kommentointi_login.php";
-  }
-  </script>
      <div class="row">
       <div class="panel">
 <?php
 $sql = "SELECT UID FROM 581D_Kayttaja WHERE Sposti = '$logged_user'";
-echo "<p>Kirjautunut käyttäjällä $logged_user</p>";
+if ($_SESSION['FBID']) {
+	echo "<p>Kirjautunut Facebook käyttäjällä $logged_fbuser</p>";
+} else {
+    echo "<p>Kirjautunut käyttäjällä $logged_user</p>";
+}
 $result3 = $my->query($sql);
 #var_dump($result3);
 
@@ -58,7 +59,7 @@ echo '<h5 class="float-left">&nbsp•&nbsp' . $numrows . '</h5>';
 ?>
               <textarea name="comment" maxlength="140" rows="2" required></textarea>
               <input class="button float-right" type="submit" name="submit" value="Kommentoi">
-              <input type="button" value="Kirjaudu Sisään" onclick="openWin()">
+              <a href="fblogin/logout.php">Kirjaudu Ulos</a><br>
               <hr>
             </div>
           </form>
@@ -103,6 +104,69 @@ while ($rows = $result->fetch_array(MYSQLI_ASSOC)) {
 $my->close();
 ?>
         </div>
+      </div>
+    </div>
+    <?php else: ?>     
+  <img src=<?php echo $_SESSION['kuvaid']; ?> width=300 height=400 alt-image path Invalid name=image />
+     <div class="row">
+      <div class="panel">
+        <div>
+            <div>
+              <h5 class="float-left">Kommentteja</h5>
+<?php
+$result1 = $my->query("SELECT * FROM 581D_Kommentti");
+$numrows = $result1->num_rows;
+echo '<h5 class="float-left">&nbsp•&nbsp' . $numrows . '</h5>';
+?>
+              <input type="button" value="Kirjaudu Sisään" onclick="openWin()">
+              <hr>
+            </div>
+        </div>
+        <div>
+<?php
+$result = $my->query("SELECT * FROM 581D_Kommentti, 581D_Kayttaja WHERE 581D_Kommentti.UID = 581D_Kayttaja.UID ORDER BY KTime DESC");
+while ($rows = $result->fetch_array(MYSQLI_ASSOC)) {
+  $id = $rows['UID'];
+  $uid = $rows['Nimi'];
+  $time = $rows['KTime'];
+  $kid = $rows['KommenttiID'];
+  $comment = $rows['Kommentti'];
+  echo nl2br (
+       '<div>' .
+         '<table>' .
+           '<tbody>' .
+             '<tr>' .
+               '<th class="float-left">' .
+                 '<a class="float-left">' . $uid . '</a>' .
+                 '<p class="float-left">&nbsp</p>' .
+                 '<p class="float-left date">' . $time . '</p>' .
+               '</th>' .
+               '<th>' .
+               '</th>' .
+             '</tr>' .
+             '<tr>' .
+               '<td>' .
+                 '<p id="kommentti">' . $comment . '</p>' .
+               '</td>' .
+               '<th>' .
+               '</th>' .
+             '</tr>' .
+           '</tbody>' .
+         '</table>' .
+       '</div>'
+);
+}
+$my->close();
+?>
+        </div>
+      </div>
+    </div>
+    <?php endif ?>
+  <script>
+  function openWin() {
+    window.location.href = "kommentointi_login.php";
+  }
+  </script>
         <script src="js/jquery.min.js"></script>
         <script src="js/what-input.min.js"></script>
         <script src="js/foundation.min.js"></script>
@@ -116,7 +180,5 @@ $('p#kommentti').readmore({
   lessLink: '<a href="#" class="less">Näytä vähemmän <i class="fi-arrow-up"></i></a>',
 });
         </script>
-      </div>
-    </div>
   </body>
 </html>
