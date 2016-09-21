@@ -107,7 +107,7 @@ if ($my->mysqli_errno) {
   <div class="wrap">
     <h1><?echo $rows[1][3]?></h1>
     
-    <center><img src="<?echo $rows[1][1]?>"></center>
+    <center><img class="imageclass" src="<?echo $rows[1][1]?>"></center>
     <p>
     <?
      echo "<p><br>".$rows[$p][0]."&nbsp YKSI &nbsp".$rows[$p][1]."&nbsp YKSI &nbsp".$rows[$p][2]."&nbsp YKSI &nbsp".$rows[$p][3]."&nbsp YKSI &nbsp".$rows[$p][4]."&nbsp YKSI &nbsp".$rows[$p][5]."&nbsp YKSI &nbsp".$rows[$p][6]."&nbsp YKSI &nbsp".$rows[$p][7]."&nbsp YKSI &nbsp".$rows[$p][8]."&nbsp YKSI &nbsp".$rows[$p][9]."&nbsp YKSI &nbsp".$rows[$p][10]."&nbsp YKSI &nbsp".$rows[$p][11]."&nbsp YKSI &nbsp".$rows[$p][12]."&nbsp YKSI &nbsp".$rows[$p][13]."&nbsp YKSI &nbsp".$rows[$p][14]."&nbsp YKSI &nbsp".$rows[$p][15]."&nbsp YKSI &nbsp".$rows[$p][16]."&nbsp YKSI &nbsp".$rows[$p][17]."</p>";        
