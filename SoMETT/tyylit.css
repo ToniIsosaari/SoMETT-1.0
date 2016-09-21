@@ -5,19 +5,22 @@
 	height: 60px;
 	background: #00BCD4;
 	padding-top: 0px;
-    padding-bottom: 0px;
+	padding-bottom: 0px;
 }
 .nav-desktop li{
 	background: #00BCD4;
 	line-height: 60px;
 	padding-top: 0px;
-    padding-bottom: 0px;
+	padding-bottom: 0px;
 }
 .nav-desktop a{
-    color: white;
+    	color: white;
 }
 .menu-text{
 	color: white;
+}
+.top-bar-right li{
+	list-style-type: none;
 }
 /* ****************************************
     NAV - MOBILE
