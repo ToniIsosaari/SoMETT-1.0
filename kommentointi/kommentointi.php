@@ -10,7 +10,7 @@ if ($my->mysqli_errno) {
 $my->set_charset("utf8");
 ?>
 <!DOCTYPE HTML>
-<html xmlns:fb="http://www.facebook.com/2008/fbml" class="no-js" lang="en">
+<html xmlns:fb="http://www.facebook.com/2008/fbml" class="no-js" lang="fi">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -21,6 +21,7 @@ $my->set_charset("utf8");
     <link rel="stylesheet" href="css/stylesheet.css" />
   </head>
   <body>
+    <!--JOS KÄYTTÄJÄ ON KIRJAUTUNUT ALKAA-->
   <?php if ($_SESSION['FBID'] or $_SESSION['login_user']): ?>      
   <img src=<?php echo $_SESSION['kuvaid']; ?> width=300 height=400 alt-image path Invalid name=image />
      <div class="row">
@@ -106,6 +107,7 @@ $my->close();
         </div>
       </div>
     </div>
+        <!--JOS KÄYTTÄJÄ ON KIRJAUTUNUT LOPPUU JA JOS KÄYTTÄJÄ EI OLE KIRJAUTUNUT ALKAA-->
     <?php else: ?>     
   <img src=<?php echo $_SESSION['kuvaid']; ?> width=300 height=400 alt-image path Invalid name=image />
      <div class="row">
@@ -161,6 +163,7 @@ $my->close();
         </div>
       </div>
     </div>
+<!--JOS KÄYTTÄJÄ EI OLE KIRJAUTUNUT LOPPUU-->
     <?php endif ?>
   <script>
   function openWin() {
