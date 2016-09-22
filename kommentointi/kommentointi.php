@@ -3,6 +3,7 @@ session_start();
 $kuvaid = $_GET['KID'];
 $logged_user = $_SESSION['login_user'];
 $logged_fbuser = $_SESSION['FULLNAME'];
+$faceid = $_SESSION['FBID'];
 $my = mysqli_connect("localhost", "data15", "aJrHfybLxsLU76rV", "data15");
 if ($my->mysqli_errno) {
   die("MySQL, virhe yhteyden luonnissa:" . $my->connect_error);
@@ -45,7 +46,11 @@ $submit = $_POST['submit'];
 if (isset($_POST['submit'])) {
   $obj = $result3->fetch_object();
     var_dump($obj);
-  $sql = "INSERT INTO 581D_Kommentti (UID,Kommentti) VALUES ('".$obj->UID."','$comment') ";
+if ($_SESSION['FBID']) {
+    $sql = "INSERT INTO 581D_Kommentti (UID,Kommentti) VALUES ('".$faceid."','$comment') ";
+} else {
+    $sql = "INSERT INTO 581D_Kommentti (UID,Kommentti) VALUES ('".$obj->UID."','$comment') ";
+}
   $result = $my->query($sql);
 #die($sql);
 
@@ -70,7 +75,7 @@ echo '<h5 class="float-left">&nbsp•&nbsp' . $numrows . '</h5>';
         </div>
         <div>
 <?php
-$result = $my->query("SELECT * FROM 581D_Kommentti, 581D_Kayttaja WHERE 581D_Kommentti.UID = 581D_Kayttaja.UID AND KuvaID = '$kuvaid' ORDER BY KTime DESC");
+$result = $my->query("SELECT * FROM 581D_Kommentti, 581D_Kayttaja, 3972_FBKayttaja WHERE 581D_Kommentti.UID = 581D_Kayttaja.UID or 581D_Kommentti.UID = 3972_FBKayttaja.Fuid AND KuvaID = '$kuvaid' ORDER BY KTime DESC");
 while ($rows = $result->fetch_array(MYSQLI_ASSOC)) {
   $id = $rows['UID'];
   $uid = $rows['Nimi'];
