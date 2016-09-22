@@ -8,12 +8,7 @@
 <title>SoMETT</title>
 <?php include('styles.php');?>
 </head>
-    <link rel="stylesheet" type="text/css" href="kommentti.css">
   <body>
- <?php include('nav.php');?>
- <?php include('main.php');?>
- <?php include('footer.php');?>
- <?php include('script.php');?>
 
     <table class="table1">
       <form method="POST">
@@ -29,12 +24,12 @@
 
   </tr>
     <?
-  $sql=mysqli_connect("localhost", "data15", "aJrHfybLxsLU76rV", "data15");
-  if($sql->mysql_errno) {
-    die("mysql, virhe yhteyden luonnissa:" . $sql->connect_error);
-  }
-  $sql->set_charset("utf8");
-  $result = $sql->query('SELECT * FROM `581D_Kommentti`, `581D_Kayttaja` WHERE 581D_Kommentti.UID=581D_Kayttaja.UID');
+  #$sql=mysqli_connect("localhost", "data15", "aJrHfybLxsLU76rV", "data15");
+  #if($sql->mysql_errno) {
+   # die("mysql, virhe yhteyden luonnissa:" . $sql->connect_error);
+  #}
+  #$sql->set_charset("utf8");
+  $result = $my->query('SELECT * FROM `581D_Kommentti`, `581D_Kayttaja` WHERE 581D_Kommentti.UID=581D_Kayttaja.UID');
   while($i = $result->fetch_array(MYSQLI_ASSOC)) {
   ?>
 
@@ -46,8 +41,8 @@
         #$result5 = $sql->query("SELECT * FROM 581D_Kommentti WHERE 581D_Kommentti.UID=581D_Kayttaja.UID AND UID = '$asd';");       
         #while($w = $result4->fetch_array(MYSQLI_ASSOC)){
         ?>
-        <td><? echo $w['KommenttiID'];?></td>
-        <td><? echo $w['Kommentti'];?></td>
+        <td><? echo $i['KommenttiID'];?></td>
+        <td><? echo $i['Kommentti'];?></td>
         <td><? echo $i['UID']?></td>
         <td><select name="Rights[]">
               <option value="<?echo $i['UID']?>,0" <? if($i['Status'] == 0){
@@ -91,7 +86,7 @@
       $oik_id = $muokkaus;#[$b];
       $user_id = $UID;#[$c];
       $query3 = "UPDATE 581D_Kayttaja SET Status = '$oik_id' WHERE UID = '$user_id';";
-      if($result3 = $sql->query($query3)){
+      if($result3 = $my->query($query3)){
       #echo "<meta HTTP-EQUIV='REFRESH' content='0; url=kommentti.php'>";
 #echo "<pre>";
  #      var_dump($muokkaus);
@@ -107,7 +102,7 @@
       for($a=0;$a<count($checkbox);$a++){
       $del_id = $checkbox[$a];
       $query2 = "DELETE FROM 581D_Kommentti WHERE KommenttiID ='$del_id';";
-      if($result = $sql->query($query2)){
+      if($result = $my->query($query2)){
       header("Refresh:0");
       }
       }
@@ -115,7 +110,7 @@
  #     echo "<pre>";
   #      var_dump($_POST['Rights']);
    #        echo"</pre>";
-      $sql->close();
+      $my->close();
     ?>
       </form>
     </table>
