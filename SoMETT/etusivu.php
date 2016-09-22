@@ -8,7 +8,7 @@
   <!-- Secondary osio (lisää eri niin tärkeä sisältö tänne) -->
 <section class="secondary">
   <div class="wrap">
-      <h2>Uusimmat</h2>
+      <h3>Uusimmat</h3>
       <hr>
 
 				<ul id="carousel1" class="elastislide-list">
@@ -33,7 +33,7 @@ echo "</ul>";
 </section>
 <section class="secondary grey">
   <div class="wrap">
-      <h2>Suosituimmat</h2>
+      <h3>Suosituimmat</h3>
       <hr>
 <ul  id="carousel" class="elastislide-list">
 
