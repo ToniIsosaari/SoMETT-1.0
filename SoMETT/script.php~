@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SoMETT</title>
+<link rel="stylesheet" href="http://cosmo.kpedu.fi/~tomijylha/SoMETT-1.0/dad/dropzone-4.3.0/dist/dropzone.css">
+<link rel="stylesheet" href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/dad/node_modules/foundation-sites/dist/foundation.min.css">
+<link rel="stylesheet" href="foundation-icons/foundation-icons.css">
+<link rel="stylesheet" href="tyylit.css">
+</head>
+<body>
+<?php include('nav.php');?>
+<?php include('main.php');?>
+<?php include('footer.php');?>
+<script src="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/dad/node_modules/foundation-sites/vendor/jquery/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/foundation/6.2.3/foundation.min.js"></script>
+<script src="http://cosmo.kpedu.fi/~tomijylha/SoMETT-1.0/dad/dropzone-4.3.0/dist/dropzone.js"></script>
+<script>
+      $(document).foundation();
+</script>
+<script>
+      $(document).ready(function(){
+        $(".apua").click(function(){
+          $(".help").toggle(1000);
+        });
+      });
+</script>
+</body>
+</html>
+

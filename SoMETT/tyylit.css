@@ -2,22 +2,28 @@
 	NAV - DESKTOP
 **************************************** */
 .nav-desktop{
-	height: 60px;
+	height: 70px;
 	background: #00BCD4;
 	padding-top: 0px;
-    padding-bottom: 0px;
+	padding-bottom: 0px;
 }
 .nav-desktop li{
 	background: #00BCD4;
-	line-height: 60px;
+	line-height: 70px;
 	padding-top: 0px;
-    padding-bottom: 0px;
+	padding-bottom: 0px;
 }
 .nav-desktop a{
-    color: white;
+    	color: white;
 }
 .menu-text{
 	color: white;
+}
+.top-bar-right li{
+	list-style-type: none;
+}
+.top-bar-right i{
+	font-size: 30px;
 }
 /* ****************************************
     NAV - MOBILE
@@ -32,7 +38,7 @@
 .off-canvas-wrapper{
 	background: #0097A7;
 }
-#offCanvas{
+#offCanvas1{
 	background: transparent;
 }
 .mobile-menu a{
@@ -43,7 +49,7 @@
 **************************************** */
 .main{
     padding: 80px 0px;
-    background: #d9d9d9;
+    background: white;
 }
 .main h1{
     text-align: center;
@@ -53,6 +59,7 @@
 **************************************** */
 .secondary{
     padding: 80px 0px;
+	background: white;
 }
 .right{
 	text-align: right;
@@ -75,7 +82,7 @@
 	padding: 70px 0px;
 }
 .lisays{
-	padding: 60px 0px 450px 0px;
+	padding: 100px 0px 300px 0px;
 	background: #d9d9d9;
 }
 .lisays h1{
@@ -204,4 +211,12 @@
     .nav-mobile{
         display: none;
     }
+}
+
+/* ****************************************
+    CSS - TONI ISOSAARI
+**************************************** */
+
+.imageclass{
+    box-shadow: 10px 10px 50px #888888;
 }

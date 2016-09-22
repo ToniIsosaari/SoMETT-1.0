@@ -1,0 +1,222 @@
+/* ****************************************
+	NAV - DESKTOP
+**************************************** */
+.nav-desktop{
+	height: 70px;
+	background: #00BCD4;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+.nav-desktop li{
+	background: #00BCD4;
+	line-height: 70px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+.nav-desktop a{
+    	color: white;
+}
+.menu-text{
+	color: white;
+}
+.top-bar-right li{
+	list-style-type: none;
+}
+.top-bar-right i{
+	font-size: 50px;
+}
+/* ****************************************
+    NAV - MOBILE
+**************************************** */
+.title-bar{
+	background: #00BCD4;
+	height: 60px;
+	line-height: 60px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+.off-canvas-wrapper{
+	background: #0097A7;
+}
+#offCanvas1{
+	background: transparent;
+}
+.mobile-menu a{
+	color: white;
+}
+/* ****************************************
+    MAIN - SECTION
+**************************************** */
+.main{
+    padding: 80px 0px;
+    background: white;
+}
+.main h1{
+    text-align: center;
+}
+/* ****************************************
+    SECONDARY - SECTION
+**************************************** */
+.secondary{
+    padding: 80px 0px;
+	background: white;
+}
+.right{
+	text-align: right;
+}
+/* ****************************************
+    GREY - SECTION
+**************************************** */
+.grey{
+	background: #d9d9d9;
+}
+.grey hr{
+	border-color: white;
+}
+/* ****************************************
+    LISAYS - SECTION
+**************************************** */
+.dropzone{
+	border-style: dashed;
+	border-color: #0097A7;
+	padding: 70px 0px;
+}
+.lisays{
+	padding: 100px 0px 300px 0px;
+	background: #d9d9d9;
+}
+.lisays h1{
+	text-align: center;
+}
+.laapeli-b {
+	position: absolute;
+	margin-top: 200px;
+}
+.input-field-b {
+	position: absolute;
+	margin-top: 230px;
+	border-style: dashed;
+	border-width: 2px;
+	border-color: #0097A7;
+	width:75%;
+	max-width: 900px;
+	text-align: center;
+}
+.laapeli-a{
+	position: absolute;
+    margin-top: 290px;
+}
+.input-field-a {
+    position: absolute;
+    margin-top: 320px;
+    border-style: dashed;
+    border-width: 2px;
+	border-color: #0097A7;
+	width: 75%;
+	max-width: 900px;
+	text-align: center;
+	height: 11em;
+	max-height: 200px;
+	resize: none;
+}
+.button{
+	position: absolute;
+	margin-top: 530px;
+}
+/* ****************************************
+    ETUSIVU - SECTION
+**************************************** */
+.etusivu{
+	padding: 12em 0;
+	color: white;
+	background-size: cover;
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");	
+	-webkit-filter: grayscale(80%);
+}
+.etusivu p{
+    text-align: center;
+}
+.transbox{
+	padding: 20px 0;
+	background-color: #ffffff;
+	border-width: 1px;
+	border-style: dashed;
+	opacity: 0.6;
+	filter: alpha(opacity=60);
+}
+/* ****************************************
+    WRAP - STYLE
+**************************************** */
+.wrap{
+	width: 90%;
+	max-width: 1100px;
+	margin: 0 auto;
+}
+/* ****************************************
+    APUPALKKI - DIV
+**************************************** */
+.apupalkki{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+	color: #00BCD4;
+	font-size: 20px;
+}
+/* ****************************************
+    HELP - SECTION
+**************************************** */
+.help{
+	padding: 80px 0px;
+}
+/* ****************************************
+    FOOTER - SECTION
+**************************************** */
+.footer{
+	padding: 80px 0px;
+	background-color: #0097A7;
+}
+.footer h4, .footer p, .footer i, .footer li{
+	color: white;
+}
+.footer i{
+	font-size: 45px;
+}
+.fi-book:before, .fi-torsos-all:before, .fi-magnifying-glass:before{
+	font-size: 30px;
+}
+.fi-social-facebook:hover{
+	color: #3B5998;
+}
+.fi-social-twitter:hover{         
+    color: #1DA1F2;
+}
+.fi-social-pinterest:hover{         
+    color: #BD081C;
+}
+.fi-social-reddit:hover{
+    color: #FF4500;
+}
+.fi-social-google-plus:hover{
+    color: #DC4A38;
+}
+/* ****************************************
+    MEDIA - QUARY
+**************************************** */
+@media (max-width: 700px){
+	.nav-desktop{
+		display: none;
+	}
+}
+@media (min-width: 700px){
+    .nav-mobile{
+        display: none;
+    }
+}
+
+/* ****************************************
+    CSS - TONI ISOSAARI
+**************************************** */
+
+.imageclass{
+    box-shadow: 10px 10px 50px #888888;
+}
