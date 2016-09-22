@@ -1,9 +1,8 @@
 <?php
 session_start();
-$kuva = $_SESSION['kuvaid'];
+$kuvaid = $_GET['KID'];
 $logged_user = $_SESSION['login_user'];
 $logged_fbuser = $_SESSION['FULLNAME'];
-$faceid = $_SESSION['FBID'];
 $my = mysqli_connect("localhost", "data15", "aJrHfybLxsLU76rV", "data15");
 if ($my->mysqli_errno) {
   die("MySQL, virhe yhteyden luonnissa:" . $my->connect_error);
@@ -23,14 +22,17 @@ $my->set_charset("utf8");
   </head>
   <body>
     <!--JOS KÄYTTÄJÄ ON KIRJAUTUNUT ALKAA-->
-  <?php if ($_SESSION['FBID'] or $_SESSION['login_user']): ?>      
+  <?php if ($_SESSION['FBID'] or $_SESSION['login_user']): ?>
   <img src=<?php echo $_SESSION['kuvaid']; ?> width=300 height=400 alt-image path Invalid name=image />
      <div class="row">
       <div class="panel">
+<?
+$kkysely = $my->query("SELECT URL FROM 581D_Kuva WHERE KuvaID = '$kuvaid'");
+?>
 <?php
 $sql = "SELECT UID FROM 581D_Kayttaja WHERE Sposti = '$logged_user'";
 if ($_SESSION['FBID']) {
-	echo "<p>Kirjautunut Facebook käyttäjällä $logged_fbuser</p>";
+    echo "<p>Kirjautunut Facebook käyttäjällä $logged_fbuser</p>";
 } else {
     echo "<p>Kirjautunut käyttäjällä $logged_user</p>";
 }
@@ -43,11 +45,7 @@ $submit = $_POST['submit'];
 if (isset($_POST['submit'])) {
   $obj = $result3->fetch_object();
     var_dump($obj);
-if ($_SESSION['FBID']) {
-	$sql = "INSERT INTO 581D_Kommentti (UID,Kommentti) VALUES ('".$faceid."','$comment') ";
-} else {
-    $sql = "INSERT INTO 581D_Kommentti (UID,Kommentti) VALUES ('".$obj->UID."','$comment') ";
-}
+  $sql = "INSERT INTO 581D_Kommentti (UID,Kommentti) VALUES ('".$obj->UID."','$comment') ";
   $result = $my->query($sql);
 #die($sql);
 
@@ -59,7 +57,7 @@ if ($_SESSION['FBID']) {
             <div>
               <h5 class="float-left">Kommentteja</h5>
 <?php
-$result1 = $my->query("SELECT * FROM 581D_Kommentti");
+$result1 = $my->query("SELECT * FROM 581D_Kommentti WHERE KuvaID = '$kuvaid'");
 $numrows = $result1->num_rows;
 echo '<h5 class="float-left">&nbsp•&nbsp' . $numrows . '</h5>';
 ?>
@@ -72,7 +70,7 @@ echo '<h5 class="float-left">&nbsp•&nbsp' . $numrows . '</h5>';
         </div>
         <div>
 <?php
-$result = $my->query("SELECT * FROM 581D_Kommentti, 581D_Kayttaja, 3972_FBKayttaja WHERE 581D_Kommentti.UID = 581D_Kayttaja.UID or 581D_Kommentti.UID = 3972_FBKayttaja.Fuid ORDER BY KTime DESC");
+$result = $my->query("SELECT * FROM 581D_Kommentti, 581D_Kayttaja WHERE 581D_Kommentti.UID = 581D_Kayttaja.UID AND KuvaID = '$kuvaid' ORDER BY KTime DESC");
 while ($rows = $result->fetch_array(MYSQLI_ASSOC)) {
   $id = $rows['UID'];
   $uid = $rows['Nimi'];
@@ -113,15 +111,18 @@ $my->close();
       </div>
     </div>
         <!--JOS KÄYTTÄJÄ ON KIRJAUTUNUT LOPPUU JA JOS KÄYTTÄJÄ EI OLE KIRJAUTUNUT ALKAA-->
-    <?php else: ?>     
-  <img src=<?php echo $_SESSION['kuvaid']; ?> width=300 height=400 alt-image path Invalid name=image />
+    <?php else: ?>
+  <img src=<? echo  $kkysely; ?> width=300 height=400 alt-image path Invalid name=image />
      <div class="row">
       <div class="panel">
         <div>
             <div>
               <h5 class="float-left">Kommentteja</h5>
+<?
+$kkysely = $my->query("SELECT URL FROM 581D_Kuva WHERE KuvaID = '$kuvaid'");
+?>
 <?php
-$result1 = $my->query("SELECT * FROM 581D_Kommentti");
+$result1 = $my->query("SELECT * FROM 581D_Kommentti WHERE KuvaID = '$kuvaid'");
 $numrows = $result1->num_rows;
 echo '<h5 class="float-left">&nbsp•&nbsp' . $numrows . '</h5>';
 ?>
@@ -131,7 +132,7 @@ echo '<h5 class="float-left">&nbsp•&nbsp' . $numrows . '</h5>';
         </div>
         <div>
 <?php
-$result = $my->query("SELECT * FROM 581D_Kommentti, 581D_Kayttaja WHERE 581D_Kommentti.UID = 581D_Kayttaja.UID ORDER BY KTime DESC");
+$result = $my->query("SELECT * FROM 581D_Kommentti, 581D_Kayttaja WHERE 581D_Kommentti.UID = 581D_Kayttaja.UID AND KuvaID = '$kuvaid' ORDER BY KTime DESC");
 while ($rows = $result->fetch_array(MYSQLI_ASSOC)) {
   $id = $rows['UID'];
   $uid = $rows['Nimi'];
