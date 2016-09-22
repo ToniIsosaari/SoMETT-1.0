@@ -19,7 +19,7 @@
   </div>
 </section>
   <!-- Secondary osio (lisää eri niin tärkeä sisältö tänne) -->
-<section class="secondary gray">
+<section class="secondary grey">
   <div class="wrap">
     <h2>Rip Juuso 2K16</h2>
     <hr>
