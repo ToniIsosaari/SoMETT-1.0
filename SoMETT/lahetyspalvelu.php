@@ -36,15 +36,15 @@ $upl = $_GET['upl'];
           <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="3000000" />
           <div>
             <label for="fileselect">Files to upload:</label>
-            <input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
-            <div id="filedrag">or drop files here</div>
-            <label>Otsikko</label>
+            <input type="file" id="filedrag" name="fileselect[]" multiple="multiple" />
+       <!--     <div id="filedrag">or drop files here</div>
+      -->      <label>Otsikko</label>
             <input type="text" name="title"></input>
             <label>Kuvaus</label>
             <input type="text" name="description"></input>
-<!--          </div>
+          </div>
           <div id="submitbutton">
-    -->        <input type="submit">Upload Files</input>
+            <input type="submit">Upload Files</input>
           </div>
         </fieldset>
       </form>

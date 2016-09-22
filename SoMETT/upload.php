@@ -51,7 +51,7 @@ else {
 			);
 			echo "<p>File $fn uploaded.</p>";
 			
-			
+
 			$directory = "http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/uploads/";
 			$my=mysqli_connect("localhost","data15","aJrHfybLxsLU76rV","data15");
 			if($my->mysql_errno){

@@ -56,8 +56,6 @@ a {
 }
 
 .main {
-	width: 95%;
-	max-width: 960px;
 	padding: 0 10px;
 	margin: 0 auto;
 	position: relative;
@@ -179,7 +177,7 @@ a {
 
 .js .gallery {
 	width: 100%;
-	max-width: 450px;
+	max-width: 100em;
 	margin: 0 auto;
 	border-radius: 20px;
 	position: relative;
