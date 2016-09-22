@@ -15,7 +15,7 @@
                      
 
  <?php
-$nico = "http://www.saple.com";
+$nico = "http://cosmo.kpedu.fi/~nikolipponen/SoMETT-1.0/kommentointi/kommentointi.php";
                     $sql=mysqli_connect("localhost","data15","aJrHfybLxsLU76rV","data15");
                     #tarkistetaan yhteyden tila
                     if($sql->connect_errno) {
