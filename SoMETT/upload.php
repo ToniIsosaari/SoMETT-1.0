@@ -52,7 +52,7 @@ else {
 			echo "<p>File $fn uploaded.</p>";
 			
 			
-			$directory = "http://cosmo.kpedu.fi/~tomijylha/SoMETT-1.0/dad/tomi/uploads/";
+			$directory = "http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/uploads/";
 			$my=mysqli_connect("localhost","data15","aJrHfybLxsLU76rV","data15");
 			if($my->mysql_errno){
 				die("MySQL, virhe (#".$my->mysql_errno.") yhteyden luonnissa:".$my->connect_error);
