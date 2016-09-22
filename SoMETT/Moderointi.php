@@ -8,7 +8,6 @@
 <title>SoMETT</title>
 <?php include('styles.php');?>
 </head>
-    <link rel="stylesheet" type="text/css" href="kommentti.css">
   <body>
 
     <table class="table1">
