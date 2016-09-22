@@ -33,9 +33,12 @@
 
       <tr class="table1">
 
-        <td><? echo $i['KommenttiID']?></td>
+        <td><? echo $i['UID']?></td>
+        <?
+        $result5 = $sql->query("SELECT * FROM 581D_Kommentti WHERE UID = '$i['UID']";);
+        while
+        <td><? echo $i['KommenttiID'];?></td>
         <td><? echo $i['Kommentti'];?></td>
-        <td><? echo $i['UID'];?></td>
         <td><select name="Rights[]">
               <option value="<?echo $i['UID']?>,0" <? if($i['Status'] == 0){
               echo "selected";
@@ -65,31 +68,37 @@
 
 
 <?
+}
       if(isset($_POST['Muokkaa']))
       {
-      echo "<pre>";
-      var_dump($_POST['Rights']);
-      echo"</pre>";
-      #list($turha,$UID,$muokkaus) = $_POST['Rights']; #explode("x",implode($_POST['Rights']));
+      $oikeudet = $_POST['Rights'];
+      for($q=0;$q<count($oikeudet);$q++){
 
+
+
+      list($UID,$turha,$muokkaus) = $oikeudet[$q];#[$q]; #explode("x",implode($_POST['Rights']));
+     # $q++;
       #for($b=0;$b<count($muokkaus);$b++){
 
       #for($c=0;$c<count($UID);$c++){
 
-      #$oik_id = $muokkaus[$b];
-      #$user_id = $UID[$c];
-      #$query3 = "UPDATE 581D_Kayttaja SET Status = '$oik_id' WHERE UID = '$user_id';";
-      #if($result3 = $sql->query($query3)){
-      #header("Refresh:0");
-
+      $oik_id = $muokkaus;#[$b];
+      $user_id = $UID;#[$c];
+      $query3 = "UPDATE 581D_Kayttaja SET Status = '$oik_id' WHERE UID = '$user_id';";
+      if($result3 = $sql->query($query3)){
+      #echo "<meta HTTP-EQUIV='REFRESH' content='0; url=kommentti.php'>";
+echo "<pre>";
+       var_dump($muokkaus);
+                 echo"</pre>";
       #}
       #}
-      #}
+      }
+      }
       }
 
 
 
-      if(isset($_POST['delete']))
+    if(isset($_POST['delete']))
       {
       $checkbox = $_POST['checkbox'];
 
@@ -102,8 +111,9 @@
       }
       }
       }
-      }
-
+ #     echo "<pre>";
+  #      var_dump($_POST['Rights']);
+   #        echo"</pre>";
       $sql->close();
 
     ?>
