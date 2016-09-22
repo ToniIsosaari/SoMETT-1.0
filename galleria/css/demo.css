@@ -56,8 +56,6 @@ a {
 }
 
 .main {
-	width: 95%;
-	max-width: 960px;
 	padding: 0 10px;
 	margin: 0 auto;
 	position: relative;
