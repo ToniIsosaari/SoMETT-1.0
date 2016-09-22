@@ -30,9 +30,9 @@ $('p#kommentti').readmore({
         <!-- kommentointi skriptit -->
 <script type="text/javascript"
 		src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-		<script type="text/javascript" src="js/jquerypp.custom.js"></script>
+		<script type="text/javascript" src="http://cosmo.kpedu/~miiahuvila/somett/SoMETT-1.0/galleria/js/jquerypp.custom.js"></script>
 		<script type="text/javascript"
-		src="js/jquery.elastislide.js"></script>
+		src="http://cosmo.kpedu/~miiahuvila/somett/SoMETT-1.0/galleria/js/jquery.elastislide.js"></script>
 		<script type="text/javascript">
 			
 			$( '#carousel1' ).elastislide();
