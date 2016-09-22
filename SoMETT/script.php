@@ -17,10 +17,10 @@
     window.location.href = "kommentointi_login.php";
   }
   </script>
-          <script src="js/jquery.min.js"></script>
-        <script src="js/what-input.min.js"></script>
-        <script src="js/foundation.min.js"></script>
-        <script src="js/readmore.js"></script>
+          <script src="http://cosmo.kpedu.fi/~johanneskallinen/SoMETT-1.0/kommentointi/js/jquery.min.js"></script>
+        <script src="http://cosmo.kpedu.fi/~johanneskallinen/SoMETT-1.0/kommentointi/js/what-input.min.js"></script>
+        <script src="http://cosmo.kpedu.fi/~johanneskallinen/SoMETT-1.0/kommentointi/js/foundation.min.js"></script>
+        <script src="http://cosmo.kpedu.fi/~johanneskallinen/SoMETT-1.0/kommentointi/js/readmore.js"></script>
                <script>
 $('p#kommentti').readmore({
   moreLink: '<a href="#" class="more">Näytä enemmän <i class="fi-arrow-down"></i></a>',
