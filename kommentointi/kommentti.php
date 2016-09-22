@@ -1,11 +1,20 @@
-<!DOCTYPE HTML>
-<html>
-  <head>
+?php include('config.php');?>
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SoMETT</title>
+<?php include('styles.php');?>
+</head>
     <link rel="stylesheet" type="text/css" href="kommentti.css">
-    <meta charset="utf-8">
-    <title>osifj</title>
-  </head>
   <body>
+ <?php include('nav.php');?>
+ <?php include('main.php');?>
+ <?php include('footer.php');?>
+ <?php include('script.php');?>
+
     <table class="table1">
       <form method="POST">
   <tr class="table1">
@@ -33,12 +42,15 @@
 
       <tr class="table1">
 
+       <?# <td><? echo $i['UID']?></td> 
+        #<?
+       # $asd = $i['UID'];
+        #$result5 = $sql->query("SELECT * FROM 581D_Kommentti WHERE 581D_Kommentti.UID=581D_Kayttaja.UID AND UID = '$asd';");       
+        #while($w = $result4->fetch_array(MYSQLI_ASSOC)){
+        ?>
+        <td><? echo $w['KommenttiID'];?></td>
+        <td><? echo $w['Kommentti'];?></td>
         <td><? echo $i['UID']?></td>
-        <?
-        $result5 = $sql->query("SELECT * FROM 581D_Kommentti WHERE UID = '$i['UID']";);
-        while
-        <td><? echo $i['KommenttiID'];?></td>
-        <td><? echo $i['Kommentti'];?></td>
         <td><select name="Rights[]">
               <option value="<?echo $i['UID']?>,0" <? if($i['Status'] == 0){
               echo "selected";
@@ -68,6 +80,7 @@
 
 
 <?
+#}
 }
       if(isset($_POST['Muokkaa']))
       {
@@ -87,9 +100,9 @@
       $query3 = "UPDATE 581D_Kayttaja SET Status = '$oik_id' WHERE UID = '$user_id';";
       if($result3 = $sql->query($query3)){
       #echo "<meta HTTP-EQUIV='REFRESH' content='0; url=kommentti.php'>";
-echo "<pre>";
-       var_dump($muokkaus);
-                 echo"</pre>";
+#echo "<pre>";
+ #      var_dump($muokkaus);
+  #               echo"</pre>";
       #}
       #}
       }
@@ -121,4 +134,5 @@ echo "<pre>";
     </table>
   </body>
 </html>
+
 
