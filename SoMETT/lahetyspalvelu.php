@@ -64,7 +64,7 @@ $upl = $_GET['upl'];
     <button class="apua">Tarvitsetko apua?</button>
   </div>
 </div>
-<section hidden class="help">
+<section hidden class="secondary help">
   <div class="wrap">
     <h2>Helppinurkka</h2>
     <hr>
