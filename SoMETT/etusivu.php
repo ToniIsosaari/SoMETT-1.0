@@ -8,33 +8,51 @@
   <!-- Secondary osio (lisää eri niin tärkeä sisältö tänne) -->
 <section class="secondary">
   <div class="wrap">
-      <h2>Mikä on SoMETT?</h2>
+      <h2>Uusimmat</h2>
       <hr>
-      <p>SoMETTi on Erikoistietotoimiston Musketin sosiaalisenmedian nettiversio, joka mahdollistaa 
-      tavallisten ihmisten kuvien lähettämisen yhteisön ja Erikoistietotoimiston työntekijöiden tutkittavaksi.
-      Tavoitteenamme on edistää museoaineiston tutkimista käyttämällä hyödyksi innostuneita vapaaehtoisia yhteisönjäseniä,
-      liity joukkoomme jo tänään!</p>
+
+				<ul id="carousel1" class="elastislide-list">
+                     
+
+ <?php
+$nico = "http://www.saple.com";
+                    $sql=mysqli_connect("localhost","data15","aJrHfybLxsLU76rV","data15");
+                    #tarkistetaan yhteyden tila
+                    if($sql->connect_errno) {
+                    echo "MySQL, virhe yhteyden luonnissa:" . $sql->connect_error;
+                    }
+                    $sql->set_charset("utf8");
+                    $result = $sql->query("SELECT * FROM 581D_Kuva ORDER BY KuvaID DESC");
+                    while($rivi = $result->fetch_array(MYSQL_ASSOC)) {
+                    echo "<li data-preview='".$rivi['URL']."'>"."<a href=".$nico."?KuvaID=".$rivi['KuvaID']."><img src=".$rivi['URL']."></a> </li>";
+}
+echo "</ul>";
+  $sql->close; 
+?>
   </div>
 </section>
 <section class="secondary grey">
   <div class="wrap">
-      <h2>Miten SoMETT toimii?</h2>
+      <h2>Suosituimmat</h2>
       <hr>
-      <div class="row">
-        <div class="small-12 medium-6 large-6 columns">
-          <p>SoMETTin toiminnan pääpilari on sosiaalisuus ja tärkeimpänä työkalunamme ovat sosiaalisenmedian eri palvelut.
-          Meille on hyvin tärkeää kasvattaa laaja käyttäjäkunta, joka mahdollistaa sen, että palveluumme lisätään aktiivisesti
-          uusia kuvia ja jo olemassa oleviin kuviin saataisiin kerättyä tarpeeksi aiheeseen liittyvää tietoa.</p>
-        </div>
-        <div class="small-12 medium-6 large-6 columns">
-          <h4>Toimintamallimme pähkinänkuoressa:</h4>
-          <p>
-          1. Käyttäjä lisää kuvan palveluumme ja jakaa kuvan sosiaalisen medianpalveluihin antamamme linkin kautta.<br>
-          2. Muut käyttäjät kommentoivat kuvaa ja kertovat tietonsa kyseiseen aiheeseen liittyen.<br>
-          3. Erikoistietotoimiston työntekijä varmistaa tiedot.<br>
-          4. Museoviraston työntekijä päättää liitetäänkö kuvamateriaali museotietokantaan.</p>
-        </div> 
-      </div>
+<ul  id="carousel" class="elastislide-list">
+
+
+<?		
+ 
+                    $sql=mysqli_connect("localhost","data15","aJrHfybLxsLU76rV","data15");
+                    #tarkistetaan yhteyden tila
+                    if($sql->connect_errno) {
+                    echo "MySQL, virhe yhteyden luonnissa:" . $sql->connect_error;
+                    }
+                    $sql->set_charset("utf8");
+                    $result = $sql->query("SELECT * FROM 581D_Kuva ORDER BY Suosituin DESC");
+                    while($rivi = $result->fetch_array(MYSQL_ASSOC)) {
+                    echo "<li data-preview='".$rivi['URL']."'>"."<a href="."#"."><img src=".$rivi['URL']."></a> </li>"; 
+ }
+echo "</ul>";
+$sql->close;             
+?>
   </div>
 </section>
 </div>
