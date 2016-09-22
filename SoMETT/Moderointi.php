@@ -10,10 +10,6 @@
 </head>
     <link rel="stylesheet" type="text/css" href="kommentti.css">
   <body>
- <?php include('nav.php');?>
- <?php include('main.php');?>
- <?php include('footer.php');?>
- <?php include('script.php');?>
 
     <table class="table1">
       <form method="POST">
