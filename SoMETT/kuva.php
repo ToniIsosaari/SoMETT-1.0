@@ -165,6 +165,8 @@ $my->close();
         </div>
   </div>
 </section>
+</div>
+</div>
   <!-- Footer osio (ÄLÄ KOSKE!) -->
 <?php include("footer.php")?>
 <?php include("script.php")?>
