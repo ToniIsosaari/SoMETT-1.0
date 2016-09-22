@@ -1,4 +1,4 @@
-?php include('config.php');?>
+<?php include('config.php');?>
 <!DOCTYPE html>
 <html lang="fi">
 <head>
@@ -6,7 +6,7 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>SoMETT</title>
-<?php include('styles.php');?>
+<?include('styles.php');?>
 </head>
   <body>
 
@@ -87,7 +87,7 @@
       $user_id = $UID;#[$c];
       $query3 = "UPDATE 581D_Kayttaja SET Status = '$oik_id' WHERE UID = '$user_id';";
       if($result3 = $my->query($query3)){
-      #echo "<meta HTTP-EQUIV='REFRESH' content='0; url=kommentti.php'>";
+      echo "<meta HTTP-EQUIV='REFRESH' content='0; url=Moderointi.php'>";
 #echo "<pre>";
  #      var_dump($muokkaus);
   #               echo"</pre>";
@@ -103,7 +103,7 @@
       $del_id = $checkbox[$a];
       $query2 = "DELETE FROM 581D_Kommentti WHERE KommenttiID ='$del_id';";
       if($result = $my->query($query2)){
-      header("Refresh:0");
+     echo "<meta HTTP-EQUIV='REFRESH' content='0; url=Moderointi.php'>";
       }
       }
       }
@@ -116,3 +116,8 @@
     </table>
   </body>
 </html>
+
+
+
+
+
