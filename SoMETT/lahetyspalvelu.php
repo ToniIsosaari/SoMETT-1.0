@@ -59,7 +59,7 @@ $upl = $_GET['upl'];
   </	div>
 </section>
   <!-- Apua uusavuttomille -->
-<div class="apupalkki">
+<div class="secondary apupalkki">
   <div class="wrap">
     <button class="apua">Tarvitsetko apua?</button>
   </div>
