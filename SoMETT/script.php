@@ -11,3 +11,20 @@
         });
       });
 </script>
+<!-- kommentointi skriptit-->
+  <script>
+  function openWin() {
+    window.location.href = "kommentointi_login.php";
+  }
+  </script>
+          <script src="js/jquery.min.js"></script>
+        <script src="js/what-input.min.js"></script>
+        <script src="js/foundation.min.js"></script>
+        <script src="js/readmore.js"></script>
+               <script>
+$('p#kommentti').readmore({
+  moreLink: '<a href="#" class="more">Näytä enemmän <i class="fi-arrow-down"></i></a>',
+  lessLink: '<a href="#" class="less">Näytä vähemmän <i class="fi-arrow-up"></i></a>',
+});
+        </script>
+        <!-- kommentointi skriptit -->
