@@ -27,11 +27,15 @@
             <div class="main">
 				<header class="clearfix">	
 					<h1>Käyttäjän kuvat <span>Selaa käyttäjän kuvia</span></h1>
-											
+						
                     
 				</header>
 				 <div class="gallery">
-				    <ul id="carousel" class="elastislide-list">
+				    <div class="container demo-1">
+<div class="elastislide-wrapper elastislide-horizontal">
+<div class="elastislide-carousel">
+<ul id="carousel" class="elastislide-list" style="display: block; max-height: 150px; transition: all 500ms ease-in-out; transform: translateX(-553px);">
+
 					<?php 
 					
 				
@@ -47,27 +51,101 @@
                     while($rivi = $result->fetch_array(MYSQL_ASSOC)) {
                     echo "<li data-preview='".$rivi['URL']."'>"."<a href="."#"."><img src=".$rivi['URL']."></a> </li>";
                 
-                                           
-                                            
-            
-                    }
-                   echo "</ul>"; 
-                     echo "<div class="."image-preview".">";
-                         echo
-                         "<img id="."preview"." src=".$rivi['URL']."></a> </li>";
-                     
-                     
-                    ?>
-     
-</li>
-<? $sql->close(); ?> 
-                    
-				</div> </div> 
-				<p class="info"><strong>Käyttäjän "4":</strong> Kuvat</p>
 
+
+	$d = $rivi['Title'];
+                    $e = $rivi['Description'];                       
+                                }            
+
+
+                    
+                   echo "</ul>"; 
+
+                     echo "<div class="."image-preview".">";
+
+
+echo "<p color=blue>".$d."</p>";                        
+ echo
+                         "<img id="."preview"." src=".$rivi['URL']."></a> </li>";
+                   
+echo "<p>".$e."</p>";
+echo "<br>";
+ 
+  
+  
+?>
+</div> </div> </div> </div> 
+
+ <div class="container demo-1">
+<div class="elastislide-wrapper elastislide-horizontal">
+<div class="elastislide-carousel">
+<ul id="carousel1" class="elastislide-list" style="display: block; max-height: 150px; transition: all 500ms ease-in-out; transform: translateX(-553px);">
+
+ 
+<? 
+ while($rivi = $result->fetch_array(MYSQL_ASSOC)) {
+                     echo "<li data-preview='".$rivi['URL']."'>"."<a href="."#"."><img src=".$rivi['URL']."></a> </li>";
+}
+
+echo "</ul>";
+
+$sql->close();
+ ?>
+
+     
+</div> 
+                    
+				
+            
+				
+
+            
+</div> </div> 
 			</div>
-		</div>
-		<script type="text/javascript"
+	
+
+
+
+ <p align="center" class="info"><strong>Käyttäjän "4":</strong> Kuvat</p>
+    <div class="container demo-1">	
+<div class="elastislide-wrapper elastislide-horizontal">
+<div class="elastislide-carousel">
+<ul id="carousel1" class="elastislide-list" style="display: block; max-height: 150px; transition: all 500ms ease-in-out; transform: translateX(-553px);">
+<li style="width: 33.1126%; max-width: 176px; max-height: 150px;">
+<a href="#"><img src="images/small/1.jpg" alt="image01"></a></li>
+<li style="width: 33.1126%; max-width: 176px; max-height: 150px;"><a href="#"><img src="images/small/2.jpg" alt="image02"></a></li>
+<li style="width: 33.1126%; max-width: 176px; max-height: 150px;"><a href="#"><img src="images/small/3.jpg" alt="image03"></a></li>
+<li style="width: 33.1126%; max-width: 176px; max-height: 150px;"><a href="#"><img src="images/small/4.jpg" alt="image04"></a></li>
+<li style="width: 33.1126%; max-width: 176px; max-height: 150px;"><a href="#"><img src="images/small/5.jpg" alt="image05"></a></li>
+<li style="width: 33.1126%; max-width: 176px; max-height: 150px;"><a href="#"><img src="images/small/6.jpg" alt="image06"></a></li>
+<li style="width: 33.1126%; max-width: 176px; max-height: 150px;"><a href="#"><img src="images/small/7.jpg" alt="image07"></a></li>
+<li style="width: 33.1126%; max-width: 176px; max-height: 150px;"><a href="#"><img src="images/small/8.jpg" alt="image08"></a></li>
+<li style="width: 33.1126%; max-width: 176px; max-height: 150px;"><a href="#"><img src="images/small/9.jpg" alt="image09"></a></li>
+<li style="width: 33.1126%; max-width: 176px; max-height: 150px;"><a href="#"><img src="images/small/10.jpg" alt="image10"></a></li>
+<li style="width: 33.1126%; max-width: 176px; max-height: 150px;"><a href="#"><img src="images/small/11.jpg" alt="image11"></a></li>
+<li style="width: 33.1126%; max-width: 176px; max-height: 150px;"><a href="#"><img src="images/small/12.jpg" alt="image12"></a></li>
+<li style="width: 33.1126%; max-width: 176px; max-height: 150px;"><a href="#"><img src="images/small/13.jpg" alt="image13"></a></li>
+<li style="width: 33.1126%; max-width: 176px; max-height: 150px;"><a href="#"><img src="images/small/14.jpg" alt="image14"></a></li>
+<li style="width: 33.1126%; max-width: 176px; max-height: 150px;"><a href="#"><img src="images/small/15.jpg" alt="image15"></a></li>
+<li style="width: 33.1126%; max-width: 176px; max-height: 150px;"><a href="#"><img src="images/small/16.jpg" alt="image16"></a></li>
+<li style="width: 33.1126%; max-width: 176px; max-height: 150px;"><a href="#"><img src="images/small/17.jpg" alt="image17"></a></li>
+<li style="width: 33.1126%; max-width: 176px; max-height: 150px;"><a href="#"><img src="images/small/18.jpg" alt="image18"></a></li>
+<li style="width: 33.1126%; max-width: 176px; max-height: 150px;"><a href="#"><img src="images/small/19.jpg" alt="image19"></a></li>
+<li style="width: 33.1126%; max-width: 176px; max-height: 150px;"><a href="#"><img src="images/small/20.jpg" alt="image20"></a></li>
+</ul></div><nav><span class="elastislide-prev" style="display: block;">Previous</span><span class="elastislide-next" style="display: block;">Next</span></nav></div>
+					
+				
+
+ </div> 
+
+
+
+
+</body> 
+
+</html> 
+
+	<script type="text/javascript"
 		src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script type="text/javascript" src="js/jquerypp.custom.js"></script>
 		<script type="text/javascript"
@@ -107,5 +185,45 @@
 			}
 
 		</script>
+
+	
+<script type="text/javascript">
+
+            // example how to integrate with a previewer
+
+            var current = 0,
+                $preview = $( '#preview1' ),
+                $carouselEl = $( '#carousel1' ),
+                $carouselItems = $carouselEl.children(),
+                carousel = $carouselEl.elastislide( {
+                    current : current,
+                    minItems : 4,
+                    onClick : function( el, pos, evt ) {
+
+                        changeImage( el, pos );
+                        evt.preventDefault();
+
+                    },
+                    onReady : function() {
+
+                        changeImage( $carouselItems.eq( current ), current
+);
+
+                    }
+                } );
+
+            function changeImage( el, pos ) {
+
+                $preview.attr( 'src', el.data( 'preview' ) );
+                $carouselItems.removeClass( 'current-img' );
+                el.addClass( 'current-img' );
+                carousel.setCurrent( pos );
+
+            }
+
+        </script>
+	            
+	                                        		
+
     </body>
 </html>
