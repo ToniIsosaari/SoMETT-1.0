@@ -12,6 +12,8 @@
 <?include('nav.php');?>
 <section class="secondary grey">
   <div class="wrap">
+    <h2 class="text-center">Kommenttien moderointi</h2>
+    <hr>
     <table class="table1">
       <form method="POST">
   <tr class="table1">
