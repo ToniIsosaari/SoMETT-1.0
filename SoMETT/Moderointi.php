@@ -9,15 +9,16 @@
 <?include('styles.php');?>
 </head>
   <body>
-
+<?include('nav.php');?>
+<section class="secondary grey">
+  <div class="wrap">
     <table class="table1">
       <form method="POST">
   <tr class="table1">
     <td>KommenttiID</td>
     <td>Kommentti</td>
     <td>KäyttäjäID</td>
-    <td>Oikeudet</td>
-    <td><input type="submit" name="Muokkaa" value="ei toimi"></td>
+    <td>Oikeudet <input type="submit" name="Muokkaa" value="ei toimi"></td>
     <td><input type="submit" name="delete" value="delete"></td>
 
 
@@ -114,6 +115,11 @@
     ?>
       </form>
     </table>
+    </div>
+    </section>
+    </div>
+    </div>
+    <?php include('footer.php'); ?>
   </body>
 </html>
 
