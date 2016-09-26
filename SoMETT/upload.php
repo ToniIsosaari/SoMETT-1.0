@@ -1,21 +1,17 @@
 <?php
-
-/*
 $my=mysqli_connect("localhost","data15","aJrHfybLxsLU76rV","data15");
 if($my->mysql_errno){
-	die("MySQL, virhe (#".$my->mysql_errno.") yhteyden luonnissa:".$my->connect_error);
+	die("MySQL, virhe (#".$my->mysql_errno.") yhteyden luonnissa:".$my->connect_erroe);
 }
 $my->set_charset("utf8");
-$sql = 'SELECT MAX(KID) FROM 581D_Kuva'; 
-if($KID=$my->query($sql)){
-	echo '<p>Nimi tallennettu!</p>'.$KID;
-}
-else {
+if($result = $my->query("SELECT * FROM 581D_Kuva ")){
+	while($d = $result->fetch_object()){
+		$KID = $d->KuvaID;
+	}
+} else {
 	echo "Virhe SQL-kyselyssä!";
 }
 $my->close();
- 
-*/
 
 /*
 Server-side PHP file upload code for HTML5 File Drag & Drop demonstration
@@ -26,8 +22,9 @@ Developed by Craig Buckler (@craigbuckler) of OptimalWorks.net
 $fn = (isset($_SERVER['HTTP_X_FILENAME']) ? $_SERVER['HTTP_X_FILENAME'] : false);
 $title = $_POST["title"];
 $description = $_POST["description"];
-if ($fn) {
 
+if ($fn) {
+	
 	// AJAX call
 	file_put_contents(
 		'uploads/' . $fn,
@@ -38,10 +35,9 @@ if ($fn) {
 
 }
 else {
-
+	$fn = $fn . $KID;
 	// form submit
 	$files = $_FILES['fileselect'];
-
 	foreach ($files['error'] as $id => $err) {
 		if ($err == UPLOAD_ERR_OK) {
 			$fn = $files['name'][$id];
@@ -72,7 +68,7 @@ else {
 
 
 
-			header("Location:lahetyspalvelu.php?upl=1");
+			header('Location:lahetyspalvelu.php?upl=1?"'.$KID.'""'.$fn.'"'.$files.'"');
 		}
 
 	}
