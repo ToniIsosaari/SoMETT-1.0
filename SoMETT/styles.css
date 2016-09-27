@@ -3,6 +3,11 @@ Styles for HTML5 File Drag & Drop demonstration
 Featured on SitePoint.com
 Developed by Craig Buckler (@craigbuckler) of OptimalWorks.net
 */
+.uplform {
+//	border: 1px solid black;
+	margin: 0 3.7em 0em 3.7em;
+	
+}
 body
 {
 	font-family: "Segoe UI", Tahoma, Helvetica, freesans, sans-serif;
@@ -27,20 +32,22 @@ legend
 	color: #333;
 }
 
-#filedrag
+#fileselect
 {
 //	display: none;
 	font-weight: bold;
 	text-align: center;
-	padding: 1em 0;
+	padding: 0.4em 0 3em 0.2em;
+	align-self:center;
 	margin: 1em 0;
 	color: #555;
-	border: 2px dashed #555;
+	border: 2px solid #0097A7;
 	border-radius: 7px;
 	cursor: default;
+	background-color:white;
 }
 
-#filedrag.hover
+#fileselect.hover
 {
 	color: #f00;
 	border-color: #f00;
@@ -92,4 +99,9 @@ pre
 #progress p.failed
 {
 	background: #c00 none 0 0 no-repeat;
+}
+.uplotsikko {
+text-align:center;
+padding-top:1em;
+
 }

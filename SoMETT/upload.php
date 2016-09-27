@@ -23,6 +23,7 @@ $fn = (isset($_SERVER['HTTP_X_FILENAME']) ? $_SERVER['HTTP_X_FILENAME'] : false)
 $title = $_POST["title"];
 $description = $_POST["description"];
 $UID = '12'; #tähän pitää getata se käyttäjäid
+
 if ($fn) {
 	
 	// AJAX call
@@ -38,7 +39,6 @@ else {
 
 	// form submit
 	$files = $_FILES['fileselect'];
-	#$files = $_FILES['filedrag'];
 	foreach ($files['error'] as $id => $err) {
 		if ($err == UPLOAD_ERR_OK) {
 			$fn = $files['name'][$id];
@@ -49,7 +49,7 @@ else {
 			echo "<p>File $fn uploaded.</p>";
 			
 
-			$directory = "http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/uploads/";
+			$directory = "http://cosmo.kpedu.fi/~tomijylha/SoMETT-1.0/SoMETT/uploads/";
 			$my=mysqli_connect("localhost","data15","aJrHfybLxsLU76rV","data15");
 			if($my->mysql_errno){
 				die("MySQL, virhe (#".$my->mysql_errno.") yhteyden luonnissa:".$my->connect_error);
@@ -58,7 +58,6 @@ else {
 			
 			$filu = $directory.$fn;
 			$sql = 'INSERT INTO 581D_Kuva(KuvaID,URL,UID,Title,Description,PublishDate)VALUES(" ","'.$filu.'","'.$UID.'","'.$title.'","'.$description.'"," ")';
-			
 			if($tulos=$my->query($sql)){
 				echo '<p>Nimi tallennettu!</p>';
 			}
@@ -69,10 +68,9 @@ else {
 
 
 
-	#		header('Location:lahetyspalvelu.php?upl=1?"'.$KID.'""'.$fn.'"'.$files.'"');
+			header('Location:lahetyspalvelu.php?upl=1?"'.$KID.'""'.$fn.'"'.$files.'"');
 		}
 
 	}
 
 }
-echo $files;
