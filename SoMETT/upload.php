@@ -22,7 +22,7 @@ Developed by Craig Buckler (@craigbuckler) of OptimalWorks.net
 $fn = (isset($_SERVER['HTTP_X_FILENAME']) ? $_SERVER['HTTP_X_FILENAME'] : false);
 $title = $_POST["title"];
 $description = $_POST["description"];
-
+$UID = '12'; #tähän pitää getata se käyttäjäid
 if ($fn) {
 	
 	// AJAX call
@@ -35,9 +35,10 @@ if ($fn) {
 
 }
 else {
-	$fn = $fn . $KID;
+
 	// form submit
 	$files = $_FILES['fileselect'];
+	#$files = $_FILES['filedrag'];
 	foreach ($files['error'] as $id => $err) {
 		if ($err == UPLOAD_ERR_OK) {
 			$fn = $files['name'][$id];
@@ -56,7 +57,7 @@ else {
 			$my->set_charset("utf8");
 			
 			$filu = $directory.$fn;
-			$sql = 'INSERT INTO 581D_Kuva(KuvaID,URL,UID,Title,Description,PublishDate)VALUES(" ","'.$filu.'","1204","'.$title.'","'.$description.'"," ")';
+			$sql = 'INSERT INTO 581D_Kuva(KuvaID,URL,UID,Title,Description,PublishDate)VALUES(" ","'.$filu.'","'.$UID.'","'.$title.'","'.$description.'"," ")';
 			
 			if($tulos=$my->query($sql)){
 				echo '<p>Nimi tallennettu!</p>';
@@ -68,9 +69,10 @@ else {
 
 
 
-			header('Location:lahetyspalvelu.php?upl=1?"'.$KID.'""'.$fn.'"'.$files.'"');
+	#		header('Location:lahetyspalvelu.php?upl=1?"'.$KID.'""'.$fn.'"'.$files.'"');
 		}
 
 	}
 
 }
+echo $files;

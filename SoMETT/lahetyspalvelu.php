@@ -22,7 +22,7 @@ $upl = $_GET['upl'];
     Mikäli et tiedä kuinka lähetysboksia käytetään, löytyy aiheesta tietoa sivunalaosassa.</p>
   </div>
     <!-- Kuvan lähetys ja muuta mukavaa -->
-    <div class="row">
+    <div class="row uplform">
       <div class="small-9 small-centered colums">
       <?if($upl==1){
           echo "Upload succesfull!";
@@ -32,19 +32,38 @@ $upl = $_GET['upl'];
       ?>      
       <form id="upload" action="upload.php" method="POST" enctype="multipart/form-data">
         <fieldset>
-          <legend>HTML File Upload</legend>
+          <h3 class="uplotsikko">Kuvan julkaisu</h3>
           <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="3000000" />
           <div>
-            <label for="fileselect">Files to upload:</label>
-            <input type="file" id="filedrag" name="fileselect[]" multiple="multiple" />
-       <!--     <div id="filedrag">or drop files here</div>
-      -->      <label>Otsikko</label>
-            <input type="text" name="title"></input>
+            <input type="file" id="fileselect" name="fileselect[]" multiple="multiple"/>
+            <div id="filedrag" name="filedrag[]">or drop files here</div>
+            <label>Otsikko</label>
+            <input type="text" name="title" required></input>
             <label>Kuvaus</label>
-            <input type="text" name="description"></input>
+            <input type="text" name="description" required></input>
           </div>
           <div id="submitbutton">
             <input type="submit">Upload Files</input>
+          </div>
+        </fieldset>
+      </form>
+      
+      <div id="progress"></div>
+      <div id="messages">
+        <p>Status Messages</p>
+      </div>
+      <!--
+      <form id="upload" action="upload.php" method="POST" enctype="multipart/form-data">
+        <fieldset>
+          <legend>HTML File Upload</legend>
+          <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
+          <div>
+            <label for="fileselect">Files to upload:</label>
+            <input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
+            <div id="filedrag">or drop files here</div>
+          </div>
+          <div id="submitbutton">
+            <button type="submit">Upload Files</button>
           </div>
         </fieldset>
       </form>
@@ -52,9 +71,8 @@ $upl = $_GET['upl'];
       <div id="messages">
         <p>Status Messages</p>
       </div>
-      <?
-      }
-      ?>
+      -->
+     <?}?>
     </div>
   </	div>
 </section>
