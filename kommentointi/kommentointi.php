@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 $kuvaid = $_GET['KID'];
@@ -37,7 +36,6 @@ $my->set_charset("utf8");
  <div class="panel">
    <!--HAETAAN KUVA TIETOKANNASTA-->
 <?
-
 $sql = "SELECT UID FROM 581D_Kayttaja, 3972_FBKayttaja WHERE Sposti = '$logged_user' OR Fuid = '$faceid'";
 if ($_SESSION['FBID']) {
     echo "<p>Kirjautunut Facebook käyttäjällä $logged_fbuser</p>";
@@ -46,7 +44,6 @@ if ($_SESSION['FBID']) {
 }
 $result3 = $my->query($sql);
 #var_dump($result3);
-
 $comment = $_POST['comment'];
 $submit = $_POST['submit'];
 // if($comment != "")
@@ -60,7 +57,6 @@ if ($_SESSION['FBID']) {
 }
   $result = $my->query($sql);
 #die($sql);
-
       echo "<meta HTTP-EQUIV='REFRESH' content='0; url=kommentointi.php'>";
 }
 ?>
@@ -152,7 +148,7 @@ echo '<h5 class="float-left">&nbsp•&nbsp' . $numrows . '</h5>';
         </div>
         <div>
 <?php
-$result = $my->query("SELECT * FROM 581D_Kommentti, 581D_Kayttaja, 3972_FBKayttaja WHERE 581D_Kommentti.UID = 581D_Kayttaja.UID or 581D_Kommentti.UID = 3972_FBKayttaja.Fuid AND KuvaID = '$kuvaid' ORDER BY KTime DESC");
+$result = $my->query("SELECT * FROM 581D_Kommentti, 581D_Kayttaja WHERE 581D_Kommentti.UID = 581D_Kayttaja.UID AND KuvaID = '$kuvaid' ORDER BY KTime DESC");
 while ($rows = $result->fetch_array(MYSQLI_ASSOC)) {
   $id = $rows['UID'];
   $uid = $rows['Nimi'];
@@ -211,4 +207,3 @@ $('p#kommentti').readmore({
         </script>
   </body>
 </html>
-
