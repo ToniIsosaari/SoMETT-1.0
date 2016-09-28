@@ -3,10 +3,10 @@
  	<div class="off-canvas position-left" id="offCanvas" data-off-canvas>
  	  <!-- Mobiili Navipalkki (ÄLÄ KOSKE!) -->
       <ul class="vertical menu mobile-menu">
-        <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/index.php">Etusivu</a></li>
-        <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/kuvapankki.php">Kuvapankki</a></li>
-        <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/lahetyspalvelu.php">Lähetyspalvelu</a></li>
-        <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/info.php"><i class="fi-info"></i> info</a></li>
+        <li><a href="index.php">Etusivu</a></li>
+        <li><a href="kuvapankki.php">Kuvapankki</a></li>
+        <li><a href="lahetyspalvelu.php">Lähetyspalvelu</a></li>
+        <li><a href="info.php"><i class="fi-info"></i> info</a></li>
       </ul>
     </div>
     <div class="off-canvas-content" data-off-canvas-content>
@@ -22,14 +22,14 @@
           <div class="top-bar-left">
             <ul class="dropdown menu dropdown-desktop" data-dropdown-menu>
               <li class="menu-text">SoMETT</li>
-              <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/index.php">Etusivu</a></li>
-              <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/kuvapankki.php">Kuvapankki</a></li>
-              <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/lahetyspalvelu.php">Lähetyspalvelu</a></li>
+              <li><a href="index.php">Etusivu</a></li>
+              <li><a href="kuvapankki.php">Kuvapankki</a></li>
+              <li><a href="lahetyspalvelu.php">Lähetyspalvelu</a></li>
             </ul>
           </div>
           <div class="top-bar-right">
             <ul>
-              <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/info.php"><i class="fi-info"></i> info</a></li>
+              <li><a href="info.php"><i class="fi-info"></i> info</a></li>
             </ul>
           </div>
         </div>
@@ -39,10 +39,12 @@
   <div class="off-canvas position-left" id="offCanvas1" data-off-canvas>
   <!-- Mobiili Navipalkki (ÄLÄ KOSKE!) -->
     <ul class="vertical menu mobile-menu">
-      <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/index.php">Etusivu</a></li>
-      <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/kuvapankki.php">Kuvapankki</a></li>
-      <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/lahetyspalvelu.php">Lähetyspalvelu</a></li>
-      <hr>
+      <li><a href="index.php">Etusivu</a></li>
+      <li><a href="kuvapankki.php">Kuvapankki</a></li>
+      <li><a href="lahetyspalvelu.php">Lähetyspalvelu</a></li>
+    </ul>
+    <hr>
+    <ul class="vertical menu mobile-menu">
       <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/info.php"><i class="fi-info"></i> info</a></li>
     </ul>
   </div>

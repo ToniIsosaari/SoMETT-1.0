@@ -7,7 +7,7 @@
 <script>
       $(document).ready(function(){
         $(".apua").click(function(){
-          $(".help").toggle(1000);
+          $(".help").slideToggle(1000);
         });
       });
 </script>
@@ -21,6 +21,7 @@
         <script src="http://cosmo.kpedu.fi/~johanneskallinen/SoMETT-1.0/kommentointi/js/what-input.min.js"></script>
         <script src="http://cosmo.kpedu.fi/~johanneskallinen/SoMETT-1.0/kommentointi/js/foundation.min.js"></script>
         <script src="http://cosmo.kpedu.fi/~johanneskallinen/SoMETT-1.0/kommentointi/js/readmore.js"></script>
+        <script src="filedrag.js"></script>
                <script>
 $('p#kommentti').readmore({
   moreLink: '<a href="#" class="more">Näytä enemmän <i class="fi-arrow-down"></i></a>',
@@ -28,3 +29,17 @@ $('p#kommentti').readmore({
 });
         </script>
         <!-- kommentointi skriptit -->
+<script type="text/javascript"
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript" src="http://cosmo.kpedu/~miiahuvila/somett/SoMETT-1.0/galleria/js/jquerypp.custom.js"></script>
+		<script type="text/javascript"
+		src="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/galleria/js/jquery.elastislide.js"></script>
+		<script type="text/javascript">
+			
+			$( '#carousel1' ).elastislide();
+			
+		</script>
+<script type="text/javascript">
+            $( '#carousel' ).elastislide();
+        </script>
+

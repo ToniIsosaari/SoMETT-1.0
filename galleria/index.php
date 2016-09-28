@@ -42,62 +42,69 @@ Carousel</span></h1>
 					<nav class="codrops-demos">
 						<a class="current-demo" href="index.html">Example
 1</a>
-						<a href="index2.html">Example 2</a>
-						<a href="index3.html">Example 3</a>
-						<a href="index4.html">Example 4</a>
 					</nav>
 				</header>
+<h2 align="center"> Uusimmat kuvat </h2> 
 
-				<!-- Elastislide Carousel -->
-				<ul id="carousel" class="elastislide-list">
-					<li><a href="#"><img src="images/small/1.jpg"
-alt="image01" /></a></li>
-					<li><a href="#"><img src="images/small/2.jpg"
-alt="image02" /></a></li>
-					<li><a href="#"><img src="images/small/3.jpg"
-alt="image03" /></a></li>
-					<li><a href="#"><img src="images/small/4.jpg"
-alt="image04" /></a></li>
-					<li><a href="#"><img src="images/small/5.jpg"
-alt="image05" /></a></li>
-					<li><a href="#"><img src="images/small/6.jpg"
-alt="image06" /></a></li>
-					<li><a href="#"><img src="images/small/7.jpg"
-alt="image07" /></a></li>
-					<li><a href="#"><img src="images/small/8.jpg"
-alt="image08" /></a></li>
-					<li><a href="#"><img src="images/small/9.jpg"
-alt="image09" /></a></li>
-					<li><a href="#"><img src="images/small/10.jpg"
-alt="image10" /></a></li>
-					<li><a href="#"><img src="images/small/11.jpg"
-alt="image11" /></a></li>
-					<li><a href="#"><img src="images/small/12.jpg"
-alt="image12" /></a></li>
-					<li><a href="#"><img src="images/small/13.jpg"
-alt="image13" /></a></li>
-					<li><a href="#"><img src="images/small/14.jpg"
-alt="image14" /></a></li>
-					<li><a href="#"><img src="images/small/15.jpg"
-alt="image15" /></a></li>
-					<li><a href="#"><img src="images/small/16.jpg"
-alt="image16" /></a></li>
-					<li><a href="#"><img src="images/small/17.jpg"
-alt="image17" /></a></li>
-					<li><a href="#"><img src="images/small/18.jpg"
-alt="image18" /></a></li>
-					<li><a href="#"><img src="images/small/19.jpg"
-alt="image19" /></a></li>
-					<li><a href="#"><img src="images/small/20.jpg"
-alt="image20" /></a></li>
-				</ul>
-				<!-- End Elastislide Carousel -->
+				<ul id="carousel1" class="elastislide-list">
+                     
 
-				<p><strong>Resize the browser to see how the carousel
-adapts</strong></p>
+ <?php
 
-				<p class="info"><strong>Example 1:</strong> A minimum of 3
-(default) images are always visible.</p>
+session_start();
+$nico = "http://cosmo.kpedu.fi/~nikolipponen/SoMETT-1.0/kommentointi/kommentointi.php";
+
+                    $sql=mysqli_connect("localhost","data15","aJrHfybLxsLU76rV","data15");
+                    #tarkistetaan yhteyden tila
+                    if($sql->connect_errno) {
+                    echo "MySQL, virhe yhteyden luonnissa:" . $sql->connect_error;
+                    }
+
+                    $sql->set_charset("utf8");
+                    $result = $sql->query("SELECT * FROM 581D_Kuva ORDER BY KuvaID DESC");
+
+                    while($rivi = $result->fetch_array(MYSQL_ASSOC)) {
+                    echo "<li data-preview='".$rivi['URL']."'>"."<a href=".$nico."?KID=".$rivi['KuvaID']."><img src=".$rivi['URL']."></a> </li>";
+                    $_SESSION['kuvaid']=$rivi['KuvaID'];
+                    $_SESSION['kuva']=$rivi['URL'];
+
+}
+
+echo "</ul>";
+
+  $sql->close; 
+?>
+
+<div style="margin-top:3em;">
+<h2 align="center"> Suosituimmat kuvat </h2> 
+       <ul  id="carousel" class="elastislide-list">
+
+
+<?		
+ 
+                    $sql=mysqli_connect("localhost","data15","aJrHfybLxsLU76rV","data15");
+                    #tarkistetaan yhteyden tila
+                    if($sql->connect_errno) {
+                    echo "MySQL, virhe yhteyden luonnissa:" . $sql->connect_error;
+                    }
+
+                    $sql->set_charset("utf8");
+                    $result = $sql->query("SELECT * FROM 581D_Kuva ORDER BY Suosituin DESC");
+
+
+                    while($rivi = $result->fetch_array(MYSQL_ASSOC)) {
+                     echo "<li data-preview='".$rivi['URL']."'>"."<a href=".$nico."?KID=".$rivi['KuvaID']."><img src=".$rivi['URL']."></a> </li>";
+                    $_SESSION['kuvaid']=$rivi['KuvaID'];
+                    $_SESSION['kuva']=$rivi['URL'];
+
+ }
+
+echo "</ul>";
+$sql->close;             
+?>
+</div>
+</div> </div>
+
 			</div>
 		</div>
 		<script type="text/javascript"
@@ -107,8 +114,14 @@ adapts</strong></p>
 		src="js/jquery.elastislide.js"></script>
 		<script type="text/javascript">
 			
-			$( '#carousel' ).elastislide();
+			$( '#carousel1' ).elastislide();
 			
 		</script>
+<script type="text/javascript">
+
+            $( '#carousel' ).elastislide();
+
+        </script>
+
     </body>
 </html>

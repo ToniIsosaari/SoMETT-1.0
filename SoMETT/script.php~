@@ -1,22 +1,6 @@
-<!DOCTYPE html>
-<html lang="fi">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SoMETT</title>
-<link rel="stylesheet" href="http://cosmo.kpedu.fi/~tomijylha/SoMETT-1.0/dad/dropzone-4.3.0/dist/dropzone.css">
-<link rel="stylesheet" href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/dad/node_modules/foundation-sites/dist/foundation.min.css">
-<link rel="stylesheet" href="foundation-icons/foundation-icons.css">
-<link rel="stylesheet" href="tyylit.css">
-</head>
-<body>
-<?php include('nav.php');?>
-<?php include('main.php');?>
-<?php include('footer.php');?>
-<script src="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/dad/node_modules/foundation-sites/vendor/jquery/dist/jquery.min.js"></script>
+<!-- Mikäli haluat työsi toimivan lisää scriptisi tänne  -->
+<script src="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/node_modules/foundation-sites/vendor/jquery/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/foundation/6.2.3/foundation.min.js"></script>
-<script src="http://cosmo.kpedu.fi/~tomijylha/SoMETT-1.0/dad/dropzone-4.3.0/dist/dropzone.js"></script>
 <script>
       $(document).foundation();
 </script>
@@ -27,6 +11,35 @@
         });
       });
 </script>
-</body>
-</html>
+<!-- kommentointi skriptit-->
+  <script>
+  function openWin() {
+    window.location.href = "kommentointi_login.php";
+  }
+  </script>
+          <script src="http://cosmo.kpedu.fi/~johanneskallinen/SoMETT-1.0/kommentointi/js/jquery.min.js"></script>
+        <script src="http://cosmo.kpedu.fi/~johanneskallinen/SoMETT-1.0/kommentointi/js/what-input.min.js"></script>
+        <script src="http://cosmo.kpedu.fi/~johanneskallinen/SoMETT-1.0/kommentointi/js/foundation.min.js"></script>
+        <script src="http://cosmo.kpedu.fi/~johanneskallinen/SoMETT-1.0/kommentointi/js/readmore.js"></script>
+        <script src="filedrag.js"></script>
+               <script>
+$('p#kommentti').readmore({
+  moreLink: '<a href="#" class="more">Näytä enemmän <i class="fi-arrow-down"></i></a>',
+  lessLink: '<a href="#" class="less">Näytä vähemmän <i class="fi-arrow-up"></i></a>',
+});
+        </script>
+        <!-- kommentointi skriptit -->
+<script type="text/javascript"
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript" src="http://cosmo.kpedu/~miiahuvila/somett/SoMETT-1.0/galleria/js/jquerypp.custom.js"></script>
+		<script type="text/javascript"
+		src="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/galleria/js/jquery.elastislide.js"></script>
+		<script type="text/javascript">
+			
+			$( '#carousel1' ).elastislide();
+			
+		</script>
+<script type="text/javascript">
+            $( '#carousel' ).elastislide();
+        </script>
 
