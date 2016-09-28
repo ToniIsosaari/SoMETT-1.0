@@ -17,21 +17,18 @@
     <table class="table1">
       <form method="POST">
   <tr class="table1">
-    <td>KommenttiID</td>
-    <td>Kommentti</td>
     <td>KäyttäjäID</td>
-    <td>Oikeudet <input type="submit" name="Muokkaa" value="ei toimi"></td>
+    <td>Nimi</td>
+    <td>Kommentti</td>
+    <td>Ilmoitukset</td>
+    <td>Oikeudet<input type="submit" name="Muokkaa" value="ei toimi"></td>
     <td><input type="submit" name="delete" value="delete"></td>
 
 
 
   </tr>
     <?
-  #$sql=mysqli_connect("localhost", "data15", "aJrHfybLxsLU76rV", "data15");
-  #if($sql->mysql_errno) {
-   # die("mysql, virhe yhteyden luonnissa:" . $sql->connect_error);
-  #}
-  #$sql->set_charset("utf8");
+
   $result = $my->query('SELECT * FROM `581D_Kommentti`, `581D_Kayttaja` WHERE 581D_Kommentti.UID=581D_Kayttaja.UID');
   while($i = $result->fetch_array(MYSQLI_ASSOC)) {
   ?>
@@ -44,9 +41,10 @@
         #$result5 = $sql->query("SELECT * FROM 581D_Kommentti WHERE 581D_Kommentti.UID=581D_Kayttaja.UID AND UID = '$asd';");       
         #while($w = $result4->fetch_array(MYSQLI_ASSOC)){
         ?>
-        <td><? echo $i['KommenttiID'];?></td>
-        <td><? echo $i['Kommentti'];?></td>
         <td><? echo $i['UID']?></td>
+        <td><? echo $i['Nimi']?></td>
+        <td><? echo $i['Kommentti'];?></td>
+        <td><? echo $i['Tila'];?></td>
         <td><select name="Rights[]">
               <option value="<?echo $i['UID']?>,0" <? if($i['Status'] == 0){
               echo "selected";
@@ -68,37 +66,41 @@
               }else{
               echo "";
               }?>>3</option>
-            </select>
-        <td class="table1"><input type="checkbox" name="checkbox[]" id="checkbox[]" value="<?echo $i['KommenttiID'];?>"/></td>
+            </select></td>
+           <td class="table1"><input type="checkbox" name="checkbox[]" id="checkbox[]" value="<?echo $i['KommenttiID'];?>"/></td>
       </tr>
 
 
 
 
 <?
-#}
+
+
+
+      #for($q1=0;$q1<count($_POST['Rights']);$q1++){
+      #list($UID1,$turha1,$muokkaus1) = $_POST['Rights'];
+
 }
       if(isset($_POST['Muokkaa']))
       {
       $oikeudet = $_POST['Rights'];
       for($q=0;$q<count($oikeudet);$q++){
-      list($UID,$turha,$muokkaus) = $oikeudet[$q];#[$q]; #explode("x",implode($_POST['Rights']));
-     # $q++;
-      #for($b=0;$b<count($muokkaus);$b++){
-      #for($c=0;$c<count($UID);$c++){
-      $oik_id = $muokkaus;#[$b];
-      $user_id = $UID;#[$c];
+      list($UID,$turha,$muokkaus) = $oikeudet[$q];
+
+
+      $oik_id = $muokkaus;
+      $user_id = $UID;
       $query3 = "UPDATE 581D_Kayttaja SET Status = '$oik_id' WHERE UID = '$user_id';";
       if($result3 = $my->query($query3)){
       echo "<meta HTTP-EQUIV='REFRESH' content='0; url=Moderointi.php'>";
 #echo "<pre>";
- #      var_dump($muokkaus);
+ #      var_dump($muokkaus1);
   #               echo"</pre>";
+
+      }
+      }
+      }
       #}
-      #}
-      }
-      }
-      }
     if(isset($_POST['delete']))
       {
       $checkbox = $_POST['checkbox'];
@@ -124,6 +126,7 @@
     <?php include('footer.php'); ?>
   </body>
 </html>
+
 
 
 

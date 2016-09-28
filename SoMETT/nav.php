@@ -39,11 +39,21 @@
   <div class="off-canvas position-left" id="offCanvas1" data-off-canvas>
   <!-- Mobiili Navipalkki (ÄLÄ KOSKE!) -->
     <ul class="vertical menu mobile-menu">
+<<<<<<< HEAD
       <li><a href="index.php">Etusivu</a></li>
       <li><a href="kuvapankki.php">Kuvapankki</a></li>
       <li><a href="lahetyspalvelu.php">Lähetyspalvelu</a></li>
       <hr>
       <li><a href="info.php"><i class="fi-info"></i> info</a></li>
+=======
+      <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/index.php">Etusivu</a></li>
+      <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/kuvapankki.php">Kuvapankki</a></li>
+      <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/lahetyspalvelu.php">Lähetyspalvelu</a></li>
+    </ul>
+    <hr>
+    <ul class="vertical menu mobile-menu">
+      <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/info.php"><i class="fi-info"></i> info</a></li>
+>>>>>>> 5c9c0ed8b6a7b3d25344e73c13b5bb68a0b1f665
     </ul>
   </div>
                                                 

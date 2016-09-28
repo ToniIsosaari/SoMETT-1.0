@@ -21,6 +21,7 @@
         <script src="http://cosmo.kpedu.fi/~johanneskallinen/SoMETT-1.0/kommentointi/js/what-input.min.js"></script>
         <script src="http://cosmo.kpedu.fi/~johanneskallinen/SoMETT-1.0/kommentointi/js/foundation.min.js"></script>
         <script src="http://cosmo.kpedu.fi/~johanneskallinen/SoMETT-1.0/kommentointi/js/readmore.js"></script>
+        <script src="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/filedrag.js"></script>
                <script>
 $('p#kommentti').readmore({
   moreLink: '<a href="#" class="more">Näytä enemmän <i class="fi-arrow-down"></i></a>',

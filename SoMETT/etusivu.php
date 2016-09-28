@@ -25,7 +25,7 @@ $nico = "http://cosmo.kpedu.fi/~nikolipponen/SoMETT-1.0/kommentointi/kommentoint
                     $result = $sql->query("SELECT * FROM 581D_Kuva ORDER BY KuvaID DESC");
                     while($rivi = $result->fetch_array(MYSQL_ASSOC)) {
                     
-		echo "<li data-preview='".$rivi['URL']."'>"."<a href=".$nico."?KID=".$rivi['KuvaID']."><img src=".$rivi['URL']."></a> </li>";
+		echo "<li data-preview='".$rivi['URL']."'>"."<a href=".$nico."?KID=".$rivi['KuvaID']."><img src=".$rivi['URL']." alt=".$rivi['Title']."></a> </li>";
                     $_SESSION['kuvaid']=$rivi['KuvaID'];
                     $_SESSION['kuva']=$rivi['URL'];
                     	
@@ -53,7 +53,7 @@ echo "</ul>";
                     $sql->set_charset("utf8");
                     $result = $sql->query("SELECT * FROM 581D_Kuva ORDER BY Suosituin DESC");
                     while($rivi = $result->fetch_array(MYSQL_ASSOC)) {
-                    echo "<li data-preview='".$rivi['URL']."'>"."<a href=".$nico."?KID=".$rivi['KuvaID']."><img src=".$rivi['URL']."></a> </li>";
+                    echo "<li data-preview='".$rivi['URL']."'>"."<a href=".$nico."?KID=".$rivi['KuvaID']."><img src=".$rivi['URL']." alt=".$rivi['Title']."></a> </li>";
                     $_SESSION['kuvaid']=$rivi['KuvaID'];
                     $_SESSION['kuva']=$rivi['URL'];
  }
