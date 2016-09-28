@@ -19,13 +19,13 @@ $faceid = $_SESSION['FBID'];
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kommentointi</title>
-    <?php include('http://cosmo.kpedu.fi/~nikolipponen/SoMETT-1.0/SoMETT/styles.php');?>
     <link rel="stylesheet" href="css/foundation.min.css" />
     <link rel="stylesheet" href="css/foundation-icons.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="css/stylesheet.css" />
+    <?php include('styles.php');?>
   </head>
   <body>
-    <?php include('http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/nav.php');?>
+    <?php include('nav.php');?>
     <!--JOS KÄYTTÄJÄ ON KIRJAUTUNUT ALKAA-->
   <?php if ($_SESSION['FBID'] or $_SESSION['login_user']): ?>
   <?php
