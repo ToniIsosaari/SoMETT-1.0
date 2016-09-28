@@ -42,11 +42,6 @@
       <li><a href="index.php">Etusivu</a></li>
       <li><a href="kuvapankki.php">Kuvapankki</a></li>
       <li><a href="lahetyspalvelu.php">Lähetyspalvelu</a></li>
-      <hr>
-      <li><a href="info.php"><i class="fi-info"></i> info</a></li>
-      <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/index.php">Etusivu</a></li>
-      <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/kuvapankki.php">Kuvapankki</a></li>
-      <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/lahetyspalvelu.php">Lähetyspalvelu</a></li>
     </ul>
     <hr>
     <ul class="vertical menu mobile-menu">

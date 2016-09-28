@@ -34,34 +34,28 @@
   ?>
 
       <tr class="table1">
-
-       <?# <td><? echo $i['UID']?></td> 
-        #<?
-       # $asd = $i['UID'];
-        #$result5 = $sql->query("SELECT * FROM 581D_Kommentti WHERE 581D_Kommentti.UID=581D_Kayttaja.UID AND UID = '$asd';");       
-        #while($w = $result4->fetch_array(MYSQLI_ASSOC)){
-        ?>
-        <td><? echo $i['UID']?></td>
+        <?$ID = $i['UID'];?>
+        <td><? echo $ID?></td>
         <td><? echo $i['Nimi']?></td>
         <td><? echo $i['Kommentti'];?></td>
         <td><? echo $i['Tila'];?></td>
         <td><select name="Rights[]">
-              <option value="<?echo $i['UID']?>,0" <? if($i['Status'] == 0){
+              <option value="<?echo $ID?>,0" <? if($i['Status'] == 0){
               echo "selected";
               }else{
               echo "";
               }?>>0</option>
-              <option value="<?echo $i['UID']?>,1" <? if($i['Status'] == 1){
+              <option value="<?echo $ID?>,1" <? if($i['Status'] == 1){
               echo "selected";
               }else{
               echo "";
               }?>>1</option>
-              <option value="<?echo $i['UID']?>,2" <? if($i['Status'] == 2){
+              <option value="<?echo $ID?>,2" <? if($i['Status'] == 2){
               echo "selected";
               }else{
               echo "";
               }?>>2</option>
-              <option value="<?echo $i['UID']?>,3" <? if($i['Status'] == 3){
+              <option value="<?echo $ID?>,3" <? if($i['Status'] == 3){
               echo "selected";
               }else{
               echo "";
@@ -77,8 +71,6 @@
 
 
 
-      #for($q1=0;$q1<count($_POST['Rights']);$q1++){
-      #list($UID1,$turha1,$muokkaus1) = $_POST['Rights'];
 
 }
       if(isset($_POST['Muokkaa']))
@@ -93,14 +85,10 @@
       $query3 = "UPDATE 581D_Kayttaja SET Status = '$oik_id' WHERE UID = '$user_id';";
       if($result3 = $my->query($query3)){
       echo "<meta HTTP-EQUIV='REFRESH' content='0; url=Moderointi.php'>";
-#echo "<pre>";
- #      var_dump($muokkaus1);
-  #               echo"</pre>";
 
       }
       }
       }
-      #}
     if(isset($_POST['delete']))
       {
       $checkbox = $_POST['checkbox'];
@@ -112,9 +100,6 @@
       }
       }
       }
- #     echo "<pre>";
-  #      var_dump($_POST['Rights']);
-   #        echo"</pre>";
       $my->close();
     ?>
       </form>
