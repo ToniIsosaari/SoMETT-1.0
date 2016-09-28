@@ -35,9 +35,9 @@ $upl = $_GET['upl'];
             <div>
               <input type="file" id="fileselect" name="fileselect[]" multiple="multiple"/>
               <label>Otsikko</label>
-              <input type="text" name="title" required/>
+              <input type="text" class="brd" name="title" required/>
               <label>Kuvaus</label>
-              <input type="text" name="description" required/>
+              <input type="text" class="brd" name="description" required/>
             </div>
             <div id="submitbutton">
               <input type="submit">
