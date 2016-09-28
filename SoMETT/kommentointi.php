@@ -18,7 +18,7 @@ $faceid = $_SESSION['FBID'];
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kommentointi</title>
+    <title>SoMETT</title>
     <link rel="stylesheet" href="css/foundation.min.css" />
     <link rel="stylesheet" href="css/foundation-icons.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="css/stylesheet.css" />
@@ -187,6 +187,7 @@ $my->close();
         </div>
       </div>
     </div>
+    <?php include('footer.php');?>
 <!--JOS KÄYTTÄJÄ EI OLE KIRJAUTUNUT LOPPUU-->
     <?php endif ?>
   <script>
