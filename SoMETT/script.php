@@ -7,7 +7,7 @@
 <script>
       $(document).ready(function(){
         $(".apua").click(function(){
-          $(".help").toggle(1000);
+          $(".help").slideToggle(1000);
         });
       });
 </script>
