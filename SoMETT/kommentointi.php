@@ -27,6 +27,7 @@ $faceid = $_SESSION['FBID'];
   <body>
     <?php include('nav.php');?>
     <!--JOS KÄYTTÄJÄ ON KIRJAUTUNUT ALKAA-->
+  <section class="secondary">
   <?php if ($_SESSION['FBID'] or $_SESSION['login_user']): ?>
   <?php
   $sql ="SELECT URL FROM 581D_Kuva WHERE KuvaID = '$kuvaid'";
@@ -186,6 +187,7 @@ $my->close();
 ?>
         </div>
       </div>
+    </div>
     </div>
     <?php include('footer.php');?>
 <!--JOS KÄYTTÄJÄ EI OLE KIRJAUTUNUT LOPPUU-->
