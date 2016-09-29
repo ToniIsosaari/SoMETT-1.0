@@ -27,6 +27,7 @@ $faceid = $_SESSION['FBID'];
   <body>
     <?php include('nav.php');?>
     <!--JOS KÄYTTÄJÄ ON KIRJAUTUNUT ALKAA-->
+  <section class="main">
   <?php if ($_SESSION['FBID'] or $_SESSION['login_user']): ?>
   <?php
   $sql ="SELECT URL FROM 581D_Kuva WHERE KuvaID = '$kuvaid'";
@@ -187,8 +188,12 @@ $my->close();
         </div>
       </div>
     </div>
+</section>
+</div>
+</div>
 <!--JOS KÄYTTÄJÄ EI OLE KIRJAUTUNUT LOPPUU-->
     <?php endif ?>
+<?php include('footer.php');?>
   <script>
   function openWin() {
     window.location.href = "kommentointi_login.php";
@@ -207,7 +212,6 @@ $('p#kommentti').readmore({
   lessLink: '<a href="#" class="less">Näytä vähemmän <i class="fi-arrow-up"></i></a>',
 });
         </script>
- <?php include('footer.php');?>
   </body>
 </html>
 
