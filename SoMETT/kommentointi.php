@@ -36,6 +36,8 @@ $faceid = $_SESSION['FBID'];
   $kkysely = $result->fetch_object();
   ?>
       <img src="<?php echo $kkysely->URL;?>" width="300" height="400" name="image" />
+ </section>
+ <section class="secondary">
      <div class="row">
  <div class="panel">
    <!--HAETAAN KUVA TIETOKANNASTA-->
