@@ -45,7 +45,7 @@
     </ul>
     <hr>
     <ul class="vertical menu mobile-menu">
-      <li><a href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/info.php"><i class="fi-info"></i> info</a></li>
+      <li><a href="info.php"><i class="fi-info"></i> info</a></li>
     </ul>
   </div>
                                                 
