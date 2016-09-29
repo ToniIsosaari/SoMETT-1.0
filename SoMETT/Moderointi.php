@@ -21,7 +21,7 @@
     <td>Nimi</td>
     <td>Kommentti</td>
     <td>Ilmoitukset</td>
-    <td>Oikeudet<input type="submit" name="Muokkaa" value="ei toimi"></td>
+    <td>Oikeudet<input type="submit" name="Muokkaa" value="melkeen toimii"></td>
     <td><input type="submit" name="delete" value="delete"></td>
 
 
