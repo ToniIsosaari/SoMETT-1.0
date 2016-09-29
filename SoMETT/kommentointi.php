@@ -20,9 +20,9 @@ $faceid = $_SESSION['FBID'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kommentointi</title>
     <?php include('styles.php');?>
-    <link rel="stylesheet" href="css/foundation.min.css" />
+    <!--<link rel="stylesheet" href="css/foundation.min.css" />--!>
     <link rel="stylesheet" href="css/foundation-icons.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="css/stylesheet.css" />
+    <!--<link rel="stylesheet" href="css/stylesheet.css" />--!>
   </head>
   <body>
     <?php include('nav.php');?>
@@ -207,6 +207,7 @@ $('p#kommentti').readmore({
   lessLink: '<a href="#" class="less">Näytä vähemmän <i class="fi-arrow-up"></i></a>',
 });
         </script>
+ <?php include('footer.php');?>
   </body>
 </html>
 
