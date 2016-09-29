@@ -31,7 +31,7 @@
 
   $result = $my->query('SELECT * FROM `581D_Kommentti`, `581D_Kayttaja` WHERE 581D_Kommentti.UID=581D_Kayttaja.UID');
   while($i = $result->fetch_array(MYSQLI_ASSOC)) {
-  ?>
+   ?>
 
       <tr class="table1">
         <?$ID = $i['UID'];?>
@@ -68,7 +68,6 @@
 
 
 <?
-
 
 
 
@@ -111,6 +110,7 @@
     <?php include('footer.php'); ?>
   </body>
 </html>
+
 
 
 
