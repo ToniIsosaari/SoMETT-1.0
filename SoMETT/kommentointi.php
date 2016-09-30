@@ -27,6 +27,7 @@
   </head>
   <body>
     <?php include 'nav.php'; ?>
+    <section class="secondary">
     <!--JOS KÄYTTÄJÄ ON KIRJAUTUNUT ALKAA-->
     <?php if ($_SESSION['FBID'] or $_SESSION['login_user']): ?>
     <?php
@@ -177,8 +178,17 @@
           }
           $my->close();
         ?>
+       </div>
+       </div>
+       </div>
+       </div>
+       </div>
+      </section>
       <!--JOS KÄYTTÄJÄ EI OLE KIRJAUTUNUT LOPPUU-->
       <?php endif ?>
+       <?
+           include 'footer.php';
+               ?>
       <script>
         function openWin() {
           window.location.href = "kommentointi_login.php";
@@ -197,9 +207,6 @@
           lessLink: '<a href="#" class="less">Näytä vähemmän <i class="fi-arrow-up"></i></a>',
         });
       </script>
-    <?
-    include 'footer.php';
-    ?>
   </body>
 </html>
 
