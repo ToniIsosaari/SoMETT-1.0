@@ -69,7 +69,7 @@ session_start();
           }
         ?>
         <div>
-          <form action="kommentointi.php" method="POST">
+          <form action="<?php echo 'kommentointi.php?KID='.$kuvaid.'';?>" method="POST">
             <div>
               <h5 class="float-left">Kommentteja</h5>
 			  
