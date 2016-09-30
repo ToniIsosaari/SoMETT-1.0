@@ -9,10 +9,10 @@
 		elastic, resize, thumbnail, slider" />
 <meta name="author" content="Codrops" />
 <link rel="shortcut icon" href="../favicon.ico"> 
-<link rel="stylesheet" type="text/css" href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/galleria/css/demo.css" />
-<link rel="stylesheet" type="text/css" href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/galleria/css/elastislide.css" />
-<link rel="stylesheet" type="text/css" href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/galleria/css/custom.css" />
-<script src="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/galleria/js/modernizr.custom.17475.js"></script>
+<link rel="stylesheet" type="text/css" href="http://cosmo.kpedu.fi/~miiahuvila/SoMETT2/SoMETT-1.0/galleria/css/demo.css" />
+<link rel="stylesheet" type="text/css" href="http://cosmo.kpedu.fi/~miiahuvila/SoMETT2/SoMETT-1.0/galleria/css/elastislide.css" />
+<link rel="stylesheet" type="text/css" href="http://cosmo.kpedu.fi/~miiahuvila/SoMETT2/SoMETT-1.0/galleria/css/custom.css" />
+<script src="http://cosmo.kpedu.fi/~miiahuvila/SoMETT2/SoMETT-1.0/galleria/js/modernizr.custom.17475.js"></script>
 <title>SoMETT</title>
 <!-- ieufoidafkljalksdfj -->
 <?php include('styles.php');?>

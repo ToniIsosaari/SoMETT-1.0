@@ -31,9 +31,7 @@ html { height: 100%; }
 }
 
 body {
-    font-family: 'Lato', Calibri, Arial, sans-serif;
     background: #ddd url(../images/bg.jpg) repeat top left;
-    font-weight: 300;
     color: #333;
     -webkit-font-smoothing: antialiased;
     overflow-y: scroll;
@@ -54,11 +52,6 @@ a {
 .clr {
 	clear: both;
 	float: none;
-<<<<<<< HEAD
- 
-
-=======
->>>>>>> 10edae8626f4bd8a18c7aeaa7e159c710cb0585a
 }
 
 /* Header Style */
