@@ -68,7 +68,7 @@ else {
 
 
 
-			header('Location:lahetyspalvelu.php?upl=1?"'.$KID.'""'.$fn.'"'.$files.'"');
+			header('Location:lahetyspalvelu.php?upl=1');
 		}
 
 	}

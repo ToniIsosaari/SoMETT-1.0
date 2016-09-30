@@ -16,34 +16,35 @@ $upl = $_GET['upl'];
   <!-- Jotain ylimääräistä paskaa, joka saa sivun näyttämään kivemmalta -->
   <section class="main lisays">
     <div class="wrap">
-      <h1>Lähetyspalvelu</h1>
-      <p>Tämän kautta voit lähettä kuviasi yhteisön ja museoasiantuntioiden tutkittavaksi.
-      Suosittelemme lämpimästi käytäjäehtoihin tutustumista ennen kuvien lähettämistä.
-      Mikäli et tiedä kuinka lähetysboksia käytetään, löytyy aiheesta tietoa sivunalaosassa.</p>
+     
     <!-- Kuvan lähetys ja muuta mukavaa -->
-    <div class="row uplform">
-      <div class="small-9 small-centered medium-centered large-centered colums">
-        <?if($upl==1){
-            echo "Upload succesfull!";
-          }
-          else {
-            ?>      
-        <form id="upload" action="upload.php" method="POST" enctype="multipart/form-data">
-          <fieldset>
-            <h3 class="uplotsikko">Kuvan julkaisu</h3>
-            <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="3000000"/>
-            <div>
-              <input type="file" id="fileselect" name="fileselect[]" multiple="multiple"/>
-              <label>Otsikko</label>
-              <input type="text" class="brd" name="title" required/>
-              <label>Kuvaus</label>
-              <input type="text" class="brd" name="description" required/>
-            </div>
-            <div id="submitbutton">
-              <input type="submit">
-            </div>
-          </fieldset>
-        </form>
+      <div class="row uplform">
+        <div class="small-9 small-centered medium-centered large-centered colums">
+          <?if($upl==1){?>
+          <h2>Kiitos kuvan lähettämisestä!</h2>
+          <p>("Tähän saisi lisätä jonkinmoista mallitekstiä. Kiitos nam!")</p>
+          <a href="http://cosmo.kpedu.fi/~tomijylha/SoMETT-1.0/SoMETT/kuvapankki.php">Siirry kuvagalleriaan!</a>
+          <? } else { ?>      
+          <h1>Lähetyspalvelu</h1>
+          <p>Tämän kautta voit lähettä kuviasi yhteisön ja museoasiantuntioiden tutkittavaksi.
+          Suosittelemme lämpimästi käytäjäehtoihin tutustumista ennen kuvien lähettämistä.
+          Mikäli et tiedä kuinka lähetysboksia käytetään, löytyy aiheesta tietoa sivunalaosassa.</p>
+          <form id="upload" action="upload.php" method="POST" enctype="multipart/form-data">
+            <fieldset>
+              <h3 class="uplotsikko">Kuvan julkaisu</h3>
+              <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="3000000"/>
+              <div>
+                <input type="file" id="fileselect" name="fileselect[]" multiple="multiple"/>
+                <label>Otsikko</label>
+                <input type="text" class="brd" name="title" required/>
+                <label>Kuvaus</label>
+                <input type="text" class="brd" name="description" required/>
+              </div>
+              <div id="submitbutton">
+                <input type="submit">
+              </div>
+            </fieldset>
+          </form>
         <div id="progress"></div>
         <div id="messages">
           <p>Status Messages</p>
