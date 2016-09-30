@@ -27,7 +27,6 @@
   </head>
   <body>
     <?php include 'nav.php'; ?>
-    <section class="secondary">
     <!--JOS KÄYTTÄJÄ ON KIRJAUTUNUT ALKAA-->
     <?php if ($_SESSION['FBID'] or $_SESSION['login_user']): ?>
     <?php
@@ -36,7 +35,10 @@
       $result = $my->query($sql);
       $kkysely = $result->fetch_object();
     ?>
+    <section class="main">
     <img src="<?php echo $kkysely->URL; ?>" width="300" height="400" name="image" />
+    </section>
+    <section class="secondary">
     <div class="row">
       <div class="panel">
         <!--HAETAAN KUVA TIETOKANNASTA-->
