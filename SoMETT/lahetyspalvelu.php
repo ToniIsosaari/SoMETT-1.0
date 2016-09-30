@@ -34,7 +34,8 @@ $upl = $_GET['upl'];
               <h3 class="uplotsikko">Kuvan julkaisu</h3>
               <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="3000000"/>
               <div>
-                <input type="file" id="fileselect" name="fileselect[]" multiple="multiple"/>
+                <div id="messages" hidden></div>
+                <div id="upl"><input type="file" id="fileselect" name="fileselect[]" multiple="multiple"/></div>
                 <label>Otsikko</label>
                 <input type="text" class="brd" name="title" required/>
                 <label>Kuvaus</label>
@@ -45,10 +46,10 @@ $upl = $_GET['upl'];
               </div>
             </fieldset>
           </form>
-        <div id="progress"></div>
+    <!--    <div id="progress"></div>
         <div id="messages">
           <p>Status Messages</p>
-        </div>
+        </div>-->
         <?}?>
       </div>
     </div>
