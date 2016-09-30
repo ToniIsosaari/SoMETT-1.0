@@ -4,15 +4,17 @@ Featured on SitePoint.com
 Developed by Craig Buckler (@craigbuckler) of OptimalWorks.net
 */
 (function() {
-
 	// getElementById
 	function $id(id) {
+
 		return document.getElementById(id);
 	}
 
 
 	// output information
 	function Output(msg) {
+		$('#messages').show();
+		$('#upl').hide();		
 		var m = $id("messages");
 		m.innerHTML = msg + m.innerHTML;
 	}
