@@ -43,7 +43,7 @@ $UID = '12'; #tähän pitää getata se käyttäjäid
         foreach ($files['error'] as $id => $err) {
             if ($err == UPLOAD_ERR_OK) {
                 $fn = $files['name'][$id];
-                $directory = "http://cosmo.kpedu.fi/~tomijylha/test/SoMETT-1.0/SoMETT/uploads/";
+                $directory = "http://cosmo.kpedu.fi/~tomijylha/SoMETT-1.0/SoMETT/uploads/";
                 $newfilename = round(microtime(true));
                 move_uploaded_file(
                 $files['tmp_name'][$id],
