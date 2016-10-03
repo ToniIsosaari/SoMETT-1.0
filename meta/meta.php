@@ -5,7 +5,7 @@
             die("MySQL, virhe yhteyden luonnissa:" . $my->connect_eror);
         }
         $my->set_charset('utf8');
-        if($result = $my->query("SELECT * FROM 581D_Kuva, 581D_Kayttaja, 581D_Kommentti WHERE 581D_Kuva.UID = 581D_Kayttaja.UID = 581D_Kommentti.UID")){
+        if($result = $my->query("SELECT * FROM 581D_Kuva, 581D_Kommentti WHERE 581D_Kuva.KuvaID  = 581D_Kommentti.KuvaID")){
            while($d = $result->fetch_object()){
                 $rows[]=array($d->KuvaID,$d->URL,$d->UID,$d->Title,$d->Description,$d->PublishDate,$d->SSana,$d->Nimi,$d->Snimi,$d->Sposti,$d->Status,$d->Liittyi,$d->KuvaID,$d->KommenttiID,$d->Kommentti,$d->KTime,$d->Tila);
               }
@@ -14,7 +14,7 @@
             }
                $my->close();
 
-
+$id = 2; #Tämä haetaan POSTilla/GETillä.
 ?>
 <!DOCTYPE html>
 <html temscope itemtype="http://schema.org/Article">
@@ -22,14 +22,22 @@
 		
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<title>SoMETT</title>
-<meta name="description" content="INSERT DESCRIPTION HERE" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+<!-- OG data -->
+<meta property="og:title" content="SoMETT" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="" />
+<meta property="og:image" content="<?echo $rows[$id][1]?>" />
+<meta property="og:description" content="INSERT DESCRIPTION HERE" />
+<meta property="og:site_name" content="SoMETT" />
+<meta property="article:published_time" content="2013-09-17T05:59:00+01:00" />
+<meta property="article:modified_time" content="2013-09-16T19:08:47+01:00" />
+<meta property="article:section" content="Article Section" />
+<meta property="article:tag" content="Article Tag" />
 <!-- Google+ -->
 <meta itemprop="name" content="SoMETT">
 <meta itemprop="description" content="INSERT DESCRIPTION HERE">
-<meta itemprop="image" content=" <?echo $rows[1][1]?>">
+<meta itemprop="image" content=" <?echo $rows[$id][1]?>">
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image"> 
 <meta name="twitter:site" content="@publisher_handle">
@@ -37,19 +45,10 @@
 <meta name="twitter:description" content="INSERT DESCRIPTION HERE">
 <meta name="twitter:creator" content="@author_handle">
 <!-- IMG +280x150px -->
-<meta name="twitter:image:src" content="<?echo $rows[1][1]?>">
-<!-- OG data -->
-<meta property="og:title" content="SoMETT" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.example.com/" />
-<meta property="og:image" content="<?echo $rows[1][1]?>" />
-<meta property="og:description" content="INSERT DESCRIPTION HERE" />
-<meta property="og:site_name" content="SoMETT" />
-<meta property="article:published_time" content="2013-09-17T05:59:00+01:00" />
-<meta property="article:modified_time" content="2013-09-16T19:08:47+01:00" />
-<meta property="article:section" content="Article Section" />
-<meta property="article:tag" content="Article Tag" />
-<meta property="fb:admins" content="Facebook numberic ID" />
+<meta name="twitter:image:src" content="<?echo $rows[$id][1]?>">
+<meta name="description" content="INSERT DESCRIPTION HERE" />  
+
+<title>SoMETT</title>
 
 <link rel="stylesheet" href="http://cosmo.kpedu.fi/~tomijylha/SoMETT-1.0/dad/dropzone-4.3.0/dist/dropzone.css">
 <link rel="stylesheet" href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/dad/node_modules/foundation-sites/dist/foundation.min.css">
@@ -94,11 +93,12 @@
   <!-- Main osio (lisää sivulle olennainen sisältö tänne) -->
 <section class="main">
   <div class="wrap">
-    <h1><?echo $rows[1][3]?></h1>
+    <h1><?echo $rows[$id][3]?></h1>
     
-    <center><img src="<?echo $rows[1][1]?>"></center>
+    <center><img src="<?echo $rows[$id][1]?>"></center>
     <p>
     <?
+      $p= $id;
      echo "<p><br>".$rows[$p][0]."&nbsp YKSI &nbsp".$rows[$p][1]."&nbsp YKSI &nbsp".$rows[$p][2]."&nbsp YKSI &nbsp".$rows[$p][3]."&nbsp YKSI &nbsp".$rows[$p][4]."&nbsp YKSI &nbsp".$rows[$p][5]."&nbsp YKSI &nbsp".$rows[$p][6]."&nbsp YKSI &nbsp".$rows[$p][7]."&nbsp YKSI &nbsp".$rows[$p][8]."&nbsp YKSI &nbsp".$rows[$p][9]."&nbsp YKSI &nbsp".$rows[$p][10]."&nbsp YKSI &nbsp".$rows[$p][11]."&nbsp YKSI &nbsp".$rows[$p][12]."&nbsp YKSI &nbsp".$rows[$p][13]."&nbsp YKSI &nbsp".$rows[$p][14]."&nbsp YKSI &nbsp".$rows[$p][15]."&nbsp YKSI &nbsp".$rows[$p][16]."&nbsp YKSI &nbsp".$rows[$p][17]."</p>";        
   
         

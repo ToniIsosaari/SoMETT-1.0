@@ -11,6 +11,7 @@ session_start();
   $logged_fbuser = $_SESSION['FULLNAME'];
   $faceid = $_SESSION['FBID'];
 ?>
+<?php// include('action.php');?>
 <!DOCTYPE HTML>
 <html xmlns:fb="http://www.facebook.com/2008/fbml" class="no-js" lang="fi">
   <head>
@@ -27,6 +28,8 @@ session_start();
   </head>
   <body>
     <?php include 'nav.php'; ?>
+    <section class="main">
+    <div class="wrap">
     <!--JOS KÄYTTÄJÄ ON KIRJAUTUNUT ALKAA-->
     <?php if ($_SESSION['FBID'] or $_SESSION['login_user']): ?>
     <?php
@@ -34,17 +37,17 @@ session_start();
       //echo $sql;
       $result = $my->query($sql);
       $kkysely = $result->fetch_object();
+      $_SESSION['kuvaid'] =$kuvaid;
     ?>
-    <section class="main">
-    <img src="<?php echo $kkysely->URL; ?>" width="300" height="400" name="image" />
+    <img class="centered" src="<?php echo $kkysely->URL; ?>" name="image" />
+    </div>
     </section>
-    <section class="secondary">
     <div class="row">
       <div class="panel">
         <!--HAETAAN KUVA TIETOKANNASTA-->
         <?php
           if ($_SESSION['FBID']) {
-			  $sql = "SELECT UID FROM 581D_Kayttaja WHERE FUID = '$faceid'";
+			  $sql = "SELECT UID FROM 581D_Kayttaja WHERE UID = '$faceid'";
               echo "<p>Kirjautunut Facebook käyttäjällä $logged_fbuser</p>";
           } else {
 			  $sql = "SELECT UID FROM 581D_Kayttaja WHERE Sposti = '$logged_user'";
@@ -194,7 +197,6 @@ session_start();
        </div>
        </div>
        </div>
-      </section>
       <!--JOS KÄYTTÄJÄ EI OLE KIRJAUTUNUT LOPPUU-->
       <?php endif ?>
        <?
