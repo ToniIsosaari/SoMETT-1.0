@@ -47,7 +47,7 @@ session_start();
         <!--HAETAAN KUVA TIETOKANNASTA-->
         <?php
           if ($_SESSION['FBID']) {
-			  $sql = "SELECT UID FROM 581D_Kayttaja WHERE FUID = '$faceid'";
+			  $sql = "SELECT UID FROM 581D_Kayttaja WHERE UID = '$faceid'";
               echo "<p>Kirjautunut Facebook käyttäjällä $logged_fbuser</p>";
           } else {
 			  $sql = "SELECT UID FROM 581D_Kayttaja WHERE Sposti = '$logged_user'";
@@ -61,6 +61,7 @@ session_start();
           // if($comment != "")
           if (isset($_POST['submit'])) {
             $obj = $result3->fetch_object();
+			var_dump($obj);
 			$jps = $obj->UID;
             if ($_SESSION['FBID']) {
               $sql = "INSERT INTO 581D_Kommentti (UID,Kommentti,KuvaID) VALUES ('$faceid','$comment','$kuvaid') ";
