@@ -11,6 +11,7 @@ session_start();
   $logged_fbuser = $_SESSION['FULLNAME'];
   $faceid = $_SESSION['FBID'];
 ?>
+<?php include('action.php');?>
 <!DOCTYPE HTML>
 <html xmlns:fb="http://www.facebook.com/2008/fbml" class="no-js" lang="fi">
   <head>
