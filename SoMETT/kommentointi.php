@@ -27,6 +27,8 @@ session_start();
   </head>
   <body>
     <?php include 'nav.php'; ?>
+    <section class="main">
+    <div class="wrap">
     <!--JOS KÄYTTÄJÄ ON KIRJAUTUNUT ALKAA-->
     <?php if ($_SESSION['FBID'] or $_SESSION['login_user']): ?>
     <?php
@@ -35,10 +37,9 @@ session_start();
       $result = $my->query($sql);
       $kkysely = $result->fetch_object();
     ?>
-    <section class="main">
-    <img src="<?php echo $kkysely->URL; ?>" width="300" height="400" name="image" />
+    <img class="centered" src="<?php echo $kkysely->URL; ?>" name="image" />
+    </div>
     </section>
-    <section class="secondary">
     <div class="row">
       <div class="panel">
         <!--HAETAAN KUVA TIETOKANNASTA-->
@@ -194,7 +195,6 @@ session_start();
        </div>
        </div>
        </div>
-      </section>
       <!--JOS KÄYTTÄJÄ EI OLE KIRJAUTUNUT LOPPUU-->
       <?php endif ?>
        <?
