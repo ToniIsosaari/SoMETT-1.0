@@ -5,7 +5,7 @@ Developed by Craig Buckler (@craigbuckler) of OptimalWorks.net
 */
 .uplform {
 //	border: 1px solid black;
-	margin: 0 3.7em 0em 3.7em;
+//	margin: 0 3.7em 0em 3.7em;
 	
 }
 body
@@ -57,7 +57,8 @@ legend
 
 img
 {
-	max-width: 100%;
+	width: 100%;
+
 }
 
 pre
