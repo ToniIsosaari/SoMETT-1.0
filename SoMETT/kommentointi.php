@@ -36,6 +36,7 @@ session_start();
       //echo $sql;
       $result = $my->query($sql);
       $kkysely = $result->fetch_object();
+      $_SESSION['kuvaid'] =$kuvaid;
     ?>
     <img class="centered" src="<?php echo $kkysely->URL; ?>" name="image" />
     </div>
