@@ -29,7 +29,7 @@ $my->set_charset("utf8");
 
                     <fieldset id="actions">
                         <input type="submit" name="submit" value="Kirjaudu">
-                        <a href="fblogin/fbconfig.php">Login with Facebook</a></div>
+                        <a href="<?php echo 'fblogin/fbconfig.php?KID='.$kuvaid.'';?>">Login with Facebook</a></div>
                     <a href="">Rekisteröidy</a>
                     </fieldset>
             </form>
@@ -50,7 +50,7 @@ $my->set_charset("utf8");
             $_SESSION['login_user']=$KEmail;
             $login = $_GET['login'];
 
-            header("Location: kommentointi.php");
+            header("Location: kommentointi.php?KID=".$kuvaid);
 
             }
             else
