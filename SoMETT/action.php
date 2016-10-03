@@ -6,13 +6,13 @@ if($my->mysql_errno){
   die("MySQL, virhe (#".$my->mysql_errno.") yhteyden luonnissa:".$my->connect_error);
 }
 $my->set_charset("utf8");*/
-$sql = 'SELECT * FROM 581D_Kuva WHERE KuvaID = "'.$KID.'";';
-if($result = $my->query($sql)){
-  while($d = $result->fetch_object()){
+$sqlA = 'SELECT * FROM 581D_Kuva WHERE KuvaID = "'.$KID.'";';
+if($resultA = $my->query($sqlA)){
+  while($d = $resultA->fetch_object()){
     $KID = $d->KuvaID;
     $c = $d->Suosituin + 1;
-    $sql2= 'UPDATE 581D_Kuva SET Suosituin = "'.$c.'"  WHERE KuvaID = "'.$KID.'";';
-    if($result2 = $my->query($sql2)){
+    $sql2A= 'UPDATE 581D_Kuva SET Suosituin = "'.$c.'"  WHERE KuvaID = "'.$KID.'";';
+    if($result2A = $my->query($sql2A)){
     }
   }
 } 
