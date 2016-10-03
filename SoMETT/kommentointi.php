@@ -64,7 +64,7 @@ session_start();
 			var_dump($obj);
 			$jps = $obj->UID;
             if ($_SESSION['FBID']) {
-              $sql = "INSERT INTO 581D_Kommentti (UID,Kommentti,KuvaID) VALUES ('$faceid','$comment','$kuvaid') ";
+              $sql = "INSERT INTO 581D_Kommentti (UID,FUID,Kommentti,KuvaID) VALUES ('$jps','$faceid','$comment','$kuvaid') ";
             } else {
               $sql = "INSERT INTO 581D_Kommentti (UID,Kommentti,KuvaID) VALUES ('$jps','$comment','$kuvaid') ";
             }
