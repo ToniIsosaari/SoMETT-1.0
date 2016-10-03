@@ -11,7 +11,7 @@ session_start();
   $logged_fbuser = $_SESSION['FULLNAME'];
   $faceid = $_SESSION['FBID'];
 ?>
-<?php include('action.php');?>
+<?php// include('action.php');?>
 <!DOCTYPE HTML>
 <html xmlns:fb="http://www.facebook.com/2008/fbml" class="no-js" lang="fi">
   <head>
@@ -61,10 +61,9 @@ session_start();
           // if($comment != "")
           if (isset($_POST['submit'])) {
             $obj = $result3->fetch_object();
-			var_dump($obj);
 			$jps = $obj->UID;
             if ($_SESSION['FBID']) {
-              $sql = "INSERT INTO 581D_Kommentti (UID,FUID,Kommentti,KuvaID) VALUES ('$jps','$faceid','$comment','$kuvaid') ";
+              $sql = "INSERT INTO 581D_Kommentti (UID,Kommentti,KuvaID) VALUES ('$faceid','$comment','$kuvaid') ";
             } else {
               $sql = "INSERT INTO 581D_Kommentti (UID,Kommentti,KuvaID) VALUES ('$jps','$comment','$kuvaid') ";
             }
