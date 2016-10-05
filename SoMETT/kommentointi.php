@@ -147,14 +147,15 @@ session_start();
       <div class="panel">
         <div>
           <div>
-            <h5 class="float-left">Kommentteja</h5>
+            <!-- <h5 class="float-left">Kommentteja</h5> --!>
             <?php
               $result1 = $my->query("SELECT * FROM 581D_Kommentti WHERE KuvaID = '$kuvaid'");
               $numrows = $result1->num_rows;
-              echo '<h5 class="float-left">&nbsp•&nbsp'.$numrows.'</h5>';
             ?>
 			<a href="<?php echo 'kommentointi_login.php?KID='.$kuvaid.'';?>">Kirjaudu Sisään</a><br>
             <hr>
+              <h5 class="float-left">Kommentteja</h5>
+              <? echo '<h5 class="float-left">&nbsp•&nbsp'.$numrows.'</h5>';?>
           </div>
         </div>
         <div>
