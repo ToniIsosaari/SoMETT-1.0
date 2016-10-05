@@ -88,8 +88,7 @@ session_start();
               <?php
                 $result1 = $my->query("SELECT * FROM 581D_Kommentti WHERE KuvaID = '$kuvaid'");
                 $numrows = $result1->num_rows;
-                echo '<h5 class="float-left">&nbsp•&nbsp'.$numrows.'</h5>';
-              ?>
+                echo '<h5 class="float-left">&nbsp•&nbsp'.$numrows.'</h5>';?><br>
               <!--HAETAAN KAIKKI KUVAAN LIITTYVÄT TIEDOT-->
               <?php
                 $result = $my->query("SELECT * FROM 581D_Kommentti, 581D_Kayttaja WHERE 581D_Kommentti.UID = 581D_Kayttaja.UID AND KuvaID = '$kuvaid' ORDER BY KTime DESC");
@@ -155,7 +154,7 @@ session_start();
 			<a href="<?php echo 'kommentointi_login.php?KID='.$kuvaid.'';?>">Kirjaudu Sisään</a><br>
             <hr>
               <h5 class="float-left">Kommentteja</h5>
-              <? echo '<h5 class="float-left">&nbsp•&nbsp'.$numrows.'</h5>';?>
+              <? echo '<h5 class="float-left">&nbsp•&nbsp'.$numrows.'</h5>';?><br>
           </div>
         </div>
         <div>
