@@ -43,6 +43,7 @@ session_start();
     <img class="centered" src="<?php echo $kkysely->URL; ?>" name="image" />
     </div>
     </section>
+    <section class="secondary">
     <div class="row">
       <div class="panel">
         <!--HAETAAN KUVA TIETOKANNASTA-->
@@ -131,7 +132,7 @@ session_start();
           </div>
         </div>
       </div>
-
+      </section>
       <!--JOS KÄYTTÄJÄ ON KIRJAUTUNUT LOPPUU JA JOS KÄYTTÄJÄ EI OLE KIRJAUTUNUT ALKAA-->
     <?php else: ?>
     <?php
