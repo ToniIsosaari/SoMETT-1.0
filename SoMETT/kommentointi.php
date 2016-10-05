@@ -11,7 +11,8 @@ session_start();
   $logged_fbuser = $_SESSION['FULLNAME'];
   $faceid = $_SESSION['FBID'];
 ?>
-<?php include('action.php');?>
+<?php include('action.php');
+?>
 <!DOCTYPE HTML>
 <html xmlns:fb="http://www.facebook.com/2008/fbml" class="no-js" lang="fi">
   <head>
@@ -37,6 +38,7 @@ session_start();
       //echo $sql;
       $result = $my->query($sql);
       $kkysely = $result->fetch_object();
+      $_SESSION['kuvaid']=$kuvaid;
     ?>
     <img class="centered" src="<?php echo $kkysely->URL; ?>" name="image" />
     </div>
@@ -46,7 +48,7 @@ session_start();
         <!--HAETAAN KUVA TIETOKANNASTA-->
         <?php
           if ($_SESSION['FBID']) {
-			  $sql = "SELECT UID FROM 581D_Kayttaja WHERE FUID = '$faceid'";
+			  $sql = "SELECT UID FROM 581D_Kayttaja WHERE UID = '$faceid'";
               echo "<p>Kirjautunut Facebook käyttäjällä $logged_fbuser</p>";
           } else {
 			  $sql = "SELECT UID FROM 581D_Kayttaja WHERE Sposti = '$logged_user'";
@@ -63,7 +65,7 @@ session_start();
 			var_dump($obj);
 			$jps = $obj->UID;
             if ($_SESSION['FBID']) {
-              $sql = "INSERT INTO 581D_Kommentti (UID,Kommentti,KuvaID) VALUES ('$faceid','$comment','$kuvaid') ";
+              $sql = "INSERT INTO 581D_Kommentti (UID, FUID,Kommentti,KuvaID) VALUES ('$jps','$faceid','$comment','$kuvaid') ";
             } else {
               $sql = "INSERT INTO 581D_Kommentti (UID,Kommentti,KuvaID) VALUES ('$jps','$comment','$kuvaid') ";
             }
@@ -76,18 +78,18 @@ session_start();
         <div>
           <form action="<?php echo 'kommentointi.php?KID='.$kuvaid.'';?>" method="POST">
             <div>
-              <h5 class="float-left">Kommentteja</h5>
 			  
               <!--HAETAAN KUVAKOHTAISET KOMMENTIT TIETOKANNASTA-->
+              <textarea name="comment" maxlength="140" rows="2" required></textarea>
+              <input class="button float-right" type="submit" name="submit" value="Kommentoi">
+              <a href="<?php echo 'fblogin/logout.php?KID='.$kuvaid.'';?>">Kirjaudu Ulos</a><br>
+              <hr>
+              <h5 class="float-left">Kommentteja</h5>              
               <?php
                 $result1 = $my->query("SELECT * FROM 581D_Kommentti WHERE KuvaID = '$kuvaid'");
                 $numrows = $result1->num_rows;
                 echo '<h5 class="float-left">&nbsp•&nbsp'.$numrows.'</h5>';
               ?>
-              <textarea name="comment" maxlength="140" rows="2" required></textarea>
-              <input class="button float-right" type="submit" name="submit" value="Kommentoi">
-              <a href="<?php echo 'fblogin/logout.php?KID='.$kuvaid.'';?>">Kirjaudu Ulos</a><br>
-              <hr>
               <!--HAETAAN KAIKKI KUVAAN LIITTYVÄT TIEDOT-->
               <?php
                 $result = $my->query("SELECT * FROM 581D_Kommentti, 581D_Kayttaja WHERE 581D_Kommentti.UID = 581D_Kayttaja.UID AND KuvaID = '$kuvaid' ORDER BY KTime DESC");
@@ -145,14 +147,15 @@ session_start();
       <div class="panel">
         <div>
           <div>
-            <h5 class="float-left">Kommentteja</h5>
+            <!-- <h5 class="float-left">Kommentteja</h5> --!>
             <?php
               $result1 = $my->query("SELECT * FROM 581D_Kommentti WHERE KuvaID = '$kuvaid'");
               $numrows = $result1->num_rows;
-              echo '<h5 class="float-left">&nbsp•&nbsp'.$numrows.'</h5>';
             ?>
 			<a href="<?php echo 'kommentointi_login.php?KID='.$kuvaid.'';?>">Kirjaudu Sisään</a><br>
             <hr>
+              <h5 class="float-left">Kommentteja</h5>
+              <? echo '<h5 class="float-left">&nbsp•&nbsp'.$numrows.'</h5>';?>
           </div>
         </div>
         <div>
