@@ -103,8 +103,8 @@ session_start();
             }
             $result = $my->query($sql);
             //die($sql);
-            //echo "<meta HTTP-EQUIV='REFRESH' content='0; url=kommentointi.php?KID=".$kuvaid."'>";
-			header("Location: kommentointi.php?KID=".$kuvaid);
+            echo "<meta HTTP-EQUIV='REFRESH' content='0; url=kommentointi.php?KID=".$kuvaid."'>";
+			//header("Location: kommentointi.php?KID=".$kuvaid);
           }
         ?>
         <div>
