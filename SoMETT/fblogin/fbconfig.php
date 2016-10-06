@@ -46,7 +46,9 @@ if ( isset( $session ) ) {
     checkuser($fbid,$fbfullname,$femail);
   header("Location: ../../SoMETT/kommentointi.php?KID=".$kuvaid);
 } else {
-  $loginUrl = $helper->getLoginUrl();
- header("Location: ".$loginUrl);
+$loginUrl = $helper->getLoginUrl(array(
+'scope' => 'email'
+));
+header("Location: ".$loginUrl);
 }
 ?>
