@@ -10,6 +10,12 @@ session_start();
   $logged_user = $_SESSION['login_user'];
   $logged_fbuser = $_SESSION['EMAIL'];
   $faceid = $_SESSION['FBID'];
+ 
+ $sql = "SELECT URL FROM 581D_Kuva WHERE KuvaID = '$kuvaid'";
+   $result = $my->query($sql);
+   $kkysely = $result->fetch_object();
+   $_SESSION['kuvaid']=$kuvaid;
+
 ?>
 <?php// include('action.php');
 ?>
@@ -22,8 +28,8 @@ session_start();
     <!-- OG data -->
     <meta property="og:title" content="SoMETT" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="" />
-    <meta property="og:image" content="<?echo $rows[$id][1]?>" />
+    <meta property="og:url" content="http://cosmo.kpedu.fi/~miiahuvila/SoMETT2/SoMETT-1.0/SoMETT/" />
+    <meta property="og:image" content="<?php echo  $kkysely->URL; ?>" />
     <meta property="og:description" content="INSERT DESCRIPTION HERE" />
     <meta property="og:site_name" content="SoMETT" />
     <meta property="article:published_time" content="2013-09-17T05:59:00+01:00" />
@@ -33,7 +39,7 @@ session_start();
     <!-- Google+ -->
     <meta itemprop="name" content="SoMETT">
     <meta itemprop="description" content="INSERT DESCRIPTION HERE">
-    <meta itemprop="image" content=" <?echo $rows[$id][1]?>">
+    <meta itemprop="image" content=" <?php echo  $kkysely->URL; ?>">
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@publisher_handle">
@@ -41,7 +47,7 @@ session_start();
     <meta name="twitter:description" content="INSERT DESCRIPTION HERE">
     <meta name="twitter:creator" content="@author_handle">
     <!-- IMG +280x150px -->
-    <meta name="twitter:image:src" content="<?echo $rows[$id][1]?>">
+    <meta name="twitter:image:src" content="<?php echo  $kkysely->URL; ?>">
     <meta name="description" content="INSERT DESCRIPTION HERE" />
     
     <title>Kommentointi</title>
@@ -114,7 +120,7 @@ session_start();
               <?php
                 $result1 = $my->query("SELECT * FROM 581D_Kommentti WHERE KuvaID = '$kuvaid'");
                 $numrows = $result1->num_rows;
-                echo '<h5 class="float-left">&nbsp•&nbsp'.$numrows.'</h5>';?><br>
+                echo '<h5	 class="float-left">&nbsp•&nbsp'.$numrows.'</h5>';?><br>
               <!--HAETAAN KAIKKI KUVAAN LIITTYVÄT TIEDOT-->
               <?php
                 $result = $my->query("SELECT * FROM 581D_Kommentti, 581D_Kayttaja WHERE 581D_Kommentti.UID = 581D_Kayttaja.UID AND KuvaID = '$kuvaid' ORDER BY KTime DESC");
