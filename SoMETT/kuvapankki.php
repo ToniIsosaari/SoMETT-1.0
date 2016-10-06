@@ -63,7 +63,7 @@
       echo "<p>$DK</p>";
       if($result = $my->query($sql)){
         while($d = $result->fetch_object()){
-          echo "<a class='kuvalinkki' href='http://cosmo.kpedu.fi/~toniisosaari/SoMETT/SoMETT-1.0/SoMETT/kommentointi.php?KID=".$d->KuvaID."'>
+          echo "<a class='kuvalinkki' href='kommentointi.php?KID=".$d->KuvaID."'>
           <object class='img-galleria' data='$d->URL'>
             <img data-src='holder.js/160x160?text=Kuvaa ei ole olemassa'>
           </object>
