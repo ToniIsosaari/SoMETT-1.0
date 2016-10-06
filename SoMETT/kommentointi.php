@@ -8,10 +8,10 @@ session_start();
 
   $kuvaid = $_GET['KID'];
   $logged_user = $_SESSION['login_user'];
-  $logged_fbuser = $_SESSION['FULLNAME'];
+  $logged_fbuser = $_SESSION['EMAIL'];
   $faceid = $_SESSION['FBID'];
 ?>
-<?php include('action.php');
+<?php// include('action.php');
 ?>
 <!DOCTYPE HTML>
 <html xmlns:fb="http://www.facebook.com/2008/fbml" class="no-js" lang="fi">
@@ -49,7 +49,7 @@ session_start();
         <!--HAETAAN KUVA TIETOKANNASTA-->
         <?php
           if ($_SESSION['FBID']) {
-			  $sql = "SELECT UID FROM 581D_Kayttaja WHERE UID = '$faceid'";
+			  $sql = "SELECT UID FROM 581D_Kayttaja WHERE Sposti = '$logged_fbuser'";
               echo "<p>Kirjautunut Facebook käyttäjällä $logged_fbuser</p>";
           } else {
 			  $sql = "SELECT UID FROM 581D_Kayttaja WHERE Sposti = '$logged_user'";
