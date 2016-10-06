@@ -44,10 +44,13 @@ $UID = '12'; #tähän pitää getata se käyttäjäid
             if ($err == UPLOAD_ERR_OK) {
                 $fn = $files['name'][$id];
                 $directory = "http://cosmo.kpedu.fi/~tomijylha/SoMETT-1.0/SoMETT/uploads/";
+        
+                $ext = pathinfo($fn, PATHINFO_EXTENSION);
+        
                 $newfilename = round(microtime(true));
                 move_uploaded_file(
                 $files['tmp_name'][$id],
-                'uploads/' . $newfilename
+                'uploads/' . $newfilename . "." . $ext 
                 ); 
                 
             
@@ -59,7 +62,7 @@ $UID = '12'; #tähän pitää getata se käyttäjäid
     				die("MySQL, virhe (#".$my->mysql_errno.") yhteyden luonnissa:".$my->connect_error);	
     			}
     			$my->set_charset("utf8");
-                $filu = $directory.$newfilename;
+                $filu = $directory.$newfilename.".".$ext;
 	    		$sql = 'INSERT INTO 581D_Kuva(KuvaID,URL,UID,Title,Description,PublishDate)VALUES(" ","'.$filu.'","'.$UID.'","'.$title.'","'.$description.'"," ")';
     			if($tulos=$my->query($sql)){
     				echo '<p>Nimi tallennettu!</p>';
@@ -68,7 +71,7 @@ $UID = '12'; #tähän pitää getata se käyttäjäid
     				echo "Virhe SQL-kyselyssä!";
     			}
     			$my->close();
-    			header('Location:lahetyspalvelu.php?upl=1"'.$fn.'""'.$newfilename.'""'.$temp.'"');
+    			header('Location:lahetyspalvelu.php?upl=1');
     		}
 
     	}
