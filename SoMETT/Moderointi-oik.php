@@ -12,10 +12,27 @@
     <?php include('nav.php');?>
     <section class="secondary grey">
       <div class="wrap">
-    
-    
-    
-    </div>
+        <?php
+          $Userid = $_GET['Oikeudet'];
+          $result = $my->query("SELECT * FROM 581D_Kayttaja , 581D_Kommentti WHERE 581D_Kayttaja.UID = 581D_Kommentti.UID AND 581D_Kayttaja.UID = '$Userid' ");
+          while($rows = $result->fetch_array(MYSQLI_ASSOC)){
+          $nimi = $rows['Nimi'];
+          $snimi = $rows['SNimi'];
+          $sposti = $rows['Sposti'];
+          $oikeudet = $rows['Status'];
+          $UID = $rows['UID'];
+          $Kommentti = $rows['Kommentti'];
+          $report = $rows['Tila'];
+        ?>
+                  
+        <table>
+          <td><?echo $nimi;?></td><td><? echo $snimi;?></td><td><?echo $sposti;?></td>
+        </table>
+        
+        <?
+          }
+        ?>
+      </div>
     </section>
     </div>
     </div>
