@@ -1,0 +1,44 @@
+.img-galleria{
+	display: inline-block;
+	width: 10em;
+	height: 10em;
+	margin: 3em 3em 0em 3em;
+}
+.kuvalinkki:link{
+	text-decoration: none;
+	color: black;
+}
+.kuvalinkki:visited{
+	text-decoration: none;
+	color: black;
+}
+.kuvalinkki:hover{
+	text-decoration: none;
+	color: black;
+}
+.kuvalinkki:active{
+	text-decoration: none;
+	color: black;
+}
+.kuvalinkki{
+	display: inline-block;
+	background-color: #D9D9D9;
+	margin: 0.5em 0.5em 0.5em 0.5em;
+}
+/*
+.Galleria-div{
+	//background-color: #D9D9D9;
+}*/
+.Galleria-otsikko{
+	padding: 0em 0em 0em 1em;
+	margin: 0.5em 0em 1em 2em;
+	
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 200px;
+}
+.error{
+	width: 10em;
+	heigth: 10em;
+}
