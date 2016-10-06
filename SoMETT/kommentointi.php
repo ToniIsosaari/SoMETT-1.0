@@ -11,7 +11,8 @@ session_start();
   $logged_fbuser = $_SESSION['FULLNAME'];
   $faceid = $_SESSION['FBID'];
 ?>
-<?php// include('action.php');?>
+<?php include('action.php');
+?>
 <!DOCTYPE HTML>
 <html xmlns:fb="http://www.facebook.com/2008/fbml" class="no-js" lang="fi">
   <head>
@@ -154,6 +155,7 @@ session_start();
               $numrows = $result1->num_rows;
               echo '<h5 class="float-left">&nbsp•&nbsp'.$numrows.'</h5>';
             ?>
+            <br>
           </div>
         </div>
         <div>
