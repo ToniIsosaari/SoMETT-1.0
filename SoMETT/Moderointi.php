@@ -14,7 +14,7 @@
   <div class="wrap">
     <h2 class="text-center">Kommenttien moderointi</h2>
     <hr>
-    <table class="table1">
+    <table role="grid">
       <form method="POST">
   <tr class="table1">
     <td>KäyttäjäID</td>
@@ -36,7 +36,7 @@
       <tr class="table1">
         <?$ID = $i['UID'];?>
         <td><? echo $ID;?></td>
-        <td><a href="Moderointi-oik.php"><?echo $i['Nimi'];?></a>
+        <td><a href="Moderointi-oik.php?Oikeudet=<?echo $ID;?>"><?echo $i['Nimi'];?></a>
         <td><? echo $i['Kommentti'];?></td>
         <td><? echo $i['Tila'];?></td>
         <td><? echo $i['Status']?></td>
