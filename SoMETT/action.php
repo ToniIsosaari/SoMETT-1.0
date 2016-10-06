@@ -19,7 +19,7 @@ if($resultA = $my->query($sqlA)){
 else {
   echo "Virhe SQL-kyselyssä!";
 }
-$my->close();
+
 ?>
 
 
