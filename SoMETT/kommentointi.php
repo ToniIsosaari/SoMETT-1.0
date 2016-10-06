@@ -19,6 +19,31 @@ session_start();
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- OG data -->
+    <meta property="og:title" content="SoMETT" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="<?echo $rows[$id][1]?>" />
+    <meta property="og:description" content="INSERT DESCRIPTION HERE" />
+    <meta property="og:site_name" content="SoMETT" />
+    <meta property="article:published_time" content="2013-09-17T05:59:00+01:00" />
+    <meta property="article:modified_time" content="2013-09-16T19:08:47+01:00" />
+    <meta property="article:section" content="Article Section" />
+    <meta property="article:tag" content="Article Tag" />
+    <!-- Google+ -->
+    <meta itemprop="name" content="SoMETT">
+    <meta itemprop="description" content="INSERT DESCRIPTION HERE">
+    <meta itemprop="image" content=" <?echo $rows[$id][1]?>">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@publisher_handle">
+    <meta name="twitter:title" content="SoMETT">
+    <meta name="twitter:description" content="INSERT DESCRIPTION HERE">
+    <meta name="twitter:creator" content="@author_handle">
+    <!-- IMG +280x150px -->
+    <meta name="twitter:image:src" content="<?echo $rows[$id][1]?>">
+    <meta name="description" content="INSERT DESCRIPTION HERE" />
+    
     <title>Kommentointi</title>
     <!-- <link rel="stylesheet" href="css/foundation.min.css" /> -->
     <link rel="stylesheet" href="css/foundation-icons.min.css" rel="stylesheet" type="text/css" />
@@ -127,7 +152,7 @@ session_start();
                     '</div>'
                   );
                 }
-                $my->close();
+
             ?>
           </div>
         </div>
@@ -216,5 +241,7 @@ session_start();
           lessLink: '<a href="#" class="less">Näytä vähemmän <i class="fi-arrow-up"></i></a>',
         });
       </script>
+      <!-- Go to www.addthis.com/dashboard to customize your tools -->
+      <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57f35e41dd32c72d"></script>
   </body>
 </html>
