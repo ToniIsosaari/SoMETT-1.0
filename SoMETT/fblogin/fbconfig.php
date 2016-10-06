@@ -1,5 +1,7 @@
 <?php
 session_start();
+$kuvaid = $_GET['KID'];
+$hakemisto = $_SERVER['SERVER_NAME'] . dirname($_SERVER['REQUEST_URI']);
 // added in v4.0.0
 require_once 'autoload.php';
 require 'functions.php'; 
@@ -17,7 +19,7 @@ use Facebook\HttpClients\FacebookHttpable;
 // init app with app id and secret
 FacebookSession::setDefaultApplication( '1216316551765571','80b03311c222c56dc432584c448890ec' );
 // login helper with redirect_uri
-    $helper = new FacebookRedirectLoginHelper('http://cosmo.kpedu.fi/~johanneskallinen/SoMETT-1.0/kommentointi/fblogin/fbconfig.php' );
+    $helper = new FacebookRedirectLoginHelper('http://'.$hakemisto.'/fbconfig.php?KID='.$kuvaid.'' );
 try {
   $session = $helper->getSessionFromRedirect();
 } catch( FacebookRequestException $ex ) {
@@ -42,9 +44,11 @@ if ( isset( $session ) ) {
     /* ---- header location after session ----*/
 //  checkuser($fuid,$ffname,$femail);
     checkuser($fbid,$fbfullname,$femail);
-  header("Location: http://cosmo.kpedu.fi/~johanneskallinen/SoMETT-1.0/kommentointi/kommentointi.php");
+  header("Location: ../../SoMETT/kommentointi.php?KID=".$kuvaid);
 } else {
-  $loginUrl = $helper->getLoginUrl();
- header("Location: ".$loginUrl);
+$loginUrl = $helper->getLoginUrl(array(
+'scope' => 'email'
+));
+header("Location: ".$loginUrl);
 }
 ?>
