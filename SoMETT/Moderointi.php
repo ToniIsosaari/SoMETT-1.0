@@ -21,7 +21,7 @@
   <tr class="table1">
     <th>KäyttäjäID</th>
     <th>Nimi</th>
-    <th>Kommentti</th>
+    <th width="150">Kommentti</th>
     <th>Ilmoitukset</th>
     <th>Oikeudet</th>
     <th><input type="submit" name="delete" value="delete"></th>

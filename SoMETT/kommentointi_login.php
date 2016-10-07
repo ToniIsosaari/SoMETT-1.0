@@ -18,7 +18,7 @@ $my->set_charset("utf8");
   </head>
         <body>
             <?php include('nav.php');?>
-            <section class="secondary grey">
+            <section class="secondary">
                 <div class="wrap">
   <script>
   function openWin() {
