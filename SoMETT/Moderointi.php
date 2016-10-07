@@ -16,6 +16,7 @@
     <hr>
     <table role="grid">
       <form method="POST">
+  <thead>
   <tr class="table1">
     <td>KäyttäjäID</td>
     <td>Nimi</td>
@@ -23,10 +24,9 @@
     <td>Ilmoitukset</td>
     <td>Oikeudet</td>
     <td><input type="submit" name="delete" value="delete"></td>
-
-
-
   </tr>
+  </thead>
+  <tbody>
     <?
 
   $result = $my->query('SELECT * FROM `581D_Kommentti`, `581D_Kayttaja` WHERE 581D_Kommentti.UID=581D_Kayttaja.UID');
@@ -63,6 +63,7 @@
       }
       $my->close();
     ?>
+    </tbody>
       </form>
     </table>
     </div>
