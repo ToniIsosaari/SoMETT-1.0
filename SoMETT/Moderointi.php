@@ -14,19 +14,20 @@
   <div class="wrap">
     <h2 class="text-center">Kommenttien moderointi</h2>
     <hr>
+  <div class="table-scroll">
     <table role="grid">
       <form method="POST">
+  <thead>
   <tr class="table1">
-    <td>KäyttäjäID</td>
-    <td>Nimi</td>
-    <td>Kommentti</td>
-    <td>Ilmoitukset</td>
-    <td>Oikeudet</td>
-    <td><input type="submit" name="delete" value="delete"></td>
-
-
-
+    <th>KäyttäjäID</th>
+    <th>Nimi</th>
+    <th>Kommentti</th>
+    <th>Ilmoitukset</th>
+    <th>Oikeudet</th>
+    <th><input type="submit" name="delete" value="delete"></th>
   </tr>
+  </thead>
+  <tbody>
     <?
 
   $result = $my->query('SELECT * FROM `581D_Kommentti`, `581D_Kayttaja` WHERE 581D_Kommentti.UID=581D_Kayttaja.UID');
@@ -63,8 +64,10 @@
       }
       $my->close();
     ?>
+    </tbody>
       </form>
     </table>
+    </div>
     </div>
     </section>
     </div>
