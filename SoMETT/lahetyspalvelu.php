@@ -1,6 +1,16 @@
 <?php
+session_start();
 $upl = 0;
 $upl = $_GET['upl'];
+
+/*
+echo '<pre>';
+var_dump($_SESSION);
+echo '</pre>';*/
+
+if($_SESSION['FBID'] || $_SESSION['login_user']){
+
+
 ?>
 <!DOCTYPE html>
 <html lang="fi">
@@ -40,16 +50,17 @@ $upl = $_GET['upl'];
                 <input type="text" class="brd" name="title" required/>
                 <label>Kuvaus</label>
                 <input type="text" class="brd" name="description" required/>
+                <label>Kategoria</label>
+                <input type="checkbox" value="asusteet"/> Asusteet
+                <input type="checkbox" value="paikat"/> Paikat
+                <input type="checkbox" value="kuvat"/> Kuvat
               </div>
               <div id="submitbutton">
                 <input type="submit">
               </div>
             </fieldset>
           </form>
-    <!--    <div id="progress"></div>
-        <div id="messages">
-          <p>Status Messages</p>
-        </div>-->
+
         <?}?>
       </div>
     </div>
@@ -100,3 +111,10 @@ $upl = $_GET['upl'];
 
 </body>
 </html>
+<?php 
+  }
+  else{
+   header('Location:upl_login.php');
+   }
+    ?>
+  
