@@ -72,7 +72,7 @@ session_start();
       $_SESSION['kuvaid']=$kuvaid;
     ?>
     <img class="centered" src="<?php echo $kkysely->URL; ?>" name="image" />
-    <?echo "Kuva on julkaistu: ".$kkysely->PublishDate;?>
+    <?echo "Kuva on ladattu: ".$kkysely->PublishDate;?>
     </div>
     </section>
 	<section class="secondary">
