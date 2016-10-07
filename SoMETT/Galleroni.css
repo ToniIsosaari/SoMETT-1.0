@@ -28,9 +28,10 @@
 /*
 .Galleria-div{
 	//background-color: #D9D9D9;
+	align-item: center;
 }*/
 .Galleria-otsikko{
-	padding: 0em 0em 0em 1em;
+	padding: 0em 0em 1em 1em;
 	margin: 0.5em 0em 1em 2em;
 	
 	white-space: nowrap;
@@ -41,4 +42,11 @@
 .error{
 	width: 10em;
 	heigth: 10em;
+}
+.Infotext{
+	margin: auto;
+    width: 50%;
+    border: 2px solid #00BCD4;
+	padding: 10px;
+	text-align: center;
 }

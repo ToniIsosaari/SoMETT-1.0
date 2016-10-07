@@ -14,7 +14,7 @@
   <!-- Main osio (lisää sivulle olennainen sisältö tänne) -->
 <section class="main">
   <div class="wrap">
-    <h1>Kuva galleria</h1>
+    <h1>Kuvagalleria</h1>
     <p style="font-size: 30px;"></p>
     <p>
     
@@ -59,8 +59,10 @@
         $sql = "SELECT * FROM 581D_Kuva;";
         $DK = "";
       }
-
-      echo "<p>$DK</p>";
+      if($DK){
+        echo "<p class='Infotext'>$DK</p>";
+      }else{}
+      
       if($result = $my->query($sql)){
         while($d = $result->fetch_object()){
           echo "<a class='kuvalinkki' href='kommentointi.php?KID=".$d->KuvaID."'>
