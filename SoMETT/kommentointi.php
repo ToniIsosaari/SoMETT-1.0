@@ -72,7 +72,7 @@ session_start();
       $_SESSION['kuvaid']=$kuvaid;
     ?>
     <img class="centered" src="<?php echo $kkysely->URL; ?>" name="image" />
-    <?echo "Kuva on julkaistu: ".$kkysely->PublishDate;?>
+    <?echo "Kuva on ladattu: ".$kkysely->PublishDate;?>
     </div>
     </section>
 	<section class="secondary">
@@ -168,13 +168,14 @@ session_start();
       <!--JOS KÄYTTÄJÄ ON KIRJAUTUNUT LOPPUU JA JOS KÄYTTÄJÄ EI OLE KIRJAUTUNUT ALKAA-->
     <?php else: ?>
     <?php
-      $sql = "SELECT URL FROM 581D_Kuva WHERE KuvaID = '$kuvaid'";
+      $sql = "SELECT URL, PublishDate FROM 581D_Kuva WHERE KuvaID = '$kuvaid'";
       //echo $sql;
       $result = $my->query($sql);
       $kkysely = $result->fetch_object();
     ?>
 
     <img src=<?php echo  $kkysely->URL; ?> width="300" height="400" name="image" />
+    <?echo "Kuva on ladattu: ".$kkysely->PublishDate;?>    
     <div class="row">
       <div class="panel">
         <div>

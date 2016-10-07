@@ -24,7 +24,7 @@
     <th width="150">Kommentti</th>
     <th>Ilmoitukset</th>
     <th>Oikeudet</th>
-    <th><input type="submit" name="delete" value="delete"></th>
+    <th><input type="submit" name="poista" value="poista"></th>
   </tr>
   </thead>
   <tbody>
@@ -50,7 +50,7 @@
 <?
 
 
-    if(isset($_POST['delete']))
+    if(isset($_POST['poista']))
       {
       $checkbox = $_POST['checkbox'];
       for($a=0;$a<count($checkbox);$a++){
