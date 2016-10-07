@@ -24,14 +24,18 @@
           $Kommentti = $rows['Kommentti'];
           $report = $rows['Tila'];
         ?>
-                  
+        <div class="table-scroll">          
         <table>
         <form method="POST">
+        <thead>
           <tr>
-            <td>Nimi</td>
-            <td>sukunimi</td>
-            <td>email</td>
-            <td>Oikeudet <input type="submit" name="Muokkaa" value="Muokkaa"></td>
+            <th width="200">Nimi</th>
+            <th width="200">sukunimi</th>
+            <th width="200">email</th>
+            <th width="200">Oikeudet <input type="submit" name="Muokkaa" value="Muokkaa"></th>
+          </tr>
+        </thead>
+        </tbody>
           <tr>
             <td><?echo $nimi;?></td>
             <td><? echo $snimi;?></td>
@@ -45,8 +49,10 @@
               <? if($oikeudet ==3) echo "selected";?>>PRO-käyttäjä</option>
             </td>
           </tr>
+        </tbody>
+        </form>
         </table>
-        
+        </div>
         <?
           }
           

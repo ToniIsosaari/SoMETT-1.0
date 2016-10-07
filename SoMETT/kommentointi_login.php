@@ -8,12 +8,18 @@ if ($my->mysqli_errno) {
 $my->set_charset("utf8");
 ?>
 <!DOCTYPE HTML>
-<html>
+<html lang="fi">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kirjaudu</title>
+    <?php include('styles.php');?>
   </head>
         <body>
+            <?php include('nav.php');?>
+            <section class="secondary">
+                <div class="wrap">
   <script>
   function openWin() {
     window.location.href = "kommentointi_login.php?KID =' . $kuvaid . '";
@@ -30,7 +36,6 @@ $my->set_charset("utf8");
                     <fieldset id="actions">
                         <input type="submit" name="submit" value="Kirjaudu">
                         <a href="<?php echo 'fblogin/fbconfig.php?KID='.$kuvaid.'';?>">Login with Facebook</a></div>
-                    <a href="">Rekisteröidy</a>
                     </fieldset>
             </form>
             <?
@@ -59,6 +64,10 @@ $my->set_charset("utf8");
             }
             $my->close();
             ?>
-
+            </div>
+            </section>
+            </div>
+            </div>
+            <?php include('footer.php')?>
         </body>
 </html>

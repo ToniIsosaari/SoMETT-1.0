@@ -1,5 +1,4 @@
 <!-- Lisää tyylisi tänne, mikäli haluat, että ne toimivat varsinaisessa versiossa  -->
-<link rel="stylesheet" href="kommentti/kommentti.css">
 <link rel="stylesheet" href="http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/node_modules/foundation-sites/dist/foundation.min.css">
 <link rel="stylesheet" href="foundation-icons/foundation-icons.css">
 <link rel="stylesheet" href="http://cosmo.kpedu.fi/~johanneskallinen/SoMETT-1.0/kommentointi/css/stylesheet.css" />
