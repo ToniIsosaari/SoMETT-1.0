@@ -17,7 +17,7 @@ session_start();
    $_SESSION['kuvaid']=$kuvaid;
 
 ?>
-<?php// include('action.php');
+<?php include('action.php');
 ?>
 <!DOCTYPE HTML>
 <html xmlns:fb="http://www.facebook.com/2008/fbml" class="no-js" lang="fi">
