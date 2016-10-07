@@ -21,12 +21,11 @@
     <p>Tervetuloa kuvagalleriaan. Täältä löydät kaikki kuvat joita palveluumme on ladattu</p>
 
 <form name="form" action="kuvapankki.php" method="post">
-  <select name="jarjestys">
+  <select name="jarjestys" onchange="this.form.submit()">
   <option value="Suosituin">Suosituimmat</option>
   <option value="Tykkaus">Tykätyimmät</option>
   <option value="Uusimmat">Uusimmat</option>
   </select>
-  <input type="submit" value="Järjestä">
 </form>
 <?php
   $DK = $_POST['jarjestys'];
