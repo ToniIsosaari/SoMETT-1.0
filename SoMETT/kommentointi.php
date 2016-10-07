@@ -65,13 +65,14 @@ session_start();
     <!--JOS KÄYTTÄJÄ ON KIRJAUTUNUT ALKAA-->
     <?php if ($_SESSION['FBID'] or $_SESSION['login_user']): ?>
     <?php
-      $sql = "SELECT URL FROM 581D_Kuva WHERE KuvaID = '$kuvaid'";
+      $sql = "SELECT URL, PublishDate FROM 581D_Kuva WHERE KuvaID = '$kuvaid'";
       //echo $sql;
       $result = $my->query($sql);
       $kkysely = $result->fetch_object();
       $_SESSION['kuvaid']=$kuvaid;
     ?>
     <img class="centered" src="<?php echo $kkysely->URL; ?>" name="image" />
+    <?echo "Kuva on julkaistu: ".$kkysely->PublishDate;?>
     </div>
     </section>
 	<section class="secondary">
