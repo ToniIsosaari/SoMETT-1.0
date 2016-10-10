@@ -1,3 +1,4 @@
+
 <div class="off-canvas-wrapper">
   <!-- <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper> -->
  	<div class="off-canvas position-left" id="offCanvas" data-off-canvas>
@@ -28,8 +29,18 @@
             </ul>
           </div>
           <div class="top-bar-right">
-            <ul>
-              <li><a href="info.php"><i class="fi-info"></i> info</a></li>
+            <ul class="menu">
+            <li><a href="info.php"><i class="fi-info"></i> info</a></li>
+<?php if($_SESSION['FBID'] || $_SESSION['login_user']) {?>
+            
+            <li><a class="button" href="<?php echo 'fblogin/logout.php';?>">Kirjaudu Ulos</a></li>
+            
+            <?php }
+            else {?>
+            <li><a class="button" href="kommentointi_login.php">Kirjaudu Sisään</a></li>
+
+            
+            <?php }?>
             </ul>
           </div>
         </div>
@@ -46,6 +57,7 @@
     <hr>
     <ul class="vertical menu mobile-menu">
       <li><a href="info.php"><i class="fi-info"></i> info</a></li>
+      <li><a class="button" href="kommentointi_login.php">Kirjaudu Sisään</a></li>
     </ul>
   </div>
                                                 
