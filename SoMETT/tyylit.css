@@ -25,6 +25,9 @@
 .top-bar-right i{
 	font-size: 30px;
 }
+.top-bar-right{
+	padding-top: 10px;
+}
 /* ****************************************
     NAV - MOBILE
 **************************************** */

@@ -1,5 +1,6 @@
 <?php
 session_start();
+$kuvaid = 0;
 $kuvaid = $_GET['KID'];
 $my = mysqli_connect("localhost", "data15", "aJrHfybLxsLU76rV", "data15");
 if ($my->mysqli_errno) {
@@ -54,12 +55,8 @@ $my->set_charset("utf8");
             echo "Kirjaudu";
             $_SESSION['login_user']=$KEmail;
             $login = $_GET['login'];
-
-            header("Location: kommentointi.php?KID=".$kuvaid);
-
-            }
-            else
-            {
+          
+             header("Location:kommentointi.php?KID=".$kuvaid);
             }
             }
             $my->close();
