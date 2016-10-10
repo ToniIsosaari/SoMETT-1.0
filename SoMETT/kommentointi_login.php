@@ -36,7 +36,13 @@ $my->set_charset("utf8");
 
                     <fieldset id="actions">
                         <input type="submit" name="submit" value="Kirjaudu">
-                        <a href="<?php echo 'fblogin/fbconfig.php?KID='.$kuvaid.'';?>">Login with Facebook</a></div>
+                        <a href="<?php
+						    if (isset($_GET['KID'])) {
+        echo 'fblogin/fbconfig.php?KID='.$kuvaid.'';
+    } else {
+        echo 'fblogin/fbconfig.php';
+    }
+						?>">Login with Facebook</a></div>
                     </fieldset>
             </form>
             <?
