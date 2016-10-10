@@ -22,6 +22,7 @@
 
 <form name="form" action="kuvapankki.php" method="post">
   <select name="jarjestys" onchange="this.form.submit()">
+  <option value="#">Valitse gategoria</option>
   <option value="Suosituin">Suosituimmat</option>
   <option value="Tykkaus">Tykätyimmät</option>
   <option value="Uusimmat">Uusimmat</option>
@@ -59,7 +60,7 @@
         $DK = "";
       }
       if($DK){
-        echo "<p class='Infotext'>$DK</p>";
+        echo "<h4>$DK</h4>";
       }else{}
       
       if($result = $my->query($sql)){
@@ -79,16 +80,6 @@
   </div>
 </section>
   <!-- Secondary osio (lisää eri niin tärkeä sisältö tänne) -->
-<section class="secondary grey">
-  <div class="wrap">
-    <h2></h2>
-    <hr>
-    <p>Tähän tulee kaikki ei niin tärkeä sisältö, joissain tilanteissa tämä voi olla myös piillotettu ja tulee näkyviin vain käyttäjän
-    halutessa nähdä epäolennaista sisältöä. Mikäli haluat lisätä omia tyylejäsi tähän osioon sinun tulee antaa osiolle "ylimääräinen" 
-    class määrittely, jota käsittelet omissa tyylimäärittelyissäsi</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et lectus vulputate, mattis arcu ac, venenatis nibh. Nunc ac augue quam. Suspendisse potenti. Donec blandit urna mauris, vel cursus elit pretium at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consequat non erat vitae commodo. Cras molestie facilisis tortor, at dignissim urna sodales nec. Nunc eu ligula volutpat, scelerisque magna nec, ullamcorper nunc. Nullam non quam imperdiet, condimentum felis eget, eleifend velit. Praesent lobortis pulvinar velit, quis pulvinar ipsum condimentum nec. Nam sem massa, pellentesque vel ultricies eget, volutpat eget nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam at malesuada sem, porttitor posuere urna. Aenean a scelerisque mi.</p>
-  </div>
-</section>
 </div>
 </div>
 <?php include("footer.php");?>
