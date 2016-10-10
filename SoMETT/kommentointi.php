@@ -219,7 +219,7 @@ $uuuid = str_replace($replace, $replaced, $uuid);
                    '<tbody>'.
                      '<tr>'.
                        '<th class="float-left">'.
-                         '<a class="float-left">'.$uid.'</a>'.
+                         '<a class="float-left">'.$uuuid.'</a>'.
                          '<p class="float-left">&nbsp</p>'.
                          '<p class="float-left date">'.$time.'</p>'.
                        '</th>'.
