@@ -22,7 +22,7 @@
 
 <form name="form" action="kuvapankki.php" method="post">
   <select name="jarjestys" onchange="this.form.submit()">
-  <option value="#">Valitse gategoria</option>
+  <option value="#">Valitse kategoria</option>
   <option value="Suosituin">Suosituimmat</option>
   <option value="Tykkaus">Tykätyimmät</option>
   <option value="Uusimmat">Uusimmat</option>
