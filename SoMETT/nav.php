@@ -31,15 +31,12 @@
           <div class="top-bar-right">
             <ul class="menu">
             <li><a href="info.php"><i class="fi-info"></i> info</a></li>
-<?php if($_SESSION['FBID'] || $_SESSION['login_user']) {?>
+            <?php if($_SESSION['FBID'] || $_SESSION['login_user']) {?>
             
-            <li><a class="button" href="<?php echo 'fblogin/logout.php';?>">Kirjaudu Ulos</a></li>
-            
+            <li><a class="secondary small button" href="<?php echo 'fblogin/logout.php';?>">Kirjaudu Ulos</a></li>
             <?php }
             else {?>
-            <li><a class="button" href="kommentointi_login.php">Kirjaudu Sisään</a></li>
-
-            
+            <li><a class="secondary small button" href="kommentointi_login.php">Kirjaudu Sisään</a></li>            
             <?php }?>
             </ul>
           </div>
@@ -57,7 +54,7 @@
     <hr>
     <ul class="vertical menu mobile-menu">
       <li><a href="info.php"><i class="fi-info"></i> info</a></li>
-      <li><a class="button" href="kommentointi_login.php">Kirjaudu Sisään</a></li>
+      <li><a class="secondary button" href="kommentointi_login.php">Kirjaudu Sisään</a></li>
     </ul>
   </div>
                                                 
