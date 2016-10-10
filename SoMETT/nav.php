@@ -54,7 +54,7 @@
     <hr>
     <ul class="vertical menu mobile-menu">
       <li><a href="info.php"><i class="fi-info"></i> info</a></li>
-      <li><a class="secondary button" href="kommentointi_login.php">Kirjaudu Sisään</a></li>
+      <li><a href="kommentointi_login.php">Kirjaudu Sisään</a></li>
     </ul>
   </div>
                                                 
