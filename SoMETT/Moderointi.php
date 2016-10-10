@@ -24,7 +24,7 @@
     <th width="150">Kommentti</th>
     <th>Ilmoitukset</th>
     <th>Oikeudet</th>
-    <th><input type="submit" name="poista" value="poista"></th>
+    <th><input class="primary hollow small button" type="submit" name="poista" value="poista"></th>
   </tr>
   </thead>
   <tbody>
