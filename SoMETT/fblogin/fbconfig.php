@@ -1,6 +1,7 @@
 <?php
 session_start();
 $kuvaid    = $_GET['KID'];
+$ohjaus    = $_GET['ohjaus'];
 $hakemisto = $_SERVER['SERVER_NAME'] . dirname($_SERVER['REQUEST_URI']);
 // added in v4.0.0
 require_once 'autoload.php';
@@ -22,9 +23,12 @@ FacebookSession::setDefaultApplication('1216316551765571', '80b03311c222c56dc432
 
 if (isset($_GET['KID'])) {
     $helper = new FacebookRedirectLoginHelper('http://' . $hakemisto . '/fbconfig.php?KID=' . $kuvaid . '');
+} elseif (isset($_GET['ohjaus'])) {
+    $helper = new FacebookRedirectLoginHelper('http://' . $hakemisto . '/fbconfig.php?ohjaus=' . $ohjaus . '');
 } else {
     $helper = new FacebookRedirectLoginHelper('http://' . $hakemisto . '/fbconfig.php');
 }
+
 try {
     $session = $helper->getSessionFromRedirect();
 }
@@ -54,7 +58,10 @@ if (isset($session)) {
     
     if (isset($_GET['KID'])) {
         header("Location: ../../SoMETT/kommentointi.php?KID=" . $kuvaid);
-    } else {
+    } elseif (isset($_GET['ohjaus'])) {
+        header("Location: ../../SoMETT/lahetyspalvelu.php");
+    }
+		else {
         header("Location: ../../SoMETT/index.php");
     }
 } else {
