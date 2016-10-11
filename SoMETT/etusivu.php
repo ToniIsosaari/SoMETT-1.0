@@ -1,3 +1,5 @@
+<script src="holder.js"></script>
+<link href="cssfix.css" rel="stylesheet" type="text/css">
 <!-- Main osio (lisää sivulle olennainen sisältö tänne) -->
 <section class="main etusivu" data-interchange="[http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/Somett_otsikkokuvat/Mini.jpg, small],[http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/Somett_otsikkokuvat/Medium.jpg, medium], [http://cosmo.kpedu.fi/~miiahuvila/somett/SoMETT-1.0/SoMETT/Somett_otsikkokuvat/Large.jpg, large]">
   <div class="wrap">
@@ -12,7 +14,7 @@
       <hr>
 
 				<ul id="carousel1" class="elastislide-list">
-                     
+                    
 
  <?php
 $nico = "kommentointi.php";
@@ -25,7 +27,7 @@ $nico = "kommentointi.php";
                     $result = $sql->query("SELECT * FROM 581D_Kuva ORDER BY KuvaID DESC");
                     while($rivi = $result->fetch_array(MYSQL_ASSOC)) {
                     
-		echo "<li data-preview='".$rivi['URL']."'>"."<a href=".$nico."?KID=".$rivi['KuvaID']."><img src=".$rivi['URL']." alt=".$rivi['Title']."></a> </li>";
+            echo "<li data-preview='".$rivi['URL']."'>"."<a href=".$nico."?KID=".$rivi['KuvaID']."><object class='object' data='".$rivi['URL']."'>"."<img data-src='holder.js/160x160?text=Kuvaa ei ole.' alt='".$rivi['Title']."'></object></a> </li>";                    
                     $_SESSION['kuvaid']=$rivi['KuvaID'];
                     $_SESSION['kuva']=$rivi['URL'];
                     	
@@ -36,6 +38,8 @@ echo "</ul>";
 ?>
   </div>
 </section>
+
+
 <section class="secondary grey">
   <div class="wrap">
       <h3>Suosituimmat</h3>
@@ -53,7 +57,7 @@ echo "</ul>";
                     $sql->set_charset("utf8");
                     $result = $sql->query("SELECT * FROM 581D_Kuva ORDER BY Suosituin DESC");
                     while($rivi = $result->fetch_array(MYSQL_ASSOC)) {
-                    echo "<li data-preview='".$rivi['URL']."'>"."<a href=".$nico."?KID=".$rivi['KuvaID']."><img src=".$rivi['URL']." alt=".$rivi['Title']."></a> </li>";
+                    echo "<li data-preview='".$rivi['URL']."'>"."<a href=".$nico."?KID=".$rivi['KuvaID']."><object class='object' data='".$rivi['URL']."'>"."<img data-src='holder.js/160x160?text=Kuvaa ei ole.' alt='".$rivi['Title']."'></object></a> </li>";
                     $_SESSION['kuvaid']=$rivi['KuvaID'];
                     $_SESSION['kuva']=$rivi['URL'];
  }
