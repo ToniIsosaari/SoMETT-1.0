@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?
+session_start();
+?>
 <html lang="fi">
 <head>
 <meta charset="utf-8">
