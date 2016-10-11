@@ -33,7 +33,10 @@ if($_SESSION['FBID'] || $_SESSION['login_user']){
           <?if($upl==1){?>
           <h2>Kiitos kuvan lähettämisestä!</h2>
           <p>("Tähän saisi lisätä jonkinmoista mallitekstiä. Kiitos nam!")</p>
-          <a href="http://cosmo.kpedu.fi/~tomijylha/SoMETT-1.0/SoMETT/kuvapankki.php">Siirry kuvagalleriaan!</a>
+		  <form name="form" action="kuvapankki.php" method="post">
+		  <input type="hidden" name="jarjestys" value="Uusimmat">
+		  <input class="button" type="submit" value="Siirry kuvagalleriaan!">
+		  </form>
           <? } else { ?>      
           <h1>Lähetyspalvelu</h1>
           <p>Tämän kautta voit lähettä kuviasi yhteisön ja museoasiantuntioiden tutkittavaksi.
