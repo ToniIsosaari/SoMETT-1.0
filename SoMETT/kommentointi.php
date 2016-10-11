@@ -131,13 +131,20 @@ session_start();
                   $time = $rows['KTime'];
                   $kid = $rows['KommenttiID'];
                   $comment = $rows['Kommentti'];
+				  
+				  $uuid = $uid;
+
+$replace = array('Ã¤','Ã¶','Ã„','Ã–');
+$replaced = array('ä','ö','Ä','Ö');
+
+$uuuid = str_replace($replace, $replaced, $uuid);
                   echo nl2br(
                     '<div>'.
                       '<table>'.
                         '<tbody>'.
                           '<tr>'.
                             '<th class="float-left">'.
-                              '<a class="float-left" href="profiili.php?id='.$id.'">'.$uid.'</a>'.
+                              '<a class="float-left" href="profiili.php?id='.$id.'">'.$uuuid.'</a>'.
                               '<p class="float-left">&nbsp</p>'.
                               '<p class="float-left date">'.$time.'</p>'.
                             '</th>'.
@@ -200,13 +207,19 @@ session_start();
               $time = $rows['KTime'];
               $kid = $rows['KommenttiID'];
               $comment = $rows['Kommentti'];
+				  $uuid = $uid;
+
+$replace = array('Ã¤','Ã¶','Ã„','Ã–');
+$replaced = array('ä','ö','Ä','Ö');
+
+$uuuid = str_replace($replace, $replaced, $uuid);
               echo nl2br(
                 '<div>'.
                  '<table>'.
                    '<tbody>'.
                      '<tr>'.
                        '<th class="float-left">'.
-                         '<a class="float-left">'.$uid.'</a>'.
+                         '<a class="float-left">'.$uuuid.'</a>'.
                          '<p class="float-left">&nbsp</p>'.
                          '<p class="float-left date">'.$time.'</p>'.
                        '</th>'.
