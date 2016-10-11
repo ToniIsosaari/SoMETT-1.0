@@ -1,7 +1,8 @@
 <?php
 session_start();
-$kuvaid = 0;
+//$kuvaid = 0;
 $kuvaid = $_GET['KID'];
+$ohjaus = $_GET['ohjaus'];
 $my = mysqli_connect("localhost", "data15", "aJrHfybLxsLU76rV", "data15");
 if ($my->mysqli_errno) {
   die("MySQL, virhe yhteyden luonnissa:" . $my->connect_error);
@@ -39,7 +40,9 @@ $my->set_charset("utf8");
                         <a href="<?php
 						    if (isset($_GET['KID'])) {
         echo 'fblogin/fbconfig.php?KID='.$kuvaid.'';
-    } else {
+    } elseif (isset($_GET['ohjaus'])) {
+        echo 'fblogin/fbconfig.php?ohjaus='.$ohjaus.'';
+		} else {
         echo 'fblogin/fbconfig.php';
     }
 						?>">Login with Facebook</a></div>
@@ -62,7 +65,15 @@ $my->set_charset("utf8");
             $_SESSION['login_user']=$KEmail;
             $login = $_GET['login'];
           
-             header("Location:kommentointi.php?KID=".$kuvaid);
+	if (isset($_GET['KID'])) {
+    echo '<META HTTP-EQUIV="Refresh" Content="0; URL=kommentointi.php?KID=' . $kuvaid . '">'; 
+} elseif (isset($_GET['ohjaus'])) {
+    echo '<META HTTP-EQUIV="Refresh" Content="0; URL=lahetyspalvelu.php">'; 
+} else {
+    echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php">'; 
+}
+		  
+             //header("Location:kommentointi.php?KID=".$kuvaid);
             }
             }
             $my->close();
