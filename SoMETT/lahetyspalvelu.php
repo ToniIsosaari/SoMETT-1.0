@@ -114,7 +114,9 @@ if($_SESSION['FBID'] || $_SESSION['login_user']){
 <?php 
   }
   else{
-   header('Location:upl_login.php');
+	 $muuttuja1 = 1;
+     echo '<META HTTP-EQUIV="Refresh" Content="0; URL=kommentointi_login.php?ohjaus=' . $muuttuja1 . '">'; 
+   //header('Location:upl_login.php');
    }
     ?>
   
