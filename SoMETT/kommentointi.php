@@ -115,7 +115,6 @@ session_start();
               <!--HAETAAN KUVAKOHTAISET KOMMENTIT TIETOKANNASTA-->
               <textarea name="comment" maxlength="140" rows="2" required></textarea>
               <input class="button float-right" type="submit" name="submit" value="Kommentoi">
-              <a href="<?php echo 'fblogin/logout.php?KID='.$kuvaid.'';?>">Kirjaudu Ulos</a><br>
               <hr>
 			  <h5 class="float-left">Kommentteja</h5>
               <?php
@@ -187,7 +186,6 @@ $uuuid = str_replace($replace, $replaced, $uuid);
       <div class="panel">
         <div>
           <div>
-			<a href="<?php echo 'kommentointi_login.php?KID='.$kuvaid.'';?>">Kirjaudu Sisään</a><br>
             <hr>
 			<h5 class="float-left">Kommentteja</h5>
             <?php
