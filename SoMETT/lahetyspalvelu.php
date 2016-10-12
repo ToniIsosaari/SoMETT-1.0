@@ -30,14 +30,7 @@ if($_SESSION['FBID'] || $_SESSION['login_user']){
     <!-- Kuvan lähetys ja muuta mukavaa -->
       <div class="row uplform">
         <div class="small-9 small-centered medium-centered large-centered colums">
-          <?if($upl==1){?>
-          <h2>Kiitos kuvan lähettämisestä!</h2>
-          <p>("Tähän saisi lisätä jonkinmoista mallitekstiä. Kiitos nam!")</p>
-		  <form name="form" action="kuvapankki.php" method="post">
-		  <input type="hidden" name="jarjestys" value="Uusimmat">
-		  <input class="button" type="submit" value="Siirry kuvagalleriaan!">
-		  </form>
-          <? } else { ?>      
+
           <h1>Lähetyspalvelu</h1>
           <p>Tämän kautta voit lähettä kuviasi yhteisön ja museoasiantuntioiden tutkittavaksi.
           Suosittelemme lämpimästi käytäjäehtoihin tutustumista ennen kuvien lähettämistä.
@@ -64,7 +57,7 @@ if($_SESSION['FBID'] || $_SESSION['login_user']){
             </fieldset>
           </form>
 
-        <?}?>
+
       </div>
     </div>
   </div>

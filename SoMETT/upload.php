@@ -20,14 +20,43 @@ Server-side PHP file upload code for HTML5 File Drag & Drop demonstration
 Featured on SitePoint.com
 Developed by Craig Buckler (@craigbuckler) of OptimalWorks.net
 */
-
+session_start();
 $fn = (isset($_SERVER['HTTP_X_FILENAME']) ? $_SERVER['HTTP_X_FILENAME'] : false);
 echo $fn;
 $title = $_POST["title"];
 $description = $_POST["description"];
-$UID = $_POST["UID"];
-$UID = '12'; #tähän pitää getata se käyttäjäid
+$UID = "UIDERROR";
+$my=mysqli_connect("localhost","data15","aJrHfybLxsLU76rV","data15");
+if($my->mysql_errno){
+    die("MySQL, virhe (#".$my->mysql_errno.") yhteyden luonnissa:".$my->connect_error);
+}
+$my->set_charset("utf8");
 
+$LOG = $_SESSION["login_user"];
+$FBID = $_SESSION["FBID"];
+
+if(is_null($LOG)){ 
+    $UID = $FBID;
+}
+else {
+    $sql = 'SELECT * FROM 581D_Kayttaja WHERE Sposti = "'.$LOG.'"';
+    echo $sql;
+    if($result = $my->query($sql)){
+        while($d = $result->fetch_object()){  
+            $UID =  $d->UID;                          
+        }
+    } 
+    else {
+        echo "Virhe SQL-kyselyssä!";
+    }
+    $my->close();   
+}   
+   
+   
+   
+   
+   
+   
     if ($fn) {
 	
 	    // AJAX call
@@ -71,7 +100,7 @@ $UID = '12'; #tähän pitää getata se käyttäjäid
     				echo "Virhe SQL-kyselyssä!";
     			}
     			$my->close();
-    			header('Location:lahetyspalvelu.php?upl=1');
+    			header('Location:redirect.php?jarjestys="uusimmat"');
     		}
 
     	}
