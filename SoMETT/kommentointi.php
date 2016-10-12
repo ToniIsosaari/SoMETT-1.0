@@ -176,14 +176,16 @@ $uuuid = str_replace($replace, $replaced, $uuid);
       <!--JOS KÄYTTÄJÄ ON KIRJAUTUNUT LOPPUU JA JOS KÄYTTÄJÄ EI OLE KIRJAUTUNUT ALKAA-->
     <?php else: ?>
     <?php
-      $sql = "SELECT URL, PublishDate FROM 581D_Kuva WHERE KuvaID = '$kuvaid'";
+      $sql = "SELECT URL, PublishDate, Title, Description FROM 581D_Kuva WHERE KuvaID = '$kuvaid'";
       //echo $sql;
       $result = $my->query($sql);
       $kkysely = $result->fetch_object();
     ?>
 
     <img src=<?php echo  $kkysely->URL; ?> width="300" height="400" name="image" />
-    <?echo "Kuva on ladattu: ".$kkysely->PublishDate;?>    
+    <?echo "Kuva on ladattu: ".$kkysely->PublishDate;?>
+    <p class="Otsik"><?php echo $kkysely->Title; ?></p>
+        <p class="Teks"><?php echo $kkysely->Description; ?></p>
     <div class="row">
       <div class="panel">
         <div>
