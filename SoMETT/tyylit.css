@@ -220,3 +220,12 @@
 .imageclass{
     box-shadow: 10px 10px 50px #888888;
 }
+
+/*kommentti taulun kuva otsikko ja teksti*/
+
+p.Otsik{
+    font-size: 2em;
+}
+p.Teks{
+    font-size: 1em;
+}

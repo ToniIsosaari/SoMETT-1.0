@@ -65,7 +65,7 @@ session_start();
     <!--JOS KÄYTTÄJÄ ON KIRJAUTUNUT ALKAA-->
     <?php if ($_SESSION['FBID'] or $_SESSION['login_user']): ?>
     <?php
-      $sql = "SELECT URL, PublishDate FROM 581D_Kuva WHERE KuvaID = '$kuvaid'";
+      $sql = "SELECT URL, PublishDate, Title, Description FROM 581D_Kuva WHERE KuvaID = '$kuvaid'";
       //echo $sql;
       $result = $my->query($sql);
       $kkysely = $result->fetch_object();
@@ -73,6 +73,8 @@ session_start();
     ?>
     <img class="centered" src="<?php echo $kkysely->URL; ?>" name="image" />
     <?echo "Kuva on ladattu: ".$kkysely->PublishDate;?>
+    <p class="Otsik"><?php echo $kkysely->Title; ?></p>
+    <p class="Teks"><?php echo $kkysely->Description; ?></p>
     </div>
     </section>
 	<section class="secondary">
