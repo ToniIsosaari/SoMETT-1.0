@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <title>SoMETT</title>
 <script src="foundation.js"></script>
-<script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
-<link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
+<script src="https://cdn.jsdelivr.net/gh/enyo/dropzone/dist/dropzone.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/enyo/dropzone/dist/dropzone.css">
 <link rel="stylesheet" href="foundation.css">
 <link rel="stylesheet" href="foundation-icons/foundation-icons.css">
 <link rel="stylesheet" href="tyylit-miia.css">
